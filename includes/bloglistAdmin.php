@@ -13,6 +13,14 @@ if(isset($_POST['delete']))
     $count = $s->deleteBlog($id, $dbcon); 
 }
 
+if(isset($_POST['edit']))
+{
+    $id = $_POST['blog_id'];
+    session_start();
+    $_SESSION['blog_id'] = $id;//SEssion create to store blog which needs to edit.
+    //$_SESSION['admin_id']= "1"; //This is to store admin id in session and transfer it to editblog.php page. so that to store the admin id
+    header("Location:http://localhost:8080/project-eagles/includes/editblog.php");
+}
 ?>
         <div class="content">
             <main>
@@ -37,12 +45,16 @@ if(isset($_POST['delete']))
                                             "<td></td>" .
                                             "<td>" . $blog->blog_date . "</td>" .
                                             "<td><form method=POST action=\"#\">" .
+                                            "<button type='submit' name='delete'>" .
+                                            "<i class='far fa-trash-alt'></i></button>" .   
                                             "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" .
-                                            "<input type=\"submit\" name=\"delete\" value=\"delete\" /></form></td>" .
                                             "<td><form method=POST action=\"#\">" .
                                             "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" .
-                                            "<input type=\"submit\" name=\"edit\" value=\"&#x270E;\"/></form></td>" .
+                                            "<button type='submit' name='edit'>" .
+                                            "<i class='far fa-edit'></i></button>" . 
                                             "<td><form method=POST action=\"#\">" .
+                                            "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" .
+                                            "<input type=\"submit\" name=\"details\" value=\"VIEW\"/></form></td>" .
                                             "</tr>";
                                 }
                             ?>
