@@ -1,6 +1,6 @@
 <?php
 require_once 'portfolio.php';
-require_once '../library/APIRequest.php';
+require_once 'APIRequest.php';
         
 $dbcon = Database::getDb();
 $list = new Portfolio();

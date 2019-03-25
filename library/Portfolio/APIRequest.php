@@ -1,5 +1,5 @@
 <?php 
-require_once 'Portfolio/portfolio.php';
+require_once 'portfolio.php';
 
 class APIRequest{
     public function getPortfolioMarketPrice(){
