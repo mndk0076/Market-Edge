@@ -1,0 +1,51 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing:inherit;
+}
+#eventtitle{
+    border-radius: 50px;
+
+}
+#title{
+    position: relative;
+    left:45px;
+    margin:20px;
+}
+#eventdescription{
+    border-radius: 50px;
+}
+#description{
+    margin:20px;
+}
+#eventimage{
+    border-radius: 50px;
+}
+#image{
+    margin:20px;
+    position: relative;
+    left:15px; 
+}
+#eventdate{
+    border-radius: 50px;
+}
+#date{
+    margin:20px;
+    position: relative;
+    left:40px; 
+}
+#location{
+    border-radius: 50px;
+}
+#loca{
+    margin:20px;
+    position: relative;
+    left:15px; 
+}
+#submit{
+    margin:20px;
+    border-radius: 50px;
+    position: relative;
+    left:125px;
+}

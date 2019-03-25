@@ -1,0 +1,218 @@
+.stock
+{
+	width: 100%;
+	height:100vh;
+	max-height: 400px;
+}
+.slider_container
+{
+	
+	width: 100%;
+	height: 100%;
+}
+.slider_container{
+	background:url(stock-market.png);
+}
+.slide_container
+{
+	
+	width: 100%;
+	top: 42%;
+}
+
+.stock-search
+{   margin:250px;
+	width: 100%;
+	z-index: 100;
+	
+}
+.search_container
+{
+	position: absolute;
+	top: -151px;
+	left: 15px;
+	width: calc(100% - 30px);
+	height: 90px;
+	border-radius: 35px;
+	padding: 10px;
+	background: rgba(255,255,255,0.33);
+	
+}
+.search_content
+{
+	width: 100%;
+	height: 100%;
+	background: #FFFFFF;
+	border-radius: 30px;
+}
+.search_form
+{
+	position: relative;
+	height: 100%;
+}
+.search_form_content
+{
+	width: 100%;
+	height: 100%;
+	padding-left: 14px;
+	padding-right: 11px;
+	
+}
+.search_form_content > div
+{
+	width: 20%;
+	height: 100%;
+	padding-left: 18px;
+	padding-right: 2px;
+	
+}
+.search_form_content > div:not(:last-child)
+{
+	border-right: solid 2px #d1d1d1;
+}
+.search_form_select
+{
+	
+	display: block;
+	position: relative;
+	top: 50%;
+	-webkit-transform: translateY(-50%);
+	-moz-transform: translateY(-50%);
+	-ms-transform: translateY(-50%);
+	-o-transform: translateY(-50%);
+	transform: translateY(-50%);
+	width: 100%;
+	-webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    -o-appearance: none;
+    appearance: none;
+    -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+    -webkit-user-select: none;
+    background-image: url(../images/down.png);
+    background-position: center right;
+    background-repeat: no-repeat;
+    border: none;
+    outline: none;
+    font-size: 13px;
+    font-weight: 400;
+    color: #6b6b6b;
+    cursor: pointer;
+}
+.search_form_button
+{   
+    margin-right:300px;
+	width: 123px;
+	height:40px;
+	max-height: 100%;
+	border-radius: 35px;
+	border: none;
+	outline: none;
+	cursor: pointer;
+	font-size: 14px;
+	font-weight: 700;
+	color: #FFFFFF;
+	text-transform: uppercase;
+	background: #40424C;
+}
+@media only screen and (max-width: 767px)
+{
+	.city
+	{
+		width: 100%;
+	}
+	.recent_slider_nav_container
+	{
+		display: none;
+	}
+}
+
+
+@media only screen and (max-width: 575px)
+{
+	.logo
+	{
+		width: 70px;
+	}
+	.header_content
+	{
+		height: 60px;
+	}
+	.menu_close_container
+	{
+		top: 28px;
+		right: 28px;
+	}
+	.menu_item a
+	{
+		font-size: 18px;
+	}
+	.menu_phone
+	{
+		font-size: 11px;
+	}
+	.button
+	{
+		width: 153px;
+		height: 52px;
+	}
+	.button a
+	{
+		font-size: 12px;
+		line-height: 52px;
+	}
+	.home_subtitle
+	{
+		font-size: 12px;
+	}
+	.home_title
+	{
+		font-size: 24px;
+	}
+	.home_price
+	{
+		font-size: 18px;
+	}
+	.search_form_button
+	{
+		font-size: 12px;
+	}
+	.city_title
+	{
+		font-size: 24px;
+	}
+	.city_subtitle
+	{
+		font-size: 14px;
+	}
+	.newsletter_title
+	{
+		font-size: 24px;
+	}
+	.footer_phone,
+	.cr
+	{
+		font-size: 12px;
+	}
+}
+
+@media only screen and (max-width: 539px)
+{
+	
+}
+
+
+@media only screen and (max-width: 480px)
+{
+	.footer_phone
+	{
+		display: none;
+	}
+}
+
+
+@media only screen and (max-width: 479px)
+{
+	
+}
+

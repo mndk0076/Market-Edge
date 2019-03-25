@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+*, *::before, *::after {
+    box-sizing:inherit;
+}
+#quesTitle{
+    position: relative;
+    left:15px;
+    margin: 25px;
+}
+#questiontitle{
+    border-radius: 50px;
+}
+#questiondescription{
+    border-radius: 50px;
+    margin-bottom: 50px;
+}
+#submit{
+    border-radius: 50px;
+}
