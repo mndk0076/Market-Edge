@@ -1,6 +1,6 @@
 <?php
-require_once '../../model/database.php';
-require_once '../../model/FAQ_class.php';
+require_once '../models/database.php';
+require_once '../models/FAQ_class.php';
 
 $dbcon = Database::getDb();
 $f = new FAQ();

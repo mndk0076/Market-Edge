@@ -20,7 +20,7 @@ include "../includes/header.php";
                     Donec eget laoreet dui. Etiam eleifend, ex a suscipit lacinia, nisi leo ullamcorper nisi, 
                 at cursus tellus mi consequat nisl.</p>-->
             <?php
-                include "/FAQCRUD/ListFAQapproved.php";
+                include "./FAQCRUD/ListFAQapproved.php";
             ?>
 
                 <h3>Have a Question You want to See in the FAQ?</h3>
@@ -98,7 +98,7 @@ include "../includes/header.php";
         </div>
         </form>-->
         <?php
-        include "/FAQCRUD/addFAQ.php";
+        include "./FAQCRUD/addFAQ.php";
         ?>
 
     </main>

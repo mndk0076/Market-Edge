@@ -116,7 +116,7 @@
 
         <!--Space for List, Edit, Delete-->
         <?php
-        include "/FAQCRUD/ListFAQ.php";
+        include "./FAQCRUD/ListFAQ.php";
 
         ?>
 	 <!--<form class="border border-light p-5">
