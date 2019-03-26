@@ -62,19 +62,11 @@ body {
 	width:100%;
 	font-size:18px;
 }
-<<<<<<< HEAD
-.msg_errors{
-	
-	color:red;
-	
-}
-=======
 .btn-send:hover{
 	background:#3B3C3E;
 	
 }
 
->>>>>>> 339e910513344369bec2644e7821b51392321e93
 .link_home_page{
 	
 	text-decoration:none;
@@ -82,11 +74,8 @@ body {
 }
 .link_home_page:hover{
 	color:red;
-<<<<<<< HEAD
-=======
 }
 #s{
 	width:300px;
 	height:40px;
->>>>>>> 339e910513344369bec2644e7821b51392321e93
 }

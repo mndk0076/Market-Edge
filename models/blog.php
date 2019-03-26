@@ -43,7 +43,7 @@ class Blog
 
         return $count;
     }
-    public function updateBlog($id, $title, $content, $bdate,$author, $db){
+    public function updateBlog($id, $title, $content, $blog_date,$user_id, $db){
         $sql = "UPDATE blogs
                 SET title = :title,
                 content = :content,
