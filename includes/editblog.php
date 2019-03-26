@@ -6,26 +6,40 @@ if(!isset($_SESSION['blog_id'])){
 }
 else
 {
+    $page_head = "Edit Blog";
     require_once 'header_admin.php';
     require_once '../models/database.php';
     require_once '../models/blog.php';
-    $id=$_SESSION['blog_id'];
+    $blog_id=$_SESSION['blog_id'];
     unset($_SESSION['blog_id']);
     $dbcon = Database::getDb();
     $b = new Blog();
-    //$s = new Admin();
     $blog = $b->getBlogById($id, $dbcon);
-    //$authors = $s->getAllAdmins($dbcon);
 
-     echo "<div class=\"content\">" .
+    if(isset($_POST['update'])){
+        $id= $_POST['blog_id'];
+        $title = $_POST['title'];
+        $title=filter_var($title, FILTER_SANITIZE_STRING);
+        $content = $_POST['content'];
+        $content=filter_var($content, FILTER_SANITIZE_STRING);
+        $blog_date = date("Y/m/d"); 
+        $user_id=1;
+    
+        $db = Database::getDb();
+        $s = new Blog();
+        $c = $s->updateBlog($id, $title, $content, $blog_date, $user_id, $db);
+        header("Location: bloglistAdmin.php");
+    }
+
+     $editform = "<div class=\"content\">" .
         "<main>" .
             "<div class=\"container-fluid\">" . 
-                "<h1>Blog Create</h1>" .
-                "<form action=\"bloglistAdmin.php\" method=\"post\">" .
+                "<h1>Blog EDIT</h1>" .
+                "<form method=\"post\">" .
                     "<div>" .
                         "<label>Blog Title:</label>" . 
                         "<input type=\"text\" value=\"" . $blog->title . "\" name=\"title\" />" .
-                        "<input type=\"hidden\" name=\"sid\" value=\"" . $blog->id . "\" />" .
+                        "<input type=\"hidden\" name=\"blog_id\" value=\"" . $blog->id . "\" />" .
                     "</div><br/>" .
                     "<div>" .
                         "<label>Blog Content:</label>" . 
@@ -40,8 +54,10 @@ else
     "</div>" .
 "</div>" ;
 }
+
 ?>
-        
+       <?php echo $editform; 
+       ?>
 
     <!-- Optional JavaScript -->
 

@@ -13,13 +13,13 @@ if(isset($_POST['delete']))
     $count = $s->deleteBlog($id, $dbcon); 
 }
 
-if(isset($_POST['edit']))
+else if(isset($_POST['edit']))
 {
     $id = $_POST['blog_id'];
     session_start();
     $_SESSION['blog_id'] = $id;//SEssion create to store blog which needs to edit.
     //$_SESSION['admin_id']= "1"; //This is to store admin id in session and transfer it to editblog.php page. so that to store the admin id
-    header("Location:http://localhost:8080/project-eagles/includes/editblog.php");
+    header("Location: editblog.php");
 }
 ?>
         <div class="content">
@@ -45,17 +45,11 @@ if(isset($_POST['edit']))
                                             "<td></td>" .
                                             "<td>" . $blog->blog_date . "</td>" .
                                             "<td><form method=POST action=\"#\">" .
-                                            "<button type='submit' name='delete'>" .
-                                            "<i class='far fa-trash-alt'></i></button>" .   
-                                            "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" .
-                                            "<td><form method=POST action=\"#\">" .
-                                            "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" .
-                                            "<button type='submit' name='edit'>" .
-                                            "<i class='far fa-edit'></i></button>" . 
-                                            "<td><form method=POST action=\"#\">" .
-                                            "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" .
-                                            "<input type=\"submit\" name=\"details\" value=\"VIEW\"/></form></td>" .
-                                            "</tr>";
+                                            "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" . 
+                                            "<button type='submit' name='delete' class='far fa-trash-alt'></button>" .
+                                            "<button type='submit' class='far fa-edit' name='edit'></button>" .
+                                            "<button type='submit' class='fas fa-info-circle' name='details'></button></form></td>" .
+                                        "</tr>";
                                 }
                             ?>
                         </tbody>
