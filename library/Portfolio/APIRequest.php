@@ -27,6 +27,16 @@ class APIRequest{
         //echo $API_query;
         return $API_query;
     }
+    public function getTickerQuote($ticker){
+        $API_query = "https://cloud.iexapis.com/beta/stock/market/batch?token=pk_2070ea1e812e4ed989df8082e86dc16d&symbols=". $ticker ."&types=quote";
+        
+        return $API_query;
+    }
+    public function getDataChart($ticker){
+        $API_query = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=". $ticker ."&apikey=Y6K29HWW8R4315MT";
+        
+        return $API_query;
+    }
 }
 
 
