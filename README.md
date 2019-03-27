@@ -29,9 +29,11 @@ Files and file firectory for reference
 
 1. Portfolio Feature
 
-    includes > portfolioView.php, editPortfolioView.php
+    includes > portfolio > portfolioView.php
     
-    library > Portfolio > all files in there.
+    models > portfolio > portfolio.php
+    
+    models > APIRequest.php
 
 /******************************************************************************/
 
@@ -41,9 +43,9 @@ PROJECT FEATURE TWO - PHASE TWO
 
 2. Chart Feature
 
-    includes > chartView.php
+    includes > portfolio > chartView.php
     
-    library > Chart > all files in there.
+    models > chart > all files in there.
 
 /******************************************************************************/
 
