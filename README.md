@@ -35,3 +35,16 @@ Files and file firectory for reference
 
 /******************************************************************************/
 
+PROJECT FEATURE TWO - PHASE TWO
+
+/** Kenneth Mendoza FEATURE ********************************************************/
+
+2. Chart Feature
+
+    includes > chartView.php
+    
+    library > Chart > all files in there.
+
+/******************************************************************************/
+
+

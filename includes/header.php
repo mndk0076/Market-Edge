@@ -48,7 +48,7 @@
 					<a class="nav-link py-0 text-white" href="#">Watchlist</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="chart.php">Chart</a>
+					<a class="nav-link py-0 text-white" href="chartView.php">Chart</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="../includes/news.php">News</a>

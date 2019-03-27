@@ -29,6 +29,31 @@ $(document).ready(function (){
         $('#del_company').val(data[2]);
         $('#del_shares').val(data[3]);
         $('#del_price').val(data[4].slice(1, 50));
-        console.log(data);
+        //console.log(data);
+    });
+});
+
+$('form.ajax').on('submit', function() {
+    $(this).unbind();
+    var that = $(this),
+        data = {};
+
+    that.find('[name]').each(function(index, value){
+        var form = $(this),
+            name = form.attr('name');
+            value = form.val();
+        data[name] = value;
+    });
+    $.ajax({
+        type: 'POST',
+        url: '../library/Portfolio/addPortfolio.php',
+        data: data,
+        success: function (response) {
+            $('#addTicker').modal('hide');
+            alertify.success('Successfully Added');
+        },
+        error: function (response) {
+            alertify.error('Something went wrong, Please try again later');
+        }
     });
 });
