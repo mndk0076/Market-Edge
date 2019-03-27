@@ -46,7 +46,7 @@ $('form.ajax').on('submit', function() {
     });
     $.ajax({
         type: 'POST',
-        url: '../library/Portfolio/addPortfolio.php',
+        url: '../portfolio/addPortfolio.php',
         data: data,
         success: function (response) {
             $('#addTicker').modal('hide');

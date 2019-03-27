@@ -1,5 +1,5 @@
 <?php
-require_once 'database.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/database.php';
 
 class Portfolio{
     public function getPortfolio($dbcon){        

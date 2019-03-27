@@ -2,7 +2,7 @@
     date_default_timezone_set('America/Los_Angeles'); 
 
     $ticker = 'SPY';
-    require_once '../library/Portfolio/APIRequest.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/models/APIRequest.php';
     $change = $company = $changePercent = $symbol ='';
     if(isset($_GET['searchTicker'])){
         $ticker = $_GET['ticker'];

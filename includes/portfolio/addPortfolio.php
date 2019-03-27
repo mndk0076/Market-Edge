@@ -1,5 +1,5 @@
 <?php
-require_once 'portfolio.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/portfolio/portfolio.php';
 
     if(isset($_POST['add_portfolio'])){
         $dbcon = Database::getDb();
@@ -13,6 +13,6 @@ require_once 'portfolio.php';
         $u->addTicker($dbcon, $ticker, $company, $shares, $price);
         
         if($ticker !='' && $company !='' && $shares !='' && $price !=''){
-            header("Location:../../includes/portfolioView.php");
+            header("Location: portfolioView.php");
         }    
     }

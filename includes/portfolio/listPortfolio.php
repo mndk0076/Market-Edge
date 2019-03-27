@@ -1,6 +1,6 @@
 <?php
-require_once 'portfolio.php';
-require_once 'APIRequest.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/portfolio/portfolio.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/APIRequest.php';
        
 $dbcon = Database::getDb();
 $u = new Portfolio();
@@ -26,7 +26,7 @@ foreach($portfolio as $price => $port){
             ."<td>$". $port->price * $port->shares ."</td>"
             ."<td>$". $tickers_price[$price] ."</td>"
             ."<td>$". $tickers_price[$price] * $port->shares ."</td>"
-            ."<td>". (($tickers_price[$price] * $port->shares) - ($port->price * $port->shares)  )."</td></tr>";
+            ."<td>". round((($tickers_price[$price] * $port->shares) - ($port->price * $port->shares)),2)."</td></tr>";
 }
 
  

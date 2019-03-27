@@ -1,6 +1,6 @@
 <?php 
     ob_start();
-    require_once 'header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
 ?>
 <h1>Edit Portfolio</h1>
 <table class="table-hover">
@@ -20,12 +20,12 @@
     </thead>
     <tbody>
         <?php 
-            require_once '../library/Portfolio/listPortfolioSetting.php';
-            require_once '../library/Portfolio/editPortfolio.php';
-            require_once '../library/Portfolio/deletePortfolio.php';
+            require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/listPortfolioSetting.php';
+            require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/editPortfolio.php';
+            require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/deletePortfolio.php';
         ?>
     </tbody>
 </table>
 <?php
-include 'footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php';
 ?>

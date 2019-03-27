@@ -1,5 +1,5 @@
 <?php 
-require_once 'portfolio.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/portfolio/portfolio.php';
 
 class APIRequest{
     public function getPortfolioMarketPrice(){

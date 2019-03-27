@@ -1,6 +1,6 @@
 <?php
 ob_start(); 
-require_once 'listPortfolioSetting.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/listPortfolioSetting.php';
 
 if(isset($_POST['editTicker'])){
     $id = $_POST['id'];
@@ -22,7 +22,7 @@ if(isset($_POST['update_ticker'])){
     $count = $p->editTicker($dbcon, $id, $ticker, $company, $shares, $price, 1);
 
     if($count){
-        header("Location:../../includes/editportfolioView.php");
+        header("Location:editportfolioView.php");
     } else {
         echo  "problem updating";
     }
@@ -40,7 +40,7 @@ if(isset($_POST['update_ticker'])){
                 </button>
             </div>
             <div class="modal-body">
-                <form action="../library/Portfolio/editPortfolio.php" method="post" id="editTickerModal">
+                <form action="editPortfolio.php" method="post" id="editTickerModal">
                    <input type="hidden" name="ticker_id" id="ticker_id">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">

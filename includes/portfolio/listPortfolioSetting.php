@@ -1,6 +1,6 @@
 <?php
-require_once 'portfolio.php';
-require_once 'APIRequest.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/portfolio/portfolio.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/models/APIRequest.php';
         
 $dbcon = Database::getDb();
 $list = new Portfolio();

@@ -1,5 +1,5 @@
 <?php 
-    require_once 'header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
 ?>
 <div class="home-container">
 	<div class="home-portfolio">
@@ -187,5 +187,5 @@
 	</div>
 </div>
 <?php 
-    include 'footer.php';
+    include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php';
 ?>

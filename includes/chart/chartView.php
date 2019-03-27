@@ -1,13 +1,13 @@
 <?php
-    require_once 'header.php';
-    require_once '../library/Chart/displaychart.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/models/chart/displaychart.php';
     
 ?>
 <!DOCTYPE HTML>
 <html>
 <head>
-	<link rel="stylesheet" href="../js/alertifyjs/css/alertify.css">
-	<link rel="stylesheet" href="../js/alertifyjs/css/themes/default.css">
+	<link rel="stylesheet" href="../../js/alertifyjs/css/alertify.css">
+	<link rel="stylesheet" href="../../js/alertifyjs/css/themes/default.css">
 <script>
 window.onload = function() {
  
@@ -110,9 +110,9 @@ chart.render();
     </div>
 </div>
     <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-    <script src="../js/portfolio.js"></script>
-    <script src="../js/alertifyjs/alertify.js"></script>
+    <script src="../../js/portfolio.js"></script>
+    <script src="../../js/alertifyjs/alertify.js"></script>
 </body>
 </html>  
-<?php include "footer.php" ?>
+<?php include $_SERVER['DOCUMENT_ROOT']."/includes/footer.php" ?>
 

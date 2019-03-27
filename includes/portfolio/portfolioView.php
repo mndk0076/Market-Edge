@@ -1,5 +1,5 @@
 <?php 
-    require_once 'header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
     ob_start();
 ?>
 <h1>Portfolio</h1>
@@ -20,7 +20,7 @@
     </thead>
     <tbody>
         <?php 
-            require_once '../library/Portfolio/listPortfolio.php';
+            require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/listPortfolio.php';
         ?>
     </tbody>
 </table>
@@ -35,7 +35,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form action="../library/Portfolio/addPortfolio.php" method="post" id="addPortfolioModal">
+                <form action="addPortfolio.php" method="post" id="addPortfolioModal">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Ticker</span>
@@ -71,5 +71,5 @@
     </div>
 </div>
 <?php
-include 'footer.php';
+include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php';
 ?>

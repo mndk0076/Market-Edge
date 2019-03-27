@@ -1,6 +1,6 @@
 <?php
 ob_start();
-require_once 'listPortfolioSetting.php';
+require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/listPortfolioSetting.php';
 
 if(isset($_POST['deleteTicker'])){
     $dbcon = Database::getDb();
@@ -10,7 +10,7 @@ if(isset($_POST['deleteTicker'])){
     $count = $p->deleteTicker($dbcon, $id);
     
     if($count){
-        header("Location:../../includes/editPortfolioView.php");      
+        header("Location:editPortfolioView.php");      
     } else {
         echo  "problem updating";
     }     
@@ -27,7 +27,7 @@ if(isset($_POST['deleteTicker'])){
                 </button>
             </div>
             <div class="modal-body">
-                <form action="../library/Portfolio/deletePortfolio.php" method="post">
+                <form action="deletePortfolio.php" method="post">
                    <input type="hidden" name="ticker_id" id="del_ticker_id">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
