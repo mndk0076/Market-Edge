@@ -1,12 +1,12 @@
 <?php
-include "../includes/header.php"
+include "../includes/header.php";
 ?>
 <link rel="stylesheet" href="../css/faqstyle.css">
     <main id="main">
 
          <div id="intro">
             <h1>FAQ</h1>
-
+            <!--
             <div class="displayedFAQ">
                 <h2>A Subject Line</h2>
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.
@@ -18,8 +18,10 @@ include "../includes/header.php"
                     Pellentesque semper ante sit amet enim auctor, quis tempor neque tempus. Proin lobortis 
                     nunc eget egestas molestie. Cras congue sagittis pellentesque. 
                     Donec eget laoreet dui. Etiam eleifend, ex a suscipit lacinia, nisi leo ullamcorper nisi, 
-                at cursus tellus mi consequat nisl.</p>
-
+                at cursus tellus mi consequat nisl.</p>-->
+            <?php
+                include "./FAQCRUD/ListFAQapproved.php";
+            ?>
 
                 <h3>Have a Question You want to See in the FAQ?</h3>
                 <p>Submit it Here!</p>
@@ -47,7 +49,7 @@ include "../includes/header.php"
                     </div>
                 </div>-->
 <!-- My scripts weren't working so I made the content without bootstrap for now and will update once the scripts are fixed-->
-             
+         <!--    
         <form action="faq.php" method="post">
                 
 
@@ -82,20 +84,23 @@ include "../includes/header.php"
                     <option value="stock">Stock</option>
                     <option value="general">General</option>
                     </select>
-                    <span id="titleErr"></span> <!--camel case?-->
+                    <span id="titleErr"></span> 
                 </div>
 
                 <div id="quesDescription" class="faqInfo">
                     <label for="questiondescription">Your Question:</label>
                     <input type="textarea" name="questiondescription" id="questiondescription">
-                    <span id="descErr"></span> <!--Fix this -->
+                    <span id="descErr"></span> 
                 </div>
 
             
                 <input type="submit" value="submit" id="submit">
         </div>
-        </form>
-        
+        </form>-->
+        <?php
+        include "./FAQCRUD/addFAQ.php";
+        ?>
+
     </main>
     <?php
     include "../includes/footer.php";
