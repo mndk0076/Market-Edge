@@ -43,7 +43,7 @@ PROJECT FEATURE TWO - PHASE TWO
 
 2. Chart Feature
 
-    includes > portfolio > chartView.php
+    includes > chart > chartView.php
     
     models > chart > all files in there.
 
