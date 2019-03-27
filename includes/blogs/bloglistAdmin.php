@@ -1,7 +1,7 @@
 <?php
-require_once '../models/database.php';
-require_once '../models/blog.php';
-require_once 'header_admin.php';
+require_once '../../models/database.php';
+require_once '../../models/blogs/blog.php';
+require_once '../header_admin.php';
 
 $dbcon = Database::getDb();
 $s = new Blog();
@@ -26,7 +26,7 @@ else if(isset($_POST['edit']))
             <main>
                 <div class="container-fluid">
                     <h1>Blogs</h1>
-                    <a href="../includes/blogCreate.php" class="fas fa-cog"></a>
+                    <a href="createblog.php" class="fas fa-cog"></a>
                     <table class="table-hover">
                             <thead>
                                 <tr>
@@ -62,12 +62,12 @@ else if(isset($_POST['edit']))
     <!-- Optional JavaScript -->
 
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="../js/jquery-3.3.1.min.js"></script>
-    <script src="../js/popper.min.js"></script>
-    <script src="../js/bootstrap.min.js"></script>
-    <script src="../js/bootstrap.bundle.min.js"></script>
-    <script src="../js/jquery.slimscroll.min.js"></script>
-    <script src="../js/trial.js"></script>
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/jquery.slimscroll.min.js"></script>
+    <script src="../../js/trial.js"></script>
 </body>
 
 </html>

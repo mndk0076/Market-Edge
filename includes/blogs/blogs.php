@@ -1,9 +1,9 @@
 <?php
-include "../includes/header.php";
+include "../header.php";
 
-require_once '../models/database.php';
-require_once '../models/blog.php';
-require_once '../models/comments.php';
+require_once '../../models/database.php';
+require_once '../../models/blogs/blog.php';
+require_once '../../models/comments/comments.php';
 
 $dbcon = Database::getDb();
 $s = new Blog();
@@ -21,7 +21,7 @@ if(isset($_POST['comment']))
 }
 
 ?>
-<link rel="stylesheet" href="../css/blog.css">
+<link rel="stylesheet" href="../../css/blog.css">
 <main id="main" style="margin-right: 5px; margin-left: 5px">
 <h1>Blog</h1>
 <div class="row">
@@ -74,4 +74,4 @@ foreach($blogs as $blog)
 // 	    </div>
 // 	  </div>  -->
 <?php
-include "../includes/footer.php";
+include "../footer.php";
