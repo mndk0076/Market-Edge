@@ -9,9 +9,23 @@ Files and file firectory for reference
 
 1. Top Gainers and Losers Feature
 
-    includes > gainers-losers-public.php
+    includes > gainerLosers > gainers-losers-public.php
     
-    model > gainers-losers.php
+    model > gainerLosers > gainers-losers.php
+
+/******************************************************************************/
+
+PROJECT FEATURE TWO - PHASE ONE
+
+Files and file firectory for reference
+
+/** ENRINA WILMS FEATURE ********************************************************/
+
+1. News
+
+    includes > news > news.php
+    
+    model > news > news.php
 
 /******************************************************************************/
 

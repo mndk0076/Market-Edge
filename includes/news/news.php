@@ -1,42 +1,25 @@
 <?php 
-    require_once 'header.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
+	require_once $_SERVER['DOCUMENT_ROOT'].'/models/news/news.php';
+
+	//RSS FEED LINK FOR MY NEWS ARTICLES
+//	$rss = "http://articlefeeds.nasdaq.com/nasdaq/categories?category=Stocks";
+	$rss = "http://rss.cnn.com/rss/money_markets.rss";
+
+	$n = new StockMarketNews();
 ?>
 <h1>News</h1>
 
 <div class="container">
-	<div class="card-deck">
-		<div class="card">
-			<img src="../images/default.png" class="card-img-top" alt="..." height="150px">
-			<div class="card-body">
-				<h5 class="card-title">Recent News ABout Stock MArket</h5>
-				<p class="card-text">This is where the news article content will be display or maybe the excerpt</p>
-			</div>
-			<div class="card-footer">
-				<a href="#" class="btn btn-primary">Read More</a>
-			</div>
-		</div>
-		<div class="card">
-			<img src="../images/default.png" class="card-img-top" alt="..." height="150px">
-			<div class="card-body">
-				<h5 class="card-title">Recent News ABout Stock MArket</h5>
-				<p class="card-text">This is where the news article content will be display or maybe the excerpt</p>
-			</div>
-			<div class="card-footer">
-				<a href="#" class="btn btn-primary">Read More</a>
-			</div>
-		</div>
-		<div class="card">
-			<img src="../images/default.png" class="card-img-top" alt="..." height="150px">
-			<div class="card-body">
-				<h5 class="card-title">Recent News ABout Stock MArket</h5>
-				<p class="card-text">This is where the news article content will be display or maybe the excerpt</p>
-			</div>
-			<div class="card-footer">
-				<a href="#" class="btn btn-primary">Read More</a>
-			</div>
-		</div>
+
+	<div id="news-container" class="row">
+		<!-- AREA WHERE THE LIST OF NEWS ARTICLES WILL BE DISPLAYED-->
+		<?php     
+        $n->getAllNews($rss);       
+		?>
 	</div>
 </div>
+
 <?php 
-    include 'footer.php';
+    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php';
 ?>

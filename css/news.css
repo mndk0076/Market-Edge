@@ -1,0 +1,35 @@
+/*===============================================NEWS=============================================================*/
+
+.news-title-background{
+	background: #2d2d2d;
+	color: #fff;
+	padding: 20px 15px;
+	font-size: 16px;
+	text-transform: capitalize;
+	text-align: center;
+}
+.news-title-link{
+	text-decoration: none !important;
+}
+.news-title-link:hover{
+	color: #0069D9 !important;
+}
+.news-background{
+	margin: 10px;
+	background: #f5f5f5;
+	border-radius: 10px;
+}
+.news-pub-date{
+	font-style: italic;
+	font-size: 14px;
+	color: gray;
+}
+.new-btn-link{
+	background: #2d2d2d;
+	color: #fff;
+}
+.new-btn-link:hover{
+	background: blue;
+	color: #fff;
+}
+/*===============================================NEWS=============================================================*/
