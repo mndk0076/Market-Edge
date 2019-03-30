@@ -1,5 +1,5 @@
 <?php
-require_once "db.php";
+require_once "../models/database.php";
 
 ?>
 <?php if (isset($_SESSION['logged_user'])):?>
