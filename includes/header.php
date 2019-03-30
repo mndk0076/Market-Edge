@@ -7,8 +7,9 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- Bootstrap CSS -->
-	<link rel="stylesheet" href="../css/bootstrap-4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../css/style.css">
+	<link rel="stylesheet" href="../../css/bootstrap-4.3.1/css/bootstrap.min.css">
+	<link rel="stylesheet" href="../../css/style.css">
+	<link rel="stylesheet" href="../../css/news.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
 	<title>Stock Market</title>
@@ -42,13 +43,13 @@
 					<a class="nav-link py-0 text-warning" href="../includes/homepage.php">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="../includes/portfolioView.php">Portfolio</a>
+					<a class="nav-link py-0 text-white" href="portfolioView.php">Portfolio</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="#">Watchlist</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="chart.php">Chart</a>
+					<a class="nav-link py-0 text-white" href="chartView.php">Chart</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="../includes/news.php">News</a>
@@ -72,10 +73,10 @@
 
 	<!-- Optional JavaScript -->
 	<!-- jQuery first, then Popper.js, then Bootstrap JS -->
-	<script src="../js/jquery-3.3.1.min.js"></script>
-	<script src="../js/popper.min.js"></script>
-	<script src="../js/bootstrap.min.js"></script>
-	<script src="../js/bootstrap.bundle.min.js"></script>
-	<script src="../js/jquery.slimscroll.min.js"></script>
-	<script src="../js/trial.js"></script>
-	<script src="../js/portfolio.js"></script>
+	<script src="../../js/jquery-3.3.1.min.js"></script>
+	<script src="../../js/popper.min.js"></script>
+	<script src="../../js/bootstrap.min.js"></script>
+	<script src="../../js/bootstrap.bundle.min.js"></script>
+	<script src="../../js/jquery.slimscroll.min.js"></script>
+	<script src="../../js/trial.js"></script>
+	<script src="../../js/portfolio.js"></script>

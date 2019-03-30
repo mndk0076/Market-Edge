@@ -50,13 +50,6 @@ h1 {
 	display: inline-block;
 	width: 30%;
 }
-
-.fa-cog {
-	width: 39%;
-	text-align: right;
-	font-size: 40px;
-}
-
 table {
 	width: 80%;
 	margin: 0 auto;
@@ -94,7 +87,7 @@ td:last-child {
 	border-width: 1px;
 	border-style: solid;
 	border-color: #1c1c1c;
-	padding-top: 9px;
+	padding-top: 10px;
 }
 
 .btn-search:link,
@@ -366,7 +359,37 @@ Responsive Table
 		grid-column: 0;
 	}
 }
-
+/*=============================================== EDIT PORTFOLIO =============================================================*/
+.input-group>.input-group-prepend {
+    flex: 0 0 30%;
+}
+.input-group .input-group-text {
+    width: 100%;
+}
+.edit-btn, .delete-btn{
+    padding: 0;
+    border: none;
+    background: none;
+}
+.fa-edit{
+    font-size: 25px;
+    color: #0056B3;
+}
+.fa-trash-alt{
+    font-size: 25px;
+    color: #DC143C;
+}
+.fa-plus {
+	margin-left: 33%;
+	text-align: right;
+	font-size: 40px;
+	color: green;
+}
+.fa-cog{
+    text-align: right;
+    font-size: 40px;
+    margin-left: 1%;  
+}
 /*===============================================CHART=============================================================*/
 .chart-wrapper {
 	margin-top: 20px;
@@ -375,37 +398,39 @@ Responsive Table
 .row-chart {
 	display: inline-block;
 	float: right;
-	margin-right: 15%;
+	margin-right: 10%;
 }
 
 .chart-title {
-	margin-left: 20%;
+	margin-left: 13%;
 	margin-top: 50px;
-	margin-bottom: 20px;
 	display: inline-block;
 	margin-right: 10px;
 }
-
+.chart-subtitle{
+    display: inline-block;
+}
+.chart-price{
+    margin-left: 5px;
+}
 .chart-search {
 	width: 20%;
-	margin-left: 20%;
+	margin-left: 12%;
 	display: inline-block;
+    margin-bottom: 30px;
 }
-
-.fa-long-arrow-alt-up,
-.chart-data {
-	color: lightgreen;
+.fa-arrow-up, .fa-arrow-down{
+    margin-right: 5px;
+    margin-left: 5px;
 }
 
 /*===============================================SEARCH RESULT =====================================================*/
 #chartContainer {
-	height: 370px;
-	width: 70%;
+	height: 400px;
+	width: 80%;
 	margin: 0 auto;
-	margin-top: -10px;
-	margin-bottom: 50px;
+	margin-bottom: 100px;
 }
-
 .img {
 	width: 70%;
 	margin: 0 180px;

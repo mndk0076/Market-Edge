@@ -9,9 +9,23 @@ Files and file firectory for reference
 
 1. Top Gainers and Losers Feature
 
-    includes > gainers-losers-public.php
+    includes > gainerLosers > gainers-losers-public.php
     
-    model > gainers-losers.php
+    model > gainerLosers > gainers-losers.php
+
+/******************************************************************************/
+
+PROJECT FEATURE TWO - PHASE ONE
+
+Files and file firectory for reference
+
+/** ENRINA WILMS FEATURE ********************************************************/
+
+1. News
+
+    includes > news > news.php
+    
+    model > news > news.php
 
 /******************************************************************************/
 
@@ -29,9 +43,24 @@ Files and file firectory for reference
 
 1. Portfolio Feature
 
-    includes > portfolioView.php, editPortfolioView.php
+    includes > portfolio > portfolioView.php
     
-    library > Portfolio > all files in there.
+    models > portfolio > portfolio.php
+    
+    models > APIRequest.php
 
 /******************************************************************************/
+
+PROJECT FEATURE TWO - PHASE TWO
+
+/** Kenneth Mendoza FEATURE ********************************************************/
+
+2. Chart Feature
+
+    includes > chart > chartView.php
+    
+    models > chart > all files in there.
+
+/******************************************************************************/
+
 
