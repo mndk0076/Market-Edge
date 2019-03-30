@@ -5,8 +5,8 @@ class Database
     //properties
     private static $user = 'root';
     private static $pass = '';
-    private static $db = 'contact_us';
-    private static $dsn = 'mysql:host=localhost:3307;dbname=login_project';
+    private static $db = 'stock_market';
+    private static $dsn = 'mysql:host=localhost;dbname=stock_market';
     private static $dbcon;
 	
     private function __construct()
