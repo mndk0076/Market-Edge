@@ -1,6 +1,6 @@
 <?php
-require_once 'database.php';
-require_once 'contact.php';
+require_once '../models/database.php';
+require_once '../models/contact.php';
 
 
 
