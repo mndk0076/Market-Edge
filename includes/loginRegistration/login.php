@@ -43,7 +43,7 @@ if(isset($_POST['do_login'])){
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		 <link href="../../css/mainLogin.css" rel="stylesheet" type="text/css">
+		 <link href="../../css/login.css" rel="stylesheet" type="text/css">
 		 <link rel="stylesheet" href="bootstrap/bootstrap.min.css" type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
        
