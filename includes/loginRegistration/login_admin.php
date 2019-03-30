@@ -1,6 +1,6 @@
 <?php
-require_once '../models/database.php';
-require_once '../models/user.php';
+require_once '../../models/database.php';
+require_once '../../models/user.php';
 require_once 'session.php';
 
 
@@ -12,7 +12,7 @@ session_start();
 if(isset($_POST['admin_login'])){
    
    $user = $_POST['email'];
-   $pass = $_POST['password'];
+   $pass = md5($_POST['password']);
    $msg = "";
    
     if(empty($_POST["email"]) || empty($_POST["password"]))  
@@ -29,7 +29,7 @@ if(isset($_POST['admin_login'])){
     if($query->rowCount() >= 1) {
         $_SESSION['email'] = $user;
         $_SESSION['time_start_login'] = time();
-        header("location: admin.php");  //????
+        header("location: ../../includes/admin.php");  //????
     } else {
         $msg = "Email or Password is wrong";
 	   header("location: secure.php");  
@@ -45,7 +45,7 @@ if(isset($_POST['admin_login'])){
         <title>Login</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		 <link href="main.css" rel="stylesheet" type="text/css">
+		 <link href="../../css/mainLogin.css" rel="stylesheet" type="text/css">
 		 <link rel="stylesheet" href="bootstrap/bootstrap.min.css" type='text/css'>
         <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
        
@@ -85,7 +85,7 @@ if(isset($_POST['admin_login'])){
 	   
   
 </form>
-<a  class="link_home_page" href="">Back  to Home Page</a>
+<a  class="link_home_page" href="../../includes/">Back  to Home Page</a>
 
 </div>
 

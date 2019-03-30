@@ -1,6 +1,6 @@
 <?php	
- require_once '../models/database.php';
-  require_once '../models/contact.php';
+ require_once '../../models/database.php';
+  require_once '../../models/contact.php';
  
 		$name ='';
 		$email ='';
@@ -98,7 +98,7 @@
         <title>Contact Us</title>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link href="main.css" rel="stylesheet" type="text/css">
+		<link href="../../css/main2.css" rel="stylesheet" type="text/css">
 		<link rel="stylesheet" href="bootstrap/bootstrap.min.css" type='text/css'>
 		<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
     </head>

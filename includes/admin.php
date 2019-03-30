@@ -25,7 +25,7 @@
 		</button>
 
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<a href="#" class="nav-link px-2 sideMenuToggler">
+			<a href="../includes/loginRegistration/users.php" class="nav-link px-2 sideMenuToggler">
 				<i class="fas fa-sliders-h icon"></i>
 			</a>
 			<form class="form-inline ml-auto">
@@ -34,7 +34,7 @@
 			</form>
 			<ul class="navbar-nav ml-auto">
 				<li>
-					<a class="nav-link" href="#" aria-haspopup="true" aria-expanded="false">
+					<a class="nav-link" href="../models/messages.php" aria-haspopup="true" aria-expanded="false">
 						<i class="fas fa-envelope icon"></i> <span class="badge badge-light">4</span>
 					</a>
 				</li>
@@ -49,9 +49,9 @@
 					</a>
 					<div class="dropdown-menu" aria-labelledby="navbarDropdown">
 						<a class="dropdown-item" href="#">Welcome Admin</a>
-						<a class="dropdown-item" href="#">Settings</a>
+						<a class="dropdown-item" href="">Settings</a>
 						<div class="dropdown-divider"></div>
-						<a class="dropdown-item" href="#">Sign Out</a>
+						<a class="dropdown-item" href="../loginRegistration/logout.php">Sign Out</a>
 					</div>
 				</li>
 			</ul>

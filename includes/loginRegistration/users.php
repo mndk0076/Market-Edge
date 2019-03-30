@@ -1,6 +1,6 @@
 <?php 
-require_once '.../models/database.php';
-require_once '../models/user.php';
+require_once '../../models/database.php';
+require_once '../../models/user.php';
 require_once "delete.php";
 
 $dbcon = Database::getDb();
@@ -23,7 +23,7 @@ $users = $u->getAllUsers($dbcon);
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style_admin.css" type="text/css" >
+    <link rel="stylesheet" href="../../css/style_admin.css" type="text/css" >
 <script type="text/javascript">
 $(document).ready(function(){
 	$('[data-toggle="tooltip"]').tooltip();
