@@ -130,14 +130,9 @@ $(document).ready(function(){
 
     <div class="container">
        <div class="table-wrapper">
-            <!--<div class="table-title">
-                <div class="row"> 
-					<div class="col-sm-7">
-						<!--<a href="#" class="btn btn-primary"><i class="material-icons">&#xE147;</i> <span>Add New User</span></a>
-						<a href="#" class="btn btn-primary"><i class="material-icons">&#xE24D;</i> <span>Export to Excel</span></a>						
-					</div>
-                </div>
-            </div>-->
+            <div class="panel-body">
+			<h2>Messages</h2>
+			</div>
 			<table class="table table-striped table-hover">
                 <thead>
                     <tr>
