@@ -1,7 +1,9 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/models/portfolio/portfolio.php';
-require_once $_SERVER['DOCUMENT_ROOT'].'/models/APIRequest.php';
-       
+    require_once '../../config_test.php';
+    require_once 'portfolio_database.php';
+    require_once 'portfolio.php';
+    require_once 'APIRequest.php';
+
 $dbcon = Database::getDb();
 $u = new Portfolio();
 $portfolio = $u->getPortfolio($dbcon);
