@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap core CSS -->
-	<link rel="stylesheet" href="../css/bootstrap-4.3.1/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/dashboard.css">
-    <link rel="stylesheet" href="../css/events.css">
+	<link rel="stylesheet" href="../../css/bootstrap-4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../css/dashboard.css">
+    <link rel="stylesheet" href="../../css/events.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
   </head>
 	
@@ -90,34 +90,12 @@
         </div>
       </div>
 
-      <h2>Events</h2>
-      
-        <form action="events.php" method="post">
-          <div id="eventForm">
+      <?php
 
-            <div id="title">
-            <label for="eventtitle">Event Title:</label>
-            <input type="text" id="eventtitle" name="eventtitle" /><br/>
-            </div>
-            <div id="description">
-            <label for="eventdescription">Event Description:</label>
-            <input type="text" id="eventdescription" name="eventdescription" /><br/>
-            </div>
-            <div id="image">
-            <label for="eventimage">Image Pathway:</label>
-            <input type="text" id="eventimage" name="eventimage" /><br/>
-            </div>
-            <div id="date">
-            <label for="eventdate">Event Date:</label>
-            <input type="text" id="eventdate" name="eventdate" /><br/>
-            </div>
-            <div id="loca">
-            <label for="location">Event Location:</label>
-            <input type="text" id="location" name="location" /><br/>
-            </div>
-            <input type="submit" value="submit" id="submit">
-          </div>
-        </form>
+      require_once 'addEvent.php';
+      require_once 'listEvent.php';
+
+      ?>
     
     </main>
   </div>
