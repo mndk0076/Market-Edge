@@ -1,7 +1,7 @@
 <?php
 include "../header.php";
 ?>
-<link rel="stylesheet" href="../css/faqstyle.css">
+<!--<link rel="stylesheet" href="../css/faqstyle.css">-->
     <main id="main">
 
          <div id="intro">
