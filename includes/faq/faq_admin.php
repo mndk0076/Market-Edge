@@ -90,33 +90,9 @@
       </div>
 
       <h2>FAQ</h2>
-      <!--
-      <form action="faq.php" method="post">
-      <div id="questionDiv">
-        <div id="quesTitle" class="faqInfo">
-            <label for="questiontitle">Subject:</label>
-            <select name="questiontitle" id="questiontitle">
-            <option value="default">Choose a Subject!</option>
-            <option value="portfolio">Portfolio</option>
-            <option value="stock">Stock</option>
-            <option value="general">General</option>
-            </select>
-            <span id="titleErr"></span> 
-        </div>
-
-        <div id="quesDescription" class="faqInfo">
-            <label for="questiondescription">Your Question:</label>
-            <input type="textarea" name="questiondescription" id="questiondescription">
-            <span id="descErr"></span> 
-        </div>
-            <input type="submit" value="submit" id="submit">
-      </div>
-        </form>
-        -->
-
-        <!--Space for List, Edit, Delete-->
+  
         <?php
-        include "./FAQCRUD/ListFAQ.php";
+        include "./ListFAQ.php";
 
         ?>
 	 <!--<form class="border border-light p-5">

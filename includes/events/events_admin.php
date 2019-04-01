@@ -90,34 +90,12 @@
         </div>
       </div>
 
-      <h2>Events</h2>
-      
-        <form action="events.php" method="post">
-          <div id="eventForm">
+      <?php
 
-            <div id="title">
-            <label for="eventtitle">Event Title:</label>
-            <input type="text" id="eventtitle" name="eventtitle" /><br/>
-            </div>
-            <div id="description">
-            <label for="eventdescription">Event Description:</label>
-            <input type="text" id="eventdescription" name="eventdescription" /><br/>
-            </div>
-            <div id="image">
-            <label for="eventimage">Image Pathway:</label>
-            <input type="text" id="eventimage" name="eventimage" /><br/>
-            </div>
-            <div id="date">
-            <label for="eventdate">Event Date:</label>
-            <input type="text" id="eventdate" name="eventdate" /><br/>
-            </div>
-            <div id="loca">
-            <label for="location">Event Location:</label>
-            <input type="text" id="location" name="location" /><br/>
-            </div>
-            <input type="submit" value="submit" id="submit">
-          </div>
-        </form>
+      require_once 'addEvent.php';
+      require_once 'listEvent.php';
+
+      ?>
     
     </main>
   </div>
