@@ -1,9 +1,7 @@
 <?php
     require_once '../../config_test.php';
-
     require_once 'header.php';
     require_once 'displaychart.php';
-    
 ?>
 <!DOCTYPE HTML>
 <html>
