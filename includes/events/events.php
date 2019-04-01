@@ -1,7 +1,7 @@
 <?php
 include "../header.php";
 ?>
-<link rel="stylesheet" href="../../css/eventstyle.css">
+<!--<link rel="stylesheet" href="../../css/eventstyle.css">-->
 
 <main id="main">
 <h1>Our Upcoming Events</h1>
