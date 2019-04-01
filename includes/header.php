@@ -64,7 +64,7 @@ require_once "../../config.php";
 					<a class="nav-link py-0 text-white" href="<?= $includepath ?>gainersLosers/gainers-losers-public.php">Top Gainers/Losers</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="../includes/bloglistAdmin.php">Blog</a>
+					<a class="nav-link py-0 text-white" href="bloglistAdmin.php">Blog</a>
 
 				</li>
 				<li class="nav-item">
