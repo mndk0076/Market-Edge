@@ -23,6 +23,9 @@ require_once '../includes/header.php';
 		</ul>
 
 		<div class="tab-content container-fluid tab-overwrite" id="pills-tabContent">
+			
+			
+			
 			<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
 				<!-- area where the GAINERS TABLE TAB DISPLAY-->
