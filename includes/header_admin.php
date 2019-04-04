@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
 
@@ -81,7 +82,7 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="../includes/bloglistAdmin.php" class="nav-link px-2">
+                        <a href="bloglistAdmin.php" class="nav-link px-2">
                             <i class="fab fa-blogger-b icon"></i>
                             <span class="text">Blog</span></a>
                         <p>

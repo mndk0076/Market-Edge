@@ -1,3 +1,6 @@
+<?php
+require_once "../../config.php";
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -8,9 +11,11 @@
 
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap-4.3.1/css/bootstrap.min.css">
-	<link rel="stylesheet" href="../../css/style.css">
-	<link rel="stylesheet" href="../../css/news.css">
+	<link rel="stylesheet" href="<?= $csspath ?>style.css">
+	<link rel="stylesheet" href="<?= $csspath ?>news.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+	<link rel="stylesheet" href="../../css/eventstyle.css">
+	<link rel="stylesheet" href="../css/faqstyle.css">
 
 	<title>Stock Market</title>
 </head>
@@ -52,14 +57,14 @@
 					<a class="nav-link py-0 text-white" href="chartView.php">Chart</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="../includes/news.php">News</a>
+					<a class="nav-link py-0 text-white" href="<?= $includepath ?>news/news.php">News</a>
 				</li>
 				<li class="nav-item">
 
-					<a class="nav-link py-0 text-white" href="../includes/gainers-losers-public.php">Top Gainers/Losers</a>
+					<a class="nav-link py-0 text-white" href="<?= $includepath ?>gainersLosers/gainers-losers-public.php">Top Gainers/Losers</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="../includes/bloglistAdmin.php">Blog</a>
+					<a class="nav-link py-0 text-white" href="bloglistAdmin.php">Blog</a>
 
 				</li>
 				<li class="nav-item">

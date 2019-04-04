@@ -1,7 +1,7 @@
 <?php
-    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
-    require_once $_SERVER['DOCUMENT_ROOT'].'/models/chart/displaychart.php';
-    
+    require_once '../../config_test.php';
+    require_once 'header.php';
+    require_once 'displaychart.php';
 ?>
 <!DOCTYPE HTML>
 <html>
@@ -114,5 +114,5 @@ chart.render();
     <script src="../../js/alertifyjs/alertify.js"></script>
 </body>
 </html>  
-<?php include $_SERVER['DOCUMENT_ROOT']."/includes/footer.php" ?>
+<?php require_once "footer.php" ?>
 

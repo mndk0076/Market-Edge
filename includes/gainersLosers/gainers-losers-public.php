@@ -1,13 +1,14 @@
 <?php 
 
-require_once "../models/gainers-losers.php";
+require_once '../../config.php';
 
+require_once   $modelspath . "gainersLosers/gainers-losers.php";
 $apiGainers = "https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_dcc8631c1b9b4c1caa84dcbeb63d32b0";
 $apiLosers = "https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_dcc8631c1b9b4c1caa84dcbeb63d32b0";
                 
 $g = new GainersLosers();
 
-require_once '../includes/header.php'; 
+require_once   $includepath . "header.php";
 ?>
 
 <h1>Top Gainers/Lossers</h1>
@@ -48,4 +49,4 @@ require_once '../includes/header.php';
 	</div>
 </div>
 
-<?php include '../includes/footer.php'; ?>
+<?php require_once   $includepath . "footer.php"; ?>

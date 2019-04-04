@@ -1,6 +1,7 @@
 <?php
 ob_start();
-require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/listPortfolioSetting.php';
+require_once '../../config_test.php';
+require_once 'listPortfolioSetting.php';
 
 if(isset($_POST['deleteTicker'])){
     $dbcon = Database::getDb();

@@ -1,20 +1,26 @@
 <?php
+require_once '../../config.php';
+
+require_once   $modelspath . "database.php";
+require_once   $modelspath . "blogs/blog.php";
+
 session_start();
 $_SESSION['blog_id']="1";
 if(!isset($_SESSION['blog_id'])){
-    echo "<h1>LOGIN FIRST</h1>";
+    header("Location: ". $includepath . "loginRegistration/login.php");
 }
 else
 {
     $page_head = "Edit Blog";
-    require_once 'header_admin.php';
-    require_once '../models/database.php';
-    require_once '../models/blog.php';
+    
+    require_once   $modelspath . "database.php";
+    require_once   $modelspath . "blogs/blog.php";
+    
     $blog_id=$_SESSION['blog_id'];
-    unset($_SESSION['blog_id']);
+    //unset($_SESSION['blog_id']);
     $dbcon = Database::getDb();
     $b = new Blog();
-    $blog = $b->getBlogById($id, $dbcon);
+    $blog = $b->getBlogById($blog_id, $dbcon);
 
     if(isset($_POST['update'])){
         $id= $_POST['blog_id'];
@@ -28,7 +34,7 @@ else
         $db = Database::getDb();
         $s = new Blog();
         $c = $s->updateBlog($id, $title, $content, $blog_date, $user_id, $db);
-        header("Location: bloglistAdmin.php");
+        header("Location: " . $includepath ."blogs/bloglistAdmin.php");
     }
 
      $editform = "<div class=\"content\">" .
@@ -53,6 +59,7 @@ else
         "</main>" .
     "</div>" .
 "</div>" ;
+require_once   $includepath . "header_admin.php";
 }
 
 ?>

@@ -1,6 +1,7 @@
 <?php 
-    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
     ob_start();
+    require_once '../../config_test.php';
+    require_once 'header.php';
 ?>
 <h1>Portfolio</h1>
 <i class="fas fa-plus" data-toggle="modal" data-target="#exampleModalCenter"></i>
@@ -20,7 +21,7 @@
     </thead>
     <tbody>
         <?php 
-            require_once $_SERVER['DOCUMENT_ROOT'].'/includes/portfolio/listPortfolio.php';
+            require_once 'listPortfolio.php';
         ?>
     </tbody>
 </table>
@@ -71,5 +72,5 @@
     </div>
 </div>
 <?php
-include $_SERVER['DOCUMENT_ROOT'].'/includes/footer.php';
+    require_once 'footer.php';
 ?>

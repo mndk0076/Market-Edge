@@ -1,5 +1,6 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/models/portfolio/portfolio.php';
+require_once '../../config_test.php';
+require_once 'portfolio.php';
 
     if(isset($_POST['add_portfolio'])){
         $dbcon = Database::getDb();

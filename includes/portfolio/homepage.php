@@ -1,5 +1,6 @@
 <?php 
-    require_once $_SERVER['DOCUMENT_ROOT'].'/includes/header.php';
+    require_once '../../config_test.php';
+    require_once 'header.php';
 ?>
 <div class="home-container">
 	<div class="home-portfolio">
