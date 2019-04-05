@@ -1,17 +1,17 @@
 <?php 
 
-require_once '../../config.php';
+require_once '../../config_test.php';
 
-require_once   $modelspath . "gainersLosers/gainers-losers.php";
+require_once MODELS_GAINERSLOSERS_PATH . "/gainers-losers.php";
 $apiGainers = "https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_dcc8631c1b9b4c1caa84dcbeb63d32b0";
 $apiLosers = "https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_dcc8631c1b9b4c1caa84dcbeb63d32b0";
                 
 $g = new GainersLosers();
 
-require_once   $includepath . "header.php";
+require_once "header.php";
 ?>
 
-<h1>Top Gainers/Lossers</h1>
+<h1>Top Gainers/Losers</h1>
 <div class="container-fluid">
 	<div class="row">
 		<ul class="nav nav-pills mb-3 nav-center" id="pills-tab" role="tablist">
@@ -24,16 +24,13 @@ require_once   $includepath . "header.php";
 		</ul>
 
 		<div class="tab-content container-fluid tab-overwrite" id="pills-tabContent">
-			
-			
-			
 			<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
 
 				<!-- area where the GAINERS TABLE TAB DISPLAY-->
 				<?php 
                 
                  $gainers = $g->getAPIGainers($apiGainers);
-                
+            
                 ?>
 			</div>
 			<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
@@ -49,4 +46,4 @@ require_once   $includepath . "header.php";
 	</div>
 </div>
 
-<?php require_once   $includepath . "footer.php"; ?>
+<?php require_once "footer.php"; ?>

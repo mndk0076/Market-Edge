@@ -21,11 +21,18 @@ Files and file firectory for reference
 
 /** ENRINA WILMS FEATURE ********************************************************/
 
-1. News
+PROJECT FEATURE THREE - PHASE ONE
 
-    includes > news > news.php
+Files and file firectory for reference
+
+/** ENRINA WILMS FEATURE ********************************************************/
+
+1. Status Post
+
+    includes > status > status.php
+    includes > status > update-status.php
     
-    model > news > news.php
+    model > status > user-status.php
 
 /******************************************************************************/
 

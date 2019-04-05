@@ -455,9 +455,11 @@ Responsive Table
     margin-left: 10%;
     margin-right: 7%;
 }
+/*
 .row{
     border: 1px solid grey;
 }
+*/
 .search-wrapper{
     width: 95%;
     margin: auto;
