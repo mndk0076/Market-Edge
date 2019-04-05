@@ -2,9 +2,9 @@
 include "../header.php";
 ?>
 <!--<link rel="stylesheet" href="../css/faqstyle.css">-->
-    <main id="main">
+    <main id="faq_main">
 
-         <div id="intro">
+         <div id="faq_intro">
             <h1>FAQ</h1>
 
             <?php

@@ -4,27 +4,33 @@ html {
 *, *::before, *::after {
     box-sizing:inherit;
 }
-#main{
+#faq_main{
     background-color: #949BA2;
 }
-#intro{
+#faq_intro{
     text-align: center !important;
     max-width:60%;
     margin:0 auto;
 }
-#about{
-    text-align: center;
+/*.displayedFAQ{
+
 }
+.myQuestions{
+    FIx the css 
+}*/
 #questionDiv{
-    text-align: center;
+    text-align: center !important;
 }
-input{
+.faq_input{
     margin:20px;
     
 }
 #faqEmail{
     position: relative;
     left:15px;
+}
+#faq_theirName{
+
 }
 #quesDescription{
     position: relative;
