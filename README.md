@@ -64,3 +64,16 @@ PROJECT FEATURE TWO - PHASE TWO
 /******************************************************************************/
 
 
+PROJECT FEATURE TWO - PHASE THREE
+
+/** Kenneth Mendoza FEATURE ********************************************************/
+
+2. Search Feature
+
+    includes > search > search_result.php
+    
+/******************************************************************************/
+
+
+
+

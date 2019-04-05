@@ -15,7 +15,6 @@ require_once "../../config.php";
 	<link rel="stylesheet" href="<?= $csspath ?>news.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 	<link rel="stylesheet" href="../../css/eventstyle.css">
-	<link rel="stylesheet" href="../css/faqstyle.css">
 
 	<title>Stock Market</title>
 </head>
@@ -28,14 +27,14 @@ require_once "../../config.php";
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="container header-search">
-			<div class="input-group collapse navbar-collapse" id="navbarSupportedContent">
-				<input type="text" class="form-control" placeholder="Search ticker or company name">
+		<form action="../../includes/search/search_result.php" class="search">
+		   <div class="input-group collapse navbar-collapse" id="navbarSupportedContent">
+				<input type="text" class="form-control" name="ticker" placeholder="Search ticker or company name">
 				<span class="input-group-btn">
-					<button class="btn btn-search" type="button" id="search"><i class="fa fa-search fa-fw"></i> Search</button>
+					<button class="btn btn-search" name="searchTicker" type="submit" id="search"><i class="fa fa-search fa-fw"></i> Search</button>
 				</span>
-			</div>
-
-
+			</div> 
+		</form>
 			<a class="navbar-brand collapse navbar-collapse" href="../includes/login-dummy.php">&nbsp;&nbsp;Login</a>
 			<a class="navbar-brand collapse navbar-collapse" href="../includes/login-dummy.php">&nbsp;&nbsp;Register</a>
 
@@ -48,13 +47,13 @@ require_once "../../config.php";
 					<a class="nav-link py-0 text-warning" href="../includes/homepage.php">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="portfolioView.php">Portfolio</a>
+					<a class="nav-link py-0 text-white" href="../portfolio/portfolioView.php">Portfolio</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="#">Watchlist</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="chartView.php">Chart</a>
+					<a class="nav-link py-0 text-white" href="../chart/chartView.php">Chart</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="<?= $includepath ?>news/news.php">News</a>
