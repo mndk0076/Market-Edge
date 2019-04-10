@@ -4,7 +4,7 @@ require_once '../../config.php';
 require_once   $modelspath . "database.php";
 require_once   $modelspath . "blogs/blog.php";
 
-
+session_start();
 $dbcon = Database::getDb();
 $s = new Blog();
 $blogs =  $s->getAllBlogs(Database::getDb());
@@ -18,15 +18,13 @@ if(isset($_POST['delete']))
 else if(isset($_POST['edit']))
 {
     $id = $_POST['blog_id'];
-    session_start();
-    $_SESSION['blog_id'] = $id;//SEssion create to store blog which needs to edit.
+    $_SESSION['blog_id'] = $id;//Session create to store blog which needs to edit.
     //$_SESSION['admin_id']= "1"; //This is to store admin id in session and transfer it to editblog.php page. so that to store the admin id
     header("Location: ". $includepath . "blogs/edit.php");
 }
 else if(isset($_POST['details']))
 {
     $id = $_POST['blog_id'];
-    session_start();
     $_SESSION['blog_id'] = $id;
     header("Location: ". $includepath . "blogs/details.php");
 }

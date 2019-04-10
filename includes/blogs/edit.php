@@ -5,7 +5,6 @@ require_once   $modelspath . "database.php";
 require_once   $modelspath . "blogs/blog.php";
 
 session_start();
-$_SESSION['blog_id']="1";
 if(!isset($_SESSION['blog_id'])){
     header("Location: ". $includepath . "loginRegistration/login.php");
 }
@@ -48,7 +47,7 @@ else
                         "<input type=\"hidden\" name=\"blog_id\" value=\"" . $blog->id . "\" />" .
                     "</div><br/>" .
                     "<div>" .
-                        "<label>Blog Content:</label>" . 
+                        "<label>Blog Description:</label>" . 
                         "<textarea name=\"content\" id=\"blog_content\" >" .  $blog->content . "</textarea>" .
                     "</div><br/>" .
                     "<div>" .
