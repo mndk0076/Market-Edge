@@ -5,10 +5,10 @@ require_once '../../models/faq/FAQ_class.php';
 if(isset($_POST['delete'])){
     $id= $_POST['id'];
     $dbcon = Database::getDb();
-    $f = new FAQ();
-    $count = $f->deleteFaq($id, $dbcon);
+    $delFAQ = new FAQ();
+    $count = $delFAQ->deleteFaq($id, $dbcon);
 
     if($count){
-        header("Location: ListFAQ.php");
+        header("Location: faqAdmin.php");
     }
 }

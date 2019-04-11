@@ -1,10 +1,10 @@
 <?php
 require_once '../../models/database.php';
-require_once '../../models/events/event_class.php'; 
+require_once '../../models/events/Event_class.php'; 
 
 $dbcon = Database::getDb();
-$e = new Event();
-$myeve = $e->getAllEvents(Database::getDb());
+$clientEvent = new Event();
+$myeve = $clientEvent->getAllEvents(Database::getDb());
 
 
 //for the Client Event page 

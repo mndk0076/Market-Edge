@@ -2,14 +2,11 @@
 
 class Event
 {
-
-
     public function getEventByID($id, $db){
         //for update
         $sql = "SELECT * FROM events where id = :id";
         $pdost = $db->prepare($sql); 
         $pdost->bindParam(':id', $id);
-
         $pdost->execute();
 
         $event = $pdost->fetch(PDO::FETCH_OBJ);
@@ -19,11 +16,10 @@ class Event
     public function getAllEvents($dbcon){
 
         $sql = "SELECT * FROM events";
-
         $pdost = $dbcon->prepare($sql);
         $pdost->execute();
-        $events = $pdost->fetchAll(PDO::FETCH_OBJ);
 
+        $events = $pdost->fetchAll(PDO::FETCH_OBJ);
         return $events;
     }
 
@@ -46,14 +42,14 @@ class Event
         $sql = "DELETE FROM events  WHERE id = :id";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(':id', $id);
+
         $count = $pdost->execute();
         return $count;
     }
 
     public function updateEvent($id, $title, $description, $image, $date, $location, $db){
         $sql = "UPDATE events SET title = :title, description = :description,
-         image =  :image, event_date = :event_date, location = :location WHERE id = :id"; 
-
+                 image =  :image, event_date = :event_date, location = :location WHERE id = :id"; 
          $pdost = $db->prepare($sql);
          $pdost->bindParam(':id', $id);
          $pdost->bindParam(':title', $title);
@@ -63,7 +59,6 @@ class Event
          $pdost->bindParam(':location', $location);
 
          $count = $pdost->execute();
-
          return $count;
     }
 }
