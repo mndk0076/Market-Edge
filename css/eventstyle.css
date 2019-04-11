@@ -4,7 +4,7 @@ html {
 *, *::before, *::after {
     box-sizing:inherit;
 }
-#main{
+#event_main{
     background-color: #949BA2;
 }
 .eventPhoto{
@@ -13,7 +13,7 @@ html {
     top:25px;
     width:75px;
 }
-.description{
+.eventDescription{
     max-width:75%;
     margin:0 auto;
 }

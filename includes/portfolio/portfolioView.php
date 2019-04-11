@@ -71,6 +71,8 @@
         </div>
     </div>
 </div>
+<!--Lawrence's Feature -->
+
 <?php
     require_once 'footer.php';
 ?>

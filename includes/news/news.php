@@ -1,12 +1,13 @@
 <?php 
-	require_once '../../config.php';
+	require_once '../../config_test.php';
 
-	require_once   $modelspath . "news/news.php";
-	require_once   $includepath . "header.php";
+	require_once MODELS_NEWS_PATH . "/news.php";
+	require_once "header.php";
 
 	//RSS FEED LINK FOR MY NEWS ARTICLES
 	$rss2 = "http://articlefeeds.nasdaq.com/nasdaq/categories?category=Stocks";
-	$rss3 = "http://rss.cnn.com/rss/money_markets.rss";
+	//$rss3 = "http://rss.cnn.com/rss/money_markets.rss";
+	$rss3 = "http://feeds.reuters.com/news/wealth";
 //	$rss3 = "http://www.cnbc.com/id/20409666/device/rss/rss";
 	$rss1 = "http://feeds.marketwatch.com/marketwatch/marketpulse/";	
 
@@ -27,7 +28,7 @@
 				<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">NASDAQ</a>
 			</li>
 			<li class="nav-item">
-				<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">CNN</a>
+				<a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#pills-contact" role="tab" aria-controls="pills-contact" aria-selected="false">REUTERS.COM</a>
 			</li>
 		</ul>
 		<div class="tab-content" id="pills-tabContent">
@@ -53,4 +54,4 @@
 	</div>
 </div>
 
-<?php require_once   $includepath . "footer.php"; ?>
+<?php require_once "footer.php"; ?>

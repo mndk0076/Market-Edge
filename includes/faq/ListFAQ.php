@@ -8,7 +8,8 @@ $myfaq = $f->getAllIncomingQuestions(Database::getDb());
 
 
 foreach($myfaq as $question){
-    echo "<li class= 'myQuestions'>" . 
+    echo "<div class='questionDiv'" .
+    "<li class= 'faqQuestions'>" . 
     $question->name . "<br/>" . 
     $question->email . "<br/>" .
     $question->title . "<br/>" . 
@@ -22,5 +23,6 @@ foreach($myfaq as $question){
     "<input type='hidden' value='$question->id' name='id' />" . 
     "<input type='submit' value='Delete' name='delete' />" . 
     "</form>" . 
-    "</li>";
+    "</li>" .
+    "</div>";
 }

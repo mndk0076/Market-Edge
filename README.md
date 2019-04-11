@@ -21,11 +21,18 @@ Files and file firectory for reference
 
 /** ENRINA WILMS FEATURE ********************************************************/
 
-1. News
+PROJECT FEATURE THREE - PHASE ONE
 
-    includes > news > news.php
+Files and file firectory for reference
+
+/** ENRINA WILMS FEATURE ********************************************************/
+
+1. Status Post
+
+    includes > status > status.php
+    includes > status > update-status.php
     
-    model > news > news.php
+    model > status > user-status.php
 
 /******************************************************************************/
 
@@ -62,5 +69,18 @@ PROJECT FEATURE TWO - PHASE TWO
     models > chart > all files in there.
 
 /******************************************************************************/
+
+
+PROJECT FEATURE TWO - PHASE THREE
+
+/** Kenneth Mendoza FEATURE ********************************************************/
+
+2. Search Feature
+
+    includes > search > search_result.php
+    
+/******************************************************************************/
+
+
 
 

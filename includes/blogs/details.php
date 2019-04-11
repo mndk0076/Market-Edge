@@ -5,7 +5,6 @@ require_once   $modelspath . "database.php";
 require_once   $modelspath . "blogs/blog.php";
 
 session_start();
-$_SESSION['blog_id']="1";
 if(!isset($_SESSION['blog_id'])){
     header("Location: ". $includepath . "loginRegistration/login.php");
 }

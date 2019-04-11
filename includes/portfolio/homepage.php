@@ -1,6 +1,6 @@
 <?php 
     require_once '../../config_test.php';
-    require_once 'header.php';
+	require_once 'header.php';
 ?>
 <div class="home-container">
 	<div class="home-portfolio">
@@ -107,7 +107,7 @@
 				<!--FORM FOR COMMENTS-->
 				<form>
 					<div class="form-group">
-						<input type="text" class="form-control" id="comment" aria-describedby="commentHelp" placeholder="Enter your ocmment here">
+						<input type="text" class="form-control" id="comment" name="comment" aria-describedby="commentHelp" placeholder="Enter your ocmment here">
 					</div>
 					<!--					<button type="submit" class="btn btn-primary">Submit</button>-->
 				</form>

@@ -1,24 +1,41 @@
 <?php
-require_once 'header_admin.php';
+require_once '../../config.php';
+require_once   $modelspath . "database.php";
+require_once   $modelspath . "blogs/blog.php";
+
+if(isset($_POST['submit'])){
+	$title=filter_var($_POST['title'], FILTER_SANITIZE_STRING);
+	$content=filter_var($_POST['content'], FILTER_SANITIZE_STRING);
+	$blog_date = date("Y/m/d");
+    $user_id=1;
+
+	$db = Database::getDb();
+    $s = new Blog();
+    //var_dump();
+    //exit();
+	$c = $s->addBlog($title, $content, $blog_date, $user_id, $db);
+	header("Location: " . $includepath ."blogs/bloglistAdmin.php");
+}
+require_once   $includepath . "header_admin.php";
+
 ?>
         <div class="content">
 
             <main>
                 <div class="container-fluid">
 
-                    <h1>Blog Create</h1>
-                    <form action="bloglistAdmin.php" method="post">
-                      <div>
-                      <label for="title">Blog Title:</label>
-                      <input type="text" id="title" name="title" /><br/>
-                      </div>
-                      <div>
-                      <label for="description">Blog Description:</label>
-                      <input type="text" id="description" name="description" /><br/>
-                      </div>
-                      <div>
-                      <input type="submit" value="submit" id="submit">
-                      </div>
+                    <h1>New Blog</h1>
+                    <form method=POST action="#">
+                        <div class="form-group" style="width:400px; margin-left:10px;">
+                            <label for="title">Blog Title:</label>
+                            <input type="text" class="form-control" id="title" name="title">
+                        </div>
+                        
+                        <div class="form-group" style="width:400px; margin-left:10px;">
+                            <label for="content">Blog Content:</label>
+                            <textarea class="form-control"  style="resize: none;" id="content"  name="content" rows="5"></textarea>
+                        </div>
+                        <input type="submit" name="submit"  class="btn btn-primary" style="margin-left:300px;" value="Create" id="submit">
                     </form>
                 </div>
             </main>

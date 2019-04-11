@@ -1,0 +1,230 @@
+@import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
+
+.search{
+    width: 100%;
+}
+.nav-center{
+	text-align: center;
+	margin: 0 auto;
+}
+.tab-overwrite{
+	width: 100%;
+	max-width: 100%;
+}
+.gainer-table{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.row-flex {
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.page-wrap {
+	width: 1000px;
+}
+
+.card-img-top {
+	object-fit: cover;
+}
+
+.containter {
+	margin: 0 auto !important;
+	display: inline-block;
+	width: 980px;
+}
+
+.b {
+	min-height: 70px;
+}
+
+.navbar-text {
+	width: 300px;
+}
+
+.mx-auto {
+	font-size: 20px;
+	text-align: center !important;
+}
+
+h1 {
+	margin: 10px 10%;
+	display: inline-block;
+	width: 30%;
+}
+table {
+	width: 80%;
+	margin: 0 auto;
+}
+
+th {
+	background: #40424C;
+	color: white;
+	font-weight: bold;
+}
+
+td {
+	color: #949BA2;
+}
+
+td,
+th {
+	padding: 6px;
+	text-align: left;
+	border-bottom: 1px solid #949BA2;
+}
+
+
+tr {
+	background-color: #40424C;
+}
+.btn-search {
+	background: #424242;
+	border-radius: 0;
+	color: #fff;
+	border-width: 1px;
+	border-style: solid;
+	border-color: #1c1c1c;
+	padding-top: 12px;
+}
+
+.btn-search:link,
+.btn-search:visited {
+	color: #fff;
+}
+
+.btn-search:active,
+.btn-search:hover {
+	background: #1c1c1c;
+	color: #fff;
+}
+
+.search {
+	width: 1000px !important;
+}
+
+.edit {
+	float: right;
+}
+
+/*
+Responsive Table
+*/
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+	table,
+	thead,
+	tbody,
+	th,
+	td,
+	tr {
+		display: block;
+		width: 100%;
+	}
+
+	.header-search {
+		margin: 10px 0;
+	}
+
+	h1 {
+		display: inline-block;
+		margin: 10px 30px;
+	}
+
+	.fa-cog {
+		width: 60%;
+	}
+
+	.wrapper {
+		margin-bottom: 70px;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+		border: 1px solid #ccc;
+	}
+
+	td {
+		/* Behave  like a "row" */
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+
+	td:before {
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%;
+		padding-right: 10px;
+		white-space: nowrap;
+		font-weight: bold;
+
+	}
+
+	/*
+ Label the data
+ */
+	tr:nth-child(even) {
+		background-color: lightgray;
+	}
+
+	td:nth-of-type(1):before {
+		content: "Ticker";
+	}
+
+	td:nth-of-type(2):before {
+		content: "Company";
+	}
+
+	td:nth-of-type(3):before {
+		content: "Shares";
+	}
+
+	td:nth-of-type(4):before {
+		content: "Prince";
+	}
+
+	td:nth-of-type(5):before {
+		content: "Initial Value";
+	}
+
+	td:nth-of-type(6):before {
+		content: "Market Value";
+	}
+
+	td:nth-of-type(7):before {
+		content: "P/L";
+		color: #949BA2;
+	}
+}
+
+@media only screen and (max-width: 760px) {
+	h1 {
+		margin: 10px 5px;
+	}
+
+	.fa-cog {
+		width: 65%;
+	}
+
+	.search {
+		margin: 15px;
+	}
+}
