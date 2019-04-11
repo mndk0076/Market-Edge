@@ -5,26 +5,26 @@
 			<div class="col-xs-12 col-sm-4 col-md-4 footer-align">
 				<h5>Quick Links</h5>
 				<ul class="list-unstyled quick-links">
-					<li><a href="#">Home</a></li>
+					<li><a href="../status/status.php">Home</a></li>
 					<li><a href="#">About Us</a></li>
-					<li><a href="#">Events</a></li>
-					<li><a href="../includes/bloglistAdmin.php">Blog</a></li>
+					<li><a href="../events/events.php">Events</a></li>
+					<li><a href="../blogs/blogs.php">Blog</a></li>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-4 footer-align">
 				<h5>Stock Market</h5>
 				<ul class="list-unstyled quick-links">
-					<li><a href="#">Portfolio</a></li>
-					<li><a href="#">Gainers/Lossers</a></li>
-					<li><a href="#">Watchlist</a></li>
-					<li><a href="#">News</a></li>
+					<li><a href="../portfolio/portfolioView.php">Portfolio</a></li>
+					<li><a href="../gainersLosers/gainers-losers-public.php">Gainers/Lossers</a></li>
+					<li><a href="../watchlist/watchlist.php">Watchlist</a></li>
+					<li><a href="../news/news.php">News</a></li>
 				</ul>
 			</div>
 			<div class="col-xs-12 col-sm-4 col-md-4 footer-align">
 				<h5>Contact Us</h5>
 				<ul class="list-unstyled quick-links">
-					<li><a href="#">Contact Us</a></li>
-					<li><a href="#">FAQ</a></li>
+					<li><a href="../contactUs/index.php">Contact Us</a></li>
+					<li><a href="../faq/faq.php">FAQ</a></li>
 					<li>
 						<div class="col-xs-12 col-sm-12 col-md-12 mt-2 mt-sm-2">
 							<ul class="list-unstyled list-inline social text-center">

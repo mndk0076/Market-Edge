@@ -45,30 +45,30 @@ require_once "../../config.php";
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto mx-auto">
 				<li class="nav-item active">
-					<a class="nav-link py-0 text-warning" href="<?= $includepath ?>status/status.php">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link py-0 text-warning" href="../status/status.php">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="../portfolio/portfolioView.php">Portfolio</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="#">Watchlist</a>
+					<a class="nav-link py-0 text-white" href="../watchlist/watchlist.php">Watchlist</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="../chart/chartView.php">Chart</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="<?= $includepath ?>news/news.php">News</a>
+					<a class="nav-link py-0 text-white" href="../news/news.php">News</a>
 				</li>
 				<li class="nav-item">
 
-					<a class="nav-link py-0 text-white" href="<?= $includepath ?>gainersLosers/gainers-losers-public.php">Top Gainers/Losers</a>
+					<a class="nav-link py-0 text-white" href="../gainersLosers/gainers-losers-public.php">Top Gainers/Losers</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="bloglistAdmin.php">Blog</a>
+					<a class="nav-link py-0 text-white" href="../blogs/blogs.php">Blog</a>
 
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="../includes/events.php">Events</a>
+					<a class="nav-link py-0 text-white" href="../events/events.php">Events</a>
 				</li>
 			</ul>
 		</div>

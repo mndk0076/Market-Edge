@@ -1,4 +1,5 @@
 <?php 
+    require_once '../../config_test.php';
     require_once 'header.php';
 ?>
 <h1>Watchlist</h1>
