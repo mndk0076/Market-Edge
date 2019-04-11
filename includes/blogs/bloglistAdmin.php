@@ -34,7 +34,7 @@ require_once   $includepath . "header_admin.php";
             <main>
                 <div class="container-fluid">
                     <h1>Blogs</h1>
-                    <a href="createblog.php" class="fas fa-cog"></a>
+                    <a href="create.php" title="Create Blog" class="fas fa-cog"></a>
                     <table class="table-hover">
                             <thead>
                                 <tr>
