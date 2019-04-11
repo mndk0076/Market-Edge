@@ -199,7 +199,7 @@ require_once MODELS_STATUS_PATH . "/user-status.php";
            <div class="ipo">
 		   <?php
 			require_once "../includes/IPO/ipo.php";
-			?>
+			?> <!-->
            </div>
 		</div><!-- PORTFOLIO, WATCHLIST AND IPO SECTION -->
 
