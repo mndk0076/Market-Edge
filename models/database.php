@@ -2,7 +2,7 @@
 class Database
 {
 	private static $user = 'root';
-	private static $pass = 'root';
+	private static $pass = '';
 	private static $db = 'stock_market';
 	private static $dsn = 'mysql:host=localhost;dbname=stock_market';
 	private static $dbcon;

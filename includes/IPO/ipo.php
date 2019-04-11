@@ -6,7 +6,7 @@ $IPO = "https://cloud.iexapis.com/beta/stock/market/upcoming-ipos?token=pk_84b5c
 
                 
 $i = new GainersIPO();
-require_once '../../includes/header.php'; 
+
 ?>
 
 <h1>IPO Calendar</h1>
@@ -26,4 +26,4 @@ $i = $i->getAPIipo($IPO);
 
 
  
-   <?php include '../../includes/footer.php'; ?>
+   
