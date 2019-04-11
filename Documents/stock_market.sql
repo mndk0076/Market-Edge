@@ -1,22 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.4
+-- version 4.8.3
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Mar 20, 2019 at 03:40 PM
--- Server version: 10.1.37-MariaDB
--- PHP Version: 7.3.0
+-- Host: localhost:8889
+-- Generation Time: Apr 11, 2019 at 05:55 PM
+-- Server version: 5.7.23
+-- PHP Version: 7.2.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
-START TRANSACTION;
 SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `stock_market`
@@ -100,13 +92,19 @@ CREATE TABLE `faq` (
 
 CREATE TABLE `portfolio` (
   `id` int(11) NOT NULL,
-  `symbol` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `ticker` varchar(255) NOT NULL,
+  `company` varchar(255) NOT NULL,
   `shares` int(11) NOT NULL,
   `price` double NOT NULL,
-  `category` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `portfolio`
+--
+
+INSERT INTO `portfolio` (`id`, `ticker`, `company`, `shares`, `price`, `user_id`) VALUES
+(3, 'TSLA', 'Tesla, Inc.', 6787, 266.83, 1);
 
 -- --------------------------------------------------------
 
@@ -117,6 +115,7 @@ CREATE TABLE `portfolio` (
 CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `content` varchar(2000) NOT NULL,
+  `date_post` datetime NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -147,6 +146,13 @@ CREATE TABLE `users` (
   `phone` varchar(255) NOT NULL,
   `role` varchar(20) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `users`
+--
+
+INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `password`, `phone`, `role`) VALUES
+(1, '', '', '', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -269,7 +275,7 @@ ALTER TABLE `faq`
 -- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `status`
@@ -281,7 +287,7 @@ ALTER TABLE `status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `watchlist`
@@ -328,8 +334,3 @@ ALTER TABLE `statuscomments`
 --
 ALTER TABLE `watchlist`
   ADD CONSTRAINT `Users_watchlist` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
