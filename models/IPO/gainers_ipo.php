@@ -10,7 +10,11 @@ Class GainersIPO{
 echo '<div class="card" style="width: 18rem;">'
  . '<div class="card-body">'
  . '<h5 class="card-title">' . $ipos['companyName'] .'</h5>'
- . '<h6 class="card-subtitle mb-2 text-muted">' .$ipos['expectedDate'] .'</h6>'
+ . '<h6 class="card-subtitle mb-2 text-muted">' . "Expected" .": "  .$ipos['expectedDate'] .'</h6>'
+ .'<h6 class="card-subtitle mb-2 text-muted">' . "Low price" . ": " . "$ " .$ipos['priceLow'] . '</h6>'
+ .'<h6 class="card-subtitle mb-2 text-muted">' . "High price" . ": " . "$ " .$ipos['priceHigh'] . '</h6>'
+ .'<h6 class="card-subtitle mb-2 text-muted">' . "Percent" . ": " .$ipos['percentOffered'] . "%" . '</h6>'
+.'<p><a href="http://'. $ipos['url']. '" class="card-link" >Go to Our Website</a></p>'
  
 
 .'<p><a href="http://'. $ipos['url']. '" class="card-link" >Go to Our Website</a></p>'
