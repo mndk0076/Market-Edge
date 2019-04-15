@@ -480,3 +480,10 @@ Responsive Table
 .add-port{
     margin-left: 180px;
 }
+/*=============================================== Dividends =============================================================*/
+.dividend{
+	margin:20px;
+}
+.port-wrapper{
+	margin-left:20%;
+}

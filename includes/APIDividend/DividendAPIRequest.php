@@ -1,5 +1,5 @@
 <?php
-//I am hardcoding the ticker for now since I don't have access to the portfolio database 
+
 
 class DividendAPIRequest{
     public function getDividend($ticker){
