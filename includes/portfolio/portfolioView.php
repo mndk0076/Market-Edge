@@ -71,8 +71,7 @@
         </div>
     </div>
 </div>
-<!--Lawrence's Feature -->
-
 <?php
+    include '../APIDividend/Dividend.php';
     require_once 'footer.php';
 ?>
