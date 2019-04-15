@@ -1,6 +1,6 @@
 <?php
 require_once '../../models/database.php';
-require_once '../../models/events/event_class.php'; 
+require_once '../../models/events/Event_class.php'; 
 
 if(isset($_POST['update'])){
     $id = $_POST['id'];
@@ -26,7 +26,7 @@ if(isset($_POST['updevent'])){
         $date, $location, $db);
 
     if($count){
-        header("Location: listEvent.php");
+        header("Location: eventsAdmin.php");
     }else{
         echo "Problem Updating";
     }

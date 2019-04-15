@@ -4,21 +4,18 @@ require_once '../../models/faq/FAQ_class.php';
 
     if(isset($_POST['addfaq'])){
 
-       
         $username = $_POST['name'];
         $useremail = $_POST['email'];
         $questiontitle = $_POST['title'];
         $questiondescription = $_POST['description'];
-        $approval = $_POST['approve'];
-
-        
+        $approval = "0";
       
         $db = Database::getDb();
-        $f = new FAQ();
-        $c = $f->addFaq($username, $useremail, 
-        $questiontitle, $questiondescription, $db);
+        $addFAQ = new FAQ();
+        $count = $addFAQ->addFaq($username, $useremail, 
+        $questiontitle, $questiondescription, $approval, $db);
 
-        if($c){
+        if($count){
             echo "Your Question is Under Review";
         }else{
             echo "Problem Adding Question";
@@ -29,16 +26,15 @@ require_once '../../models/faq/FAQ_class.php';
 ?>
 
 <form action="" method="post">
-<div id="faq_theirName" class="faqInfo">
-    Your Name: <input class="faq_input" type="text" name="name" /><br/>
+<div id="faqTheirName" class="faqInfo">
+    Your Name: <input class="faqInput" type="text" name="name" /><br/>
     <span id="nameErr"></span>
 </div>
 <div id="faqEmail" class="faqInfo">
-    Email: <input class="faq_input" type="text" name="email" /><br />
+    Email: <input class="faqInput" type="text" name="email" /><br />
     <span id="emailErr"></span>
 </div>
 <div id="questionDiv">
-   <!-- Subject: <input type="text" name="questiontitle" />-->
    <label for="title">Subject:</label>
         <select name="title" id="title">
         <option value="default">Choose a Subject!</option>
@@ -49,11 +45,9 @@ require_once '../../models/faq/FAQ_class.php';
         <span id="titleErr"></span> 
 </div>
 <div id="quesDescription" class="faqInfo">
-    Question: <input class="faq_input" type="textarea" name="description" /><br />
+    Question: <input class="faqInput" type="textarea" name="description" /><br />
     <span id="descErr"></span> 
 </div>
 
-    <input type="hidden" name="approve" value="0" >
     <input type="submit" name="addfaq" value="Add Question">
-    
 </form>
