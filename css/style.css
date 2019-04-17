@@ -487,3 +487,68 @@ Responsive Table
 .port-wrapper{
 	margin-left:20%;
 }
+/*=============================================== Events ===================================================================*/
+#event_main{
+    background-color: #949BA2;
+}
+.eventPhoto{
+    position: relative;
+    left:175px;
+    top:25px;
+    width:75px;
+}
+.eventDescription{
+    max-width:75%;
+    margin:0 auto;
+}
+.IndEvent{
+    text-align: center;
+}
+.myEvents{
+	list-style-type: none;
+}
+/*=============================================== FAQ ======================================================================*/
+#faq_main{
+    background-color: #949BA2;
+}
+#faq_intro{
+    text-align: center !important;
+    max-width:60%;
+    margin:0 auto;
+}
+.displayedFAQ{
+margin-bottom: 100px;
+}
+.myQuestions{
+  list-style-type: none;  
+}
+#faqTheirName{
+	position: relative;
+	left:600px;
+	margin:20px;
+}
+#faqEmail{
+	text-align: center !important;
+	margin:20px;
+}
+#questionDiv{
+    text-align: center !important;
+}
+.faq_input{
+    margin:20px;
+}
+#faqEmail{
+    position: relative;
+    left:15px;
+}
+#quesDescription{
+    position: relative;
+	left:615px;
+	margin:20px;
+}
+#submitFAQ{
+	border-radius: 50px;
+	position: relative;
+	left:660px;
+	margin:50px;
+}

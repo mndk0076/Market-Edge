@@ -26,6 +26,7 @@ require_once '../../models/faq/FAQ_class.php';
 ?>
 
 <form action="" method="post">
+<div id="myFAQ">
 <div id="faqTheirName" class="faqInfo">
     Your Name: <input class="faqInput" type="text" name="name" /><br/>
     <span id="nameErr"></span>
@@ -49,5 +50,6 @@ require_once '../../models/faq/FAQ_class.php';
     <span id="descErr"></span> 
 </div>
 
-    <input type="submit" name="addfaq" value="Add Question">
+    <input id="submitFAQ" type="submit" name="addfaq" value="Add Question">
+</div>
 </form>

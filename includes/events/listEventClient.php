@@ -12,12 +12,12 @@ foreach($myeve as $event){
     "<li class= 'myEvents'>" . 
     "<div class='IndEvent'>" . 
         "<img class='eventPhoto' src='" . $event->image .  "' alt='Event Photo'/>" .
-        "<h2>$event->title </h2>" . "<br/>" . 
+        "<h2 class='eventtitle'>$event->title </h2>" . "<br/>" . 
         "<div class='eventDescription'>" .
             "<p> $event->description </p>" .
         "</div>" .
-        "<p> $event->event_date </p>" .
-        "<p> $event->location </p>" . 
+        "<p class='eventDate'> $event->event_date </p>" .
+        "<p class='location'> $event->location </p>" . 
     "</div>" .
     "</li>";
 }
