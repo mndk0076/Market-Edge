@@ -39,19 +39,20 @@ else
      $editform = "<div class=\"content\">" .
         "<main>" .
             "<div class=\"container-fluid\">" . 
-                "<h1>Blog EDIT</h1>" .
+                "<h1>Edit Blog</h1>" .
                 "<form method=\"post\">" .
-                    "<div>" .
-                        "<label>Blog Title:</label>" . 
-                        "<input type=\"text\" value=\"" . $blog->title . "\" name=\"title\" />" .
                         "<input type=\"hidden\" name=\"blog_id\" value=\"" . $blog->id . "\" />" .
+                    "<div class=\"form-group\" style=\"width:400px; margin-left:10px;\">" .
+                        "<label for='title'>Blog Title:</label>" . 
+                        "<input type=\"text\" class='form-control' value=\"" . $blog->title . "\" name=\"title\" />" .
+                    "</div><br/>" .
+                    "<div class=\"form-group\" style=\"width:400px; margin-left:10px;\">" .
+                        "<label for='content'>Blog Description:</label>" . 
+                        "<textarea name=\"content\" class='form-control' style='resize: none;' rows='5' id=\"blog_content\" >" .  $blog->content . "</textarea>" .
                     "</div><br/>" .
                     "<div>" .
-                        "<label>Blog Description:</label>" . 
-                        "<textarea name=\"content\" id=\"blog_content\" >" .  $blog->content . "</textarea>" .
-                    "</div><br/>" .
-                    "<div>" .
-                        "<input type=\"submit\" name=\"update\" value=\"UPDATE\">" .
+                        '<a href="bloglistAdmin.php" class="btn btn-primary" style="margin-left:200px;" title="Go to list of blogs">Back</a>' .
+                        "<input class='btn btn-primary' style='margin-left:20px;' type=\"submit\" name=\"update\" value=\"UPDATE\">" .
                     "</div>" .
                 "</form>" .
             "</div>" .

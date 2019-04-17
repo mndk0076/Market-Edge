@@ -35,8 +35,12 @@ require_once   $includepath . "header_admin.php";
                             <label for="content">Blog Content:</label>
                             <textarea class="form-control"  style="resize: none;" id="content"  name="content" rows="5"></textarea>
                         </div>
-                        <input type="submit" name="submit"  class="btn btn-primary" style="margin-left:300px;" value="Create" id="submit">
+                        <a href="bloglistAdmin.php" class="btn btn-primary" style="margin-left:200px;" title="Go to list of blogs">Back</a>
+                        <input type="submit" name="submit"  class="btn btn-primary" style="margin-left:20px;" value="Create" id="submit">
+
                     </form>
+                    
+                    
                 </div>
             </main>
         </div>

@@ -1,9 +1,9 @@
 <?php
-include "../header.php";
-
-require_once '../../models/database.php';
-require_once '../../models/blogs/blog.php';
-require_once '../../models/comments/comments.php';
+require_once '../../config.php';
+require_once   $includepath . "header.php";
+require_once   $modelspath . "database.php";
+require_once   $modelspath . "blogs/blog.php";
+require_once   $modelspath . "comments/comments.php";
 
 $dbcon = Database::getDb();
 $s = new Blog();
@@ -22,6 +22,28 @@ if(isset($_POST['comment']))
 
 ?>
 <link rel="stylesheet" href="../../css/blog.css">
+<script type="text/javascript">
+	var myVar;    
+	function reloadpage(){
+		if (window.XMLHttpRequest) {
+            // code for IE7+, Firefox, Chrome, Opera, Safari
+            xmlhttp = new XMLHttpRequest();
+        } else {
+            // code for IE6, IE5
+            xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
+        }
+        xmlhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+            }
+        };
+        xmlhttp.open("GET","blogs.php",true);
+        xmlhttp.send();
+    }
+	}
+	$(document).ready(function(){
+		myVar=setInterval("reloadpage()", 5000);
+	});
+</script>
 <main id="main" style="margin-right: 5px; margin-left: 5px">
 <h1>Blog</h1>
 <div class="row">
@@ -31,13 +53,13 @@ foreach($blogs as $blog)
 	echo "<div class=\"col-sm-4\"> " .
 					"<div class=\"card\">" . 
 						"<div class=\"card-body\">" . 
-							"<h5 class=\"card-title\">" . $blog->title . "</h5>" . 
+							"<h5 class=\"card-title\" title='Blog Title'>" . $blog->title . "</h5>" . 
 					 		"<p class=\"card-text\">" . $blog->content . "</p>" .
 						"</div>" .
 						"<label>Comment: </label>" .
 						"<form action = \"#\" method = POST >" .
 							"<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" .
-							"<input type=\"text\" name=\"comment\"></form>" ;
+							"<input type=\"text\" class='form-control' name=\"comment\"></form>" ;
 				$c = new Comment();
 				$blogcomments =  $c->getCommentsByBlogId($blog->id, Database::getDb());
 				//var_dump($blogcomments);
@@ -60,18 +82,5 @@ foreach($blogs as $blog)
 ?>
 	</div>
 </main>
-<!-- // 	  <div class="col-sm-4">
-// 	    <div class="card">
-// 	      <div class="card-body">
-// 	        <h5 class="card-title">Special guidance on investment</h5>
-// 	        <p class="card-text">Register for 5 day special workshop on investment. Great learning from big investors.</p>
-// 	      </div>
-// 	   		<label>Comment: </label><input type="text" name="comment">
-// 	      <ul class="list-group list-group-flush">
-// 		    <li class="list-group-item">That's amazing</li>
-// 		    <li class="list-group-item">Priceless Workshop</li>
-// 		  </ul>
-// 	    </div>
-// 	  </div>  -->
 <?php
-include "../footer.php";
+require_once   $includepath . "footer.php";

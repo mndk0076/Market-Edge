@@ -34,8 +34,12 @@ require_once   $includepath . "header_admin.php";
             <main>
                 <div class="container-fluid">
                     <h1>Blogs</h1>
-                    <a href="create.php" title="Create Blog" class="fas fa-cog"></a>
-                    <table class="table-hover">
+                    <!--<span class="fas fa-cog"></span>
+                    <a href="create.php" title="Create Blog" class="oi oi-plus" ></a>-->
+                    <a href="create.php" title="Create Blog" class="btn btn-info btn-lg">
+                        <span class="glyphicon glyphicon-plus"></span> Create 
+                    </a>
+                    <table class="table table-borderless" style="background-color:#fff; border-radius:5px; margin-top:10px;">
                             <thead>
                                 <tr>
                                     <th scope="col">Title</th>
@@ -54,9 +58,9 @@ require_once   $includepath . "header_admin.php";
                                             "<td>" . $blog->blog_date . "</td>" .
                                             "<td><form method=POST action=\"#\">" .
                                             "<input type=\"hidden\" name=\"blog_id\" value =\"" . $blog->id . "\"/>" . 
-                                            "<button type='submit' name='delete' class='far fa-trash-alt'></button>" .
-                                            "<button type='submit' class='far fa-edit' name='edit'></button>" .
-                                            "<button type='submit' class='fas fa-info-circle' name='details'></button></form></td>" .
+                                            "<button type='submit' name='delete' title='Delete' class='blogbuttons far fa-trash-alt'></button>" .
+                                            "<button type='submit' class='blogbuttons far fa-edit' title='Edit' name='edit'></button>" .
+                                            "<button type='submit' class='blogbuttons fas fa-info-circle' title='Details' name='details'></button></form></td>" .
                                         "</tr>";
                                 }
                             ?>
