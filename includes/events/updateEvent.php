@@ -6,8 +6,8 @@ if(isset($_POST['update'])){
     $id = $_POST['id'];
 
     $db = Database::getDb();
-    $e = new Event();
-    $event = $e->getEventByID($id, $db);
+    $updEvent = new Event();
+    $event = $updEvent->getEventByID($id, $db);
 
 }
 
@@ -21,8 +21,8 @@ if(isset($_POST['updevent'])){
     $location = $_POST['location'];
 
     $db = Database::getDb();
-    $e = new Event();
-    $count = $e->updateEvent($id, $title, $description, $image, 
+    $updEvent = new Event();
+    $count = $updEvent->updateEvent($id, $title, $description, $image, 
         $date, $location, $db);
 
     if($count){
@@ -31,6 +31,7 @@ if(isset($_POST['updevent'])){
         echo "Problem Updating";
     }
 }
+
 ?>
 
 

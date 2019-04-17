@@ -6,7 +6,7 @@ require_once '../../models/faq/FAQ_class.php';
     $listFAQ = new FAQ();
     $myfaq = $listFAQ->getAllIncomingQuestions(Database::getDb());
 
-
+/*THis is for the Admin List FAQ */
 foreach($myfaq as $question){
     echo 
     "<tr>" .

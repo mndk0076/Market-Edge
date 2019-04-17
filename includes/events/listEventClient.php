@@ -6,9 +6,6 @@ $dbcon = Database::getDb();
 $clientEvent = new Event();
 $myeve = $clientEvent->getAllEvents(Database::getDb());
 
-
-//for the Client Event page 
-//should use same tags and classes as dummy data 
 //Individual Event is IndEvent
 foreach($myeve as $event){
     echo 
