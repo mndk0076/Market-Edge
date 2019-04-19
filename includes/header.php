@@ -51,7 +51,7 @@ require_once "../../config.php";
 					<a class="nav-link py-0 text-white" href="../portfolio/portfolioView.php">Portfolio</a>
 				</li>
 				<li class="nav-item">
-					<a class="nav-link py-0 text-white" href="../watchlist/watchlist.php">Watchlist</a>
+					<a class="nav-link py-0 text-white" href="../watchlist/watchlistView.php">Watchlist</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="../chart/chartView.php">Chart</a>

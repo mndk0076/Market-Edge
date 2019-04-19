@@ -1,6 +1,7 @@
 <?php 
     require_once '../../config_test.php';
     require_once 'portfolio.php';
+    require_once 'watchlist.php';
 
 class APIRequest{
     public function getPortfolioMarketPrice(){
@@ -36,6 +37,23 @@ class APIRequest{
     public function getDataChart($ticker){
         $API_query = "https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=". $ticker ."&apikey=Y6K29HWW8R4315MT";
         
+        return $API_query;
+    }
+    public function getWatchlistMarketPrice(){
+        $API = "https://cloud.iexapis.com/beta/stock/market/batch?token=pk_2070ea1e812e4ed989df8082e86dc16d&symbols=";
+        $API_type = "&types=price";
+
+
+        $dbcon = Database::getDb();
+        $u = new Watchlist();
+        $watchlist = $u->getWatchlist($dbcon);
+        $tickers = "";
+        foreach($watchlist as $watch){
+            $tickers.=  $watch->ticker .",";
+        }
+
+        $API_query = $API . $tickers . $API_type;   
+
         return $API_query;
     }
 }
