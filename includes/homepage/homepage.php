@@ -26,7 +26,7 @@ if ($_SESSION['uid'] == ''){
 		<h2>Financial Visualization for the Latest Stock Market<br /> Company, News, and more.</h2>
 		<p class="lead">Get started and Invest for your future</p>
 		<a class="btn btn-dark btn-lg" href="../portfolio/portfolioView.php" role="button">Add Portfolio</a>
-		<a class="btn btn-dark btn-lg" href="../watchlist/watchlist.php" role="button">Add Watchlist</a>
+		<a class="btn btn-dark btn-lg" href="../watchlist/watchlistView.php" role="button">Add Watchlist</a>
 	</div>
 </div>
 <div class="container">

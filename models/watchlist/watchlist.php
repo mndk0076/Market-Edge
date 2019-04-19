@@ -1,6 +1,6 @@
 <?php
-    require_once '../../config.php';
-    require_once   $modelspath . "database.php";
+   require_once '../../config_test.php';
+   require_once 'database.php';
 
 class Watchlist{
     public function getwatchlist($dbcon){        
@@ -10,14 +10,13 @@ class Watchlist{
 
         return $pdostm->fetchAll(PDO::FETCH_OBJ);
     }
-    public function addTicker($dbcon, $ticker, $company,$user_id){
-        $sql = "INSERT INTO watchlist (ticker, company, user_id) values (:ticker, :company, :user_id)";
-        //$sql = "INSERT INTO Portfolio (ticker, company, shares, entry, user_id) values (test, test, 1, 1, 1)";
+    public function addTicker($ticker, $company, $dbcon){
+        $sql = "INSERT INTO watchlist (company, ticker, user_id) values (:company, :ticker, 1)";
     
         $pdostm = $dbcon->prepare($sql);
         $pdostm->bindParam(':ticker', $ticker);
         $pdostm->bindParam(':company', $company);
-        $pdostm->bindParam(':user_id', $user_id);
+        //$pdostm->bindParam(':user_id', $user_id);
         $count = $pdostm->execute();
     }
     

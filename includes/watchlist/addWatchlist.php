@@ -7,11 +7,14 @@ require_once 'watchlist.php';
         
         $ticker = $_POST['ticker'];
         $company = $_POST['company'];
-            
-        $u = new Portfolio();
-        $u->addTicker($dbcon, $ticker, $company);
-        
         if($ticker !='' && $company !=''){
             header("Location: watchlistView.php");
-        }    
+        }
+        else{
+            $u = new Watchlist();
+            $u->addTicker( $ticker, $company, $dbcon);
+        }
+        
+        
+        
     }
