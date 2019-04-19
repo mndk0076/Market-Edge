@@ -12,17 +12,15 @@ require_once "../../config.php";
 	<!-- Bootstrap CSS -->
 	<link rel="stylesheet" href="../../css/bootstrap-4.3.1/css/bootstrap.min.css">
 	<link rel="stylesheet" href="<?= $csspath ?>style.css">
-	<link rel="stylesheet" href="<?= $csspath ?>news.css">
-	<link rel="stylesheet" href="<?= $csspath ?>status.css">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
-	
+	<link href="https://fonts.googleapis.com/css?family=Questrial" rel="stylesheet">
 
 	<title>Stock Market</title>
 </head>
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark b">
-		<a class="navbar-brand" href="<?= $includepath ?>status/status.php">Stock Market</a>
+		<a class="navbar-brand" href="../homepage/homepage.php">Stock Market</a>
 		<span class="navbar-text">Financial Visualization</span>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -45,7 +43,7 @@ require_once "../../config.php";
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<ul class="navbar-nav mr-auto mx-auto">
 				<li class="nav-item active">
-					<a class="nav-link py-0 text-warning" href="../status/status.php">Home <span class="sr-only">(current)</span></a>
+					<a class="nav-link py-0 text-warning" href="../homepage/homepage.php">Home <span class="sr-only">(current)</span></a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="../portfolio/portfolioView.php">Portfolio</a>

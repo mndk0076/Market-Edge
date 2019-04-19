@@ -8,26 +8,33 @@ class Status
 	public function getStatusById($id, $db){
 		
 		$query = "SELECT * FROM status WHERE id = :id";
-		$statement = $db->prepare($query);
+		$pdost = $db->prepare($query);
 		
 		//bindParam = Binds a parameter to the specified variable name
-		$statement->bindParam(':id', $id);
-		$statement->execute();
+		$pdost->bindParam(':id', $id);
+		$pdost->execute();
 		
-		$status = $statement->fetch(PDO::FETCH_OBJ);
+		$status = $pdost->fetch(PDO::FETCH_OBJ);
 		
 		return $status;
 		
 	}
+	public function getAllUsers($db){
+        $query = "SELECT fname, lname  FROM USERS";
+        $pdost = $db->prepare($query);
+        $pdost->execute();
+        $users = $pdost->fetchAll(PDO::FETCH_OBJ);
+        return $users;
+    }
 	
 	//getting all the status created and save on the database
 	public function getAllStatus($db){
 		
-		$query = "SELECT * FROM status ORDER BY date_post Desc LIMIT 4";
-		$statement = $db->prepare($query);
-		$statement->execute();
+		$query = "SELECT * FROM status ORDER BY date_post Desc";
+		$pdost = $db->prepare($query);
+		$pdost->execute();
 		
-		$status = $statement->fetchAll(PDO::FETCH_OBJ);
+		$status = $pdost->fetchAll(PDO::FETCH_OBJ);
 		
 		return $status;
 	}
@@ -37,12 +44,12 @@ class Status
 			
 		$query = "INSERT INTO status(content, date_post, user_id)
 				  VALUES (:content, :date_post , :user_id)";
-		$statement = $db->prepare($query);
-		$statement->bindParam(':content', $content);
-		$statement->bindParam(':date_post', $date_post);
-		$statement->bindParam(':user_id', $user_id);
+		$pdost = $db->prepare($query);
+		$pdost->bindParam(':content', $content);
+		$pdost->bindParam(':date_post', $date_post);
+		$pdost->bindParam(':user_id', $user_id);
 		
-		$status = $statement->execute();
+		$status = $pdost->execute();
 		
 		return $status;
 	}
@@ -56,13 +63,13 @@ class Status
 					  user_id = :user_id
 				  WHERE id = :id";
 		
-		$statement = $db->prepare($query);
-		$statement->bindParam(':id', $id);
-		$statement->bindParam(':content', $content);
-		$statement->bindParam(':date_post' , $date_post);
-		$statement->bindParam(':user_id' , $user_id);
+		$pdost = $db->prepare($query);
+		$pdost->bindParam(':id', $id);
+		$pdost->bindParam(':content', $content);
+		$pdost->bindParam(':date_post' , $date_post);
+		$pdost->bindParam(':user_id' , $user_id);
 		
-		$status = $statement->execute();
+		$status = $pdost->execute();
 		
 		return $status;
 		
@@ -72,10 +79,10 @@ class Status
 	public function deleteStatus($id, $db){
 		
 		$query = "DELETE FROM status WHERE id = :id";
-		$statement = $db->prepare($query);
-		$statement->bindParam(':id', $id);
+		$pdost = $db->prepare($query);
+		$pdost->bindParam(':id', $id);
 		
-		$status = $statement->execute();
+		$status = $pdost->execute();
 		
 		return $status;
 		
