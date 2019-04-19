@@ -3,6 +3,11 @@
     require_once 'header.php';
     require_once 'displaychart.php';
     require_once 'tickerInfo.php';
+    require_once '../../userSession.php';
+
+    if (empty($userid)){
+        header("location: ../loginRegistration/login.php");   
+    }
 ?>
 <!DOCTYPE HTML>
 <html>
