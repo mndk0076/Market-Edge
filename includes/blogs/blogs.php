@@ -50,6 +50,7 @@ if(isset($_POST['comment']))
 <?php
 foreach($blogs as $blog)
 {
+	//CODE TO DISPLAY BLOGS TO PUBLIC AND TO ALLOW THEM TO POST COMMENTS FOR BLOGS
 	echo "<div class=\"col-sm-4\"> " .
 					"<div class=\"card\">" . 
 						"<div class=\"card-body\">" . 

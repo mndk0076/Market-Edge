@@ -2,6 +2,7 @@
 require_once '../../config_test.php';
 require_once 'watchlist.php';
 require_once 'APIRequest.php';
+require_once '../../userSession.php';
         
 $dbcon = Database::getDb();
 $list = new Portfolio();

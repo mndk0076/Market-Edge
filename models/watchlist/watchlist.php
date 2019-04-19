@@ -10,13 +10,13 @@ class Watchlist{
 
         return $pdostm->fetchAll(PDO::FETCH_OBJ);
     }
-    public function addTicker($ticker, $company, $dbcon){
-        $sql = "INSERT INTO watchlist (company, ticker, user_id) values (:company, :ticker, 1)";
+    public function addTicker($ticker, $company, $dbcon, $userid){
+        $sql = "INSERT INTO watchlist (company, ticker, user_id) values (:company, :ticker, :userid)";
     
         $pdostm = $dbcon->prepare($sql);
         $pdostm->bindParam(':ticker', $ticker);
         $pdostm->bindParam(':company', $company);
-        //$pdostm->bindParam(':user_id', $user_id);
+        $pdostm->bindParam(':userid', $userid);
         $count = $pdostm->execute();
     }
     

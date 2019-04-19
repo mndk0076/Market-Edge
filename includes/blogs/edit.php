@@ -20,7 +20,7 @@ else
     $dbcon = Database::getDb();
     $b = new Blog();
     $blog = $b->getBlogById($blog_id, $dbcon);
-
+    //Update operation with data sanitazation 
     if(isset($_POST['update'])){
         $id= $_POST['blog_id'];
         $title = $_POST['title'];
