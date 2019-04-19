@@ -11,7 +11,7 @@ require_once 'watchlist.php';
         $u = new Portfolio();
         $u->addTicker($dbcon, $ticker, $company);
         
-        if($ticker !='' && $company !='' && $shares !='' && $price !=''){
+        if($ticker !='' && $company !=''){
             header("Location: watchlistView.php");
         }    
     }
