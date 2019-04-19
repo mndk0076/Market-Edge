@@ -40,10 +40,20 @@ Files and file firectory for reference
 
 1. FAQ Feature
 
-    includes > faq.php, faq_admin.php
+    includes > faq.php, faqAdmin.php
     
     model > FAQ_class.php
+    
+2. Events Feature
 
+    includes > events > events.php, eventsAdmin
+    
+    model > Event_class.php
+    
+3. Dividends Feature
+    
+    includes > APIDividend > Dividend.php, DividendAPIRequest.php
+ 
 /******************************************************************************/
 
 /** Kenneth Mendoza FEATURE ********************************************************/

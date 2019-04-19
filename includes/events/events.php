@@ -1,5 +1,11 @@
 <?php
     include "../header.php";
+
+    session_start();
+
+    if ($_SESSION['uid'] == ''){
+        header("location: ../loginRegistration/login.php");   
+    }
 ?>
 <!--For some reason some of the CSS styling won't fully load unless you do a hard refresh-->
 <main id="eventMain">

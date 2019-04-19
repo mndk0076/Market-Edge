@@ -1,6 +1,12 @@
 <?php
   require_once '../../config_test.php';
   require_once INCLUDES_PATH . '/header_admin.php';
+  
+  session_start();
+
+  if ($_SESSION['uid'] == ''){
+      header("location: ../loginRegistration/login.php");   
+  }
 ?>
       <div class="content">
         <main>
