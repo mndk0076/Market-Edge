@@ -139,7 +139,7 @@
                     </div>
                     <input type="submit" name="submit" class="btn-send" value="Submit"> 
                     </form>
-				    <a  class="link_home_page" href="#">Back  to Home Page</a>
+				    <a  class="link_home_page" href="homepage.php">Back  to Home Page</a>
 					</div>
 					
 	</main>
