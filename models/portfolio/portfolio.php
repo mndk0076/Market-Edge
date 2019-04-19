@@ -1,8 +1,7 @@
 <?php
 require_once '../../config_test.php';
 require_once 'database.php';
-session_start();
-
+require_once '../../userSession.php';
 
 class Portfolio{    
     public function getPortfolio($dbcon, $userid){   

@@ -2,6 +2,11 @@
     ob_start();
     require_once '../../config_test.php';
     require_once 'header.php';
+    require_once '../../userSession.php';
+
+    if (empty($userid)){
+        header("location: ../loginRegistration/login.php");   
+    }
 ?>
 <h1>Edit Portfolio</h1>
 <table class="table-hover">
