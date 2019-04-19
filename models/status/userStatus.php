@@ -19,14 +19,7 @@ class Status
 		return $status;
 		
 	}
-	public function getAllUsers($db){
-        $query = "SELECT fname, lname  FROM USERS";
-        $pdost = $db->prepare($query);
-        $pdost->execute();
-        $users = $pdost->fetchAll(PDO::FETCH_OBJ);
-        return $users;
-    }
-	
+
 	//getting all the status created and save on the database
 	public function getAllStatus($db){
 		
@@ -40,14 +33,16 @@ class Status
 	}
 	
 	//adding status
-	public function addStatus($content, $date_post, $user_id, $db){
+	public function addStatus($content, $date_post, $user_id, $userFname, $userLname, $db){
 			
-		$query = "INSERT INTO status(content, date_post, user_id)
-				  VALUES (:content, :date_post , :user_id)";
+		$query = "INSERT INTO status(content, date_post, user_id, userFname, userLname)
+				  VALUES (:content, :date_post , :user_id, :userFname, :userLname)";
 		$pdost = $db->prepare($query);
 		$pdost->bindParam(':content', $content);
 		$pdost->bindParam(':date_post', $date_post);
 		$pdost->bindParam(':user_id', $user_id);
+		$pdost->bindParam(':userFname', $userFname);
+		$pdost->bindParam(':userLname', $userLname);
 		
 		$status = $pdost->execute();
 		
@@ -55,12 +50,14 @@ class Status
 	}
 	
 	//updating status
-	public function updateStatus($id, $content, $date_post, $user_id, $db){
+	public function updateStatus($id, $content, $date_post, $user_id, $userFname, $userLname, $db){
 		
 		$query = "UPDATE status
 				  SET content = :content,
 				  	  date_post = :date_post,
-					  user_id = :user_id
+					  user_id = :user_id,
+					  userFname = :userFname,
+					  userLname = :userLname
 				  WHERE id = :id";
 		
 		$pdost = $db->prepare($query);
@@ -68,6 +65,8 @@ class Status
 		$pdost->bindParam(':content', $content);
 		$pdost->bindParam(':date_post' , $date_post);
 		$pdost->bindParam(':user_id' , $user_id);
+		$pdost->bindParam(':userFname' , $userFname);
+		$pdost->bindParam(':userLname' , $userLname);
 		
 		$status = $pdost->execute();
 		
