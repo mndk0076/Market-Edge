@@ -13,6 +13,7 @@
     define ("INCLUDES_SEARCH_PATH", realpath('../../includes/search'));
     define ("INCLUDES_STATUS_PATH", realpath('../../includes/status'));
     define ("INCLUDES_WATCHLIST_PATH", realpath('../../includes/watchlist'));
+    define ("INCLUDES_IPO_PATH", realpath('../../includes/IPO'));
     
     //models
     define ("MODELS_PATH", realpath('../../models/'));

@@ -3,43 +3,47 @@
 require_once '../../config_test.php';
 
 require_once MODELS_GAINERSLOSERS_PATH . "/gainers-losers.php";
+
+//API FOR THE STOCK MARKET TOP GAINERS FOR THAT DAY
 $apiGainers = "https://cloud.iexapis.com/beta/stock/market/list/gainers?token=pk_dcc8631c1b9b4c1caa84dcbeb63d32b0";
+
+//API FOR THE STOCK MARKET TOP LOSERS FOR THAT DAY
 $apiLosers = "https://cloud.iexapis.com/beta/stock/market/list/losers?token=pk_dcc8631c1b9b4c1caa84dcbeb63d32b0";
                 
-$g = new GainersLosers();
+$gainersObj = new GainersLosers();
 
 require_once "header.php";
 ?>
 
 <h1>Top Gainers/Losers</h1>
+
 <div class="container-fluid">
 	<div class="row">
 		<ul class="nav nav-pills mb-3 nav-center" id="pills-tab" role="tablist">
+			<!-- TAB LINK FOR THE GAINERS TABLE-->
 			<li class="nav-item">
-				<a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#pills-home" role="tab" aria-controls="pills-home" aria-selected="true">STOCK: TOP GAINERS</a>
+				<a class="nav-link active" id="pills-gainers-tab" data-toggle="pill" href="#pills-gainers" role="tab" aria-controls="pills-gainers" aria-selected="true">STOCK: TOP GAINERS</a>
 			</li>
+			<!-- TAB LINK FOR THE LOSERS TABLE-->
 			<li class="nav-item">
-				<a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#pills-profile" role="tab" aria-controls="pills-profile" aria-selected="false">STOCK: TOP LOSERS</a>
+				<a class="nav-link" id="pills-losers-tab" data-toggle="pill" href="#pills-losers" role="tab" aria-controls="pills-losers" aria-selected="false">STOCK: TOP LOSERS</a>
 			</li>
 		</ul>
 
+		<!-- TAB CONTAINER FOR THE TABLES WHERE IT DISPLAYS DATA-->
 		<div class="tab-content container-fluid tab-overwrite" id="pills-tabContent">
-			<div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+			<div class="tab-pane fade show active" id="pills-gainers" role="tabpanel" aria-labelledby="pills-gainers-tab">
 
-				<!-- area where the GAINERS TABLE TAB DISPLAY-->
+				<!-- AREA WHERE GAINERS TABLE TAB DISPLAY-->
 				<?php 
-                
-                 $gainers = $g->getAPIGainers($apiGainers);
-            
+                 $gainers = $gainersObj->getAPIGainers($apiGainers);
                 ?>
 			</div>
-			<div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+			<div class="tab-pane fade" id="pills-losers" role="tabpanel" aria-labelledby="pills-losers-tab">
 
-				<!-- area where the LOSER TABLE TAB DISPLAY-->
+				<!-- AREA WHERE THE LOSER TABLE TAB DISPLAY-->
 				<?php 
-                
-                  $gainers = $g->getAPIGainers($apiLosers);
-                
+                  $losers = $gainersObj->getAPIGainers($apiLosers);
                 ?>
 			</div>
 		</div>

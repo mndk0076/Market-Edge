@@ -25,8 +25,11 @@
         ?>
     </tbody>
 </table>
-<div class="port-wrapper">
-    <?php include '../APIDividend/Dividend.php'; ?>
+<div class="port-wrapper container">
+    <div class="row">
+             <?php include '../APIDividend/Dividend.php'; ?>
+       
+    </div>
 </div>
 <!-- Modal -->
 <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">

@@ -11,3 +11,5 @@ class DividendAPIRequest{
     }
 
 }
+/*This class method pulls from a stock market API and uses the ticker variable to put in the company ticker into the URL to pull from specific companies.
+ In Dividend.php  we call this method then decode the json and then display it to the Portfolio page inside some bottstrap classes.*/

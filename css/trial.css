@@ -107,3 +107,58 @@ body {
     margin-left: 5rem;
   }
 }
+/*================================================================================For Tables=====================================================================================*/
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+
+	table,
+	thead,
+	tbody,
+	th,
+	td,
+	tr {
+		display: block;
+		width: 100%;
+	}
+
+	.header-search {
+		margin: 10px 0;
+	}
+
+	h1 {
+		display: inline-block;
+		margin: 10px 30px;
+	}
+
+	.fa-cog {
+		width: 60%;
+	}
+
+	.wrapper {
+		margin-bottom: 70px;
+	}
+
+	.container {
+		width: 100%;
+	}
+
+	thead tr {
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+
+	tr {
+		border: 1px solid #ccc;
+	}
+
+	td {
+
+		border: none;
+		border-bottom: 1px solid #eee;
+		position: relative;
+		padding-left: 50%;
+	}
+
+
+	}

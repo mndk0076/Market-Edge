@@ -1,53 +1,10 @@
 <?php
+
+//SESSIONS AND LOGIN STILL NOT IMPLEMENTED
+
 require_once '../../config_test.php';
+require_once INCLUDES_STATUS_PATH . "/status-add.php";
 
-require_once MODELS_PATH . "/database.php";
-require_once MODELS_STATUS_PATH . "/user-status.php";
-require_once '../../Validation/validation.php'; 
-//require_once MODELS_STATUSCOMMENTS_PATH . "/status-comments.php";
-//include '../includes/add-status.php';
-	$message ="";
-	$statErr = "";
-	$isValid = true;
-
-if(isset($_POST['update'])) {
-	$id = $_POST['id'];
-	
-	$db = Database::getDb();
-	$s = new Status();
-	$status = $s->getStatusById($id, $db);
-}
-		
-if(isset($_POST['updBtn'])) {
-	$id = $_POST['statId'];
-	$content = $_POST['content'];
-	date_default_timezone_set("America/Toronto");
-	$date_post = date('Y-m-d h:i:sa');
-	$user_id = "1";
-	
-	if(checkEmpty($content)){
-            $statErr = "Please enter your status";
-            $isValid = false;
-	}
-	
-	//IF INPUT TEXTAREA IS NOT EMPTY THEEN FORM WILL BE SUBMITTED AND SAVE TO THE DATABASE
-if($isValid === true) {
-	
-	$db = Database::getDb();
-	$s = new Status();
-	$status = $s->updateStatus($id, $content, $date_post, $user_id, $db);
-	
-	if($status) {
-		header("Location:../homepage/homepage.php");
-	} else{
-		echo "PROBLEM UPDATING STATUS";
-	}
-}
-}
-
-$db = Database::getDb();
-$s = new Status();
-$list = $s->getAllStatus(Database::getDb());
 ?>
 
 <?php require_once 'header.php'; ?>
@@ -57,7 +14,7 @@ $list = $s->getAllStatus(Database::getDb());
 	<div class="container">
 		<h1 class="ml-auto">
 			<span class="homepage-market">Stock</span>
-			<span class="homepage-edge">Market</span>
+			<span class="homepage-edge">market</span>
 		</h1>
 		<h2>Financial Visualization for the Latest Stock Market<br /> Company, News, and more.</h2>
 		<p class="lead">Get started and Invest for your future</p>
@@ -77,17 +34,18 @@ $list = $s->getAllStatus(Database::getDb());
 				<div class="card-header">
 					<form class="form-status" method="post" action="">
 						<div class="input-group mb-3">
-							<input type="hidden" name="statId" value="<?= $status->id; ?>" />
 							<label for="content" class="sr-only">Status</label>
-							<textarea id="content" name="content" class="form-control" aria-label="With textarea" placeholder="" row="2"><?= $status->content ?></textarea>
+							<textarea id="content" name="content" class="form-control" aria-label="With textarea" placeholder="What's on your mind? Share it!" row="2"></textarea>
 							<div class="input-group-append">
-								<button id="updBtn" name="updBtn" class="btn btn-outline-dark" type="submit">Post Status</button>
+								<button id="addStatus" name="addStatus" class="btn btn-outline-dark" type="submit">Post Status</button>
 							</div>
 						</div>
 					</form>
-					<div><span class="status-error"><?php echo $statErr; ?></span></div>
+					<!-- CONTAINER FOR MESASGE ERROR IF INPUT FILED IS EMPTY-->
+					<div>
+						<span class="status-error"><?php echo $statErr; ?></span>
+					</div>
 				</div>
-
 			</div>
 		</div>
 

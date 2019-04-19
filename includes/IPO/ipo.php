@@ -9,11 +9,8 @@ $i = new GainersIPO();
 
 ?>
 
-<h1>IPO Calendar</h1>
-<div class="container-fluid">
-	<div class="row">
-
-<?php
+<div class="card mb-3">
+	<?php
 
 
 $i = $i->getAPIipo($IPO);
@@ -21,9 +18,4 @@ $i = $i->getAPIipo($IPO);
 ?>
 
 
-	</div>
 </div>
-
-
- 
-   

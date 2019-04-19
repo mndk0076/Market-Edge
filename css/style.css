@@ -1,5 +1,11 @@
 @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
-
+html{
+	font-family: 'Questrial', sans-serif;
+}
+body{
+	margin: 0;
+	font-family: 'Questrial', sans-serif;
+}
 .search{
     width: 100%;
 }
@@ -181,9 +187,11 @@ Responsive Table
 	/*
  Label the data
  */
+/*
 	tr:nth-child(even) {
 		background-color: lightgray;
 	}
+*/
 
 	td:nth-of-type(1):before {
 		content: "Ticker";
@@ -358,6 +366,40 @@ Responsive Table
 		grid-column: 0;
 	}
 }
+
+.homepage-market{
+	margin: 0;
+	padding: 0;
+	color:#2d2d2d;
+	display: block;
+	font-weight: 700;
+	font-size: 80px;
+	text-transform: uppercase;
+}
+.homepage-edge{
+	margin-top: -30px;
+	padding: 0;
+	color: #fbc531;
+	display: block;
+	font-size: 80px;
+	text-transform: uppercase;
+}
+.jumbotron{
+	background-image: url("../images/jumbotron.png");
+  	background-size: cover;
+	margin-bottom: 0;
+/*
+	opacity: .4;
+	background: #00b894;
+	
+*/
+	padding: 0 0 2rem 0;
+}
+.homepage-h5{
+	padding:10px;
+	background: #f1f2f6;
+	color:#2d2d2d;
+}
 /*=============================================== EDIT PORTFOLIO =============================================================*/
 .input-group>.input-group-prepend {
     flex: 0 0 30%;
@@ -486,10 +528,15 @@ Responsive Table
 }
 .port-wrapper{
 	margin-left:20%;
+	display:inline-block !important;
 }
 /*=============================================== Events ===================================================================*/
 #event_main{
     background-color: #949BA2;
+}
+#eventH1{
+    position: relative;
+    left:450px;	
 }
 .eventPhoto{
     position: relative;
@@ -507,7 +554,56 @@ Responsive Table
 .myEvents{
 	list-style-type: none;
 }
+@media only screen and (max-width: 1200px) {
+	#eventH1{
+		position: relative;
+		left:400px;	
+	}
+}
+@media only screen and (max-width: 900px) {
+	#eventH1{
+		position: relative;
+		left:400px;	
+		font-size:1em;
+	}
+	.eventPhoto{
+		position: relative;
+		left:100px;
+		top:25px;
+		width:50px;
+	}
+	#eventMain{
+		font-size: .75em;
+	}
+	.myEvents{
+		font-size: .75em;
+	}
+	.eventtitle{
+		font-size: .75em;
+	}
+}
+@media only screen and (max-width: 700px) {
+	#eventH1{
+		position: relative;
+		left:300px;	
+	}
+}
+@media only screen and (max-width: 550px) {
+	#eventH1{
+		position: relative;
+		left:200px;	
+	}
+}
+@media only screen and (max-width: 360px) {
+	#eventH1{
+		position: relative;
+		left:150px;	
+	}
+}
 /*=============================================== FAQ ======================================================================*/
+.center-div{
+	margin:0 auto;
+} 
 #faq_main{
     background-color: #949BA2;
 }
@@ -516,15 +612,15 @@ Responsive Table
     max-width:60%;
     margin:0 auto;
 }
+
 .displayedFAQ{
 margin-bottom: 100px;
 }
 .myQuestions{
   list-style-type: none;  
 }
+
 #faqTheirName{
-	position: relative;
-	left:600px;
 	margin:20px;
 }
 #faqEmail{
@@ -534,21 +630,272 @@ margin-bottom: 100px;
 #questionDiv{
     text-align: center !important;
 }
+#quesDescInput{
+	height:100px;
+}
 .faq_input{
     margin:20px;
 }
-#faqEmail{
-    position: relative;
-    left:15px;
+.faqSuccess{
+	position: relative;
+	left:650px;
 }
 #quesDescription{
-    position: relative;
-	left:615px;
 	margin:20px;
 }
 #submitFAQ{
 	border-radius: 50px;
+	width:150px;
 	position: relative;
-	left:660px;
+	left:250px;
 	margin:50px;
 }
+/*Used Boostrap for responsiveness */
+
+/*=============================================== GAINERS/LOSERS =========================================================*/
+.nav-center{
+	text-align: center;
+	margin: 0 auto;
+}
+.tab-overwrite{
+	width: 100%;
+	max-width: 100%;
+}
+.gainer-table{
+	margin: 0 !important;
+	padding: 0 !important;
+}
+.gainer-ticker{
+	color: #ffeaa7 !Important;
+}
+.gainer-company{
+	color: #fff !Important;
+}
+.gainer-change{
+	color: #55efc4 !Important;
+}
+.table-hover tbody tr:hover,
+            .table-hover tbody tr:hover td,
+            .table-hover tbody tr:hover th{
+	color: #2d2d2d !Important;
+}
+/*=============================================== NEWS ====================================================================*/
+.news-title-background{
+	background: #2d2d2d;
+	color: #fff;
+	padding: 20px 15px;
+	font-size: 16px;
+	text-transform: capitalize;
+	text-align: center;
+}
+.news-title-link{
+	text-decoration: none !important;
+}
+.news-title-link:hover{
+	color: #0069D9 !important;
+}
+.news-background{
+	margin: 10px;
+	background: #f5f5f5;
+	border-radius: 10px;
+}
+.news-pub-date{
+	font-style: italic;
+	font-size: 14px;
+	color: gray;
+}
+.new-btn-link{
+	background: #2d2d2d;
+	color: #fff;
+}
+.new-btn-link:hover{
+	background: blue;
+	color: #fff;
+}
+.news-container{
+	margin:0 auto;
+}
+@media only screen and (max-width: 760px),
+	(min-device-width: 768px) and (max-device-width: 1024px) {
+		.table{
+			background:red;
+		}
+		}
+}
+/*===============================================STATUS=============================================================*/
+.status-btn {
+	background: white !important;
+	text-align: left;
+	color: gray;
+	font-style: italic;
+}
+
+.status-btn:hover {
+	background: white !important;
+	text-align: left;
+	color: gray;
+	font-style: italic;
+}
+
+.status-input {
+	padding: 10px;
+	background: #2d2d2d;
+}
+
+.status-text {
+	font-style: italic;
+	color: #767C8A;
+	font-size: 16px;
+}
+
+.status-avatar {
+	display: inline-block;
+	width: 30px;
+	border-radius: 50%;
+}
+
+.status-container {
+	margin: 10px;
+	/*	padding: 5px 10px 20px 10px;*/
+}
+
+.status-comment {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+
+}
+
+.statusBtn {
+	background-color: transparent;
+	border: none;
+	color: #2d2d2d;
+	padding: 10px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+}
+
+.status-edit-btn {
+	padding-right: 20px 20px 20px 0;
+}
+
+.status-actn-btn {
+	float: left;
+}
+
+.status-action-btn {
+	background: #dfdfdf;
+	text-align: center;
+
+}
+
+.card-header {
+	background: #f5f6fa;
+	color: #2d2d2d;
+}
+
+.status-content {
+	font-size: 13px;
+	display: block;
+	text-align: justify !important;
+	word-wrap: break-word;
+	padding: 0 10px;
+}
+
+.fa-comments,
+.fa-trash-alt,
+.fa-user-edit {
+	color: white;
+	font-size: 14px;
+	color: #989898;
+	text-align: center
+}
+
+.add-icon {
+	color: red;
+	font-size:
+}
+
+.status-cont {
+	margin:
+}
+
+::placeholder {
+	color: grey;
+	font-style: italic;
+}
+
+.status-date {
+	padding-left: 40px;
+	display: block;
+	color: grey;
+	font-size: 12px;
+	margin: 0;
+	padding-bottom: 10px;
+}
+
+.status-userName {
+	color: #0984E3;
+	font-weight: 500;
+	display: inline-block;
+	margin: 0;
+}
+
+.media-body {
+	border: none !important;
+}
+
+.status-body {
+	padding: 15px;
+	border-bottom-style: none !important;
+}
+
+.status-action-btn {
+	background: red;
+}
+
+.status-recent {
+	height: 420px;
+	overflow: auto;
+}
+.status-userInitials {
+	margin-right: 10px;
+	background: #0984E3;
+	padding: 12px 8px;
+	color: #fff;
+	border-radius: 60%; 
+	width: 100px;
+	height: 150px;
+}
+.status-div{
+	margin: 0;
+	padding: 0;
+}
+.status-error{
+	display: block;
+}
+/*===============================================STATUS SCROLLBAR====================================================*/
+::-webkit-scrollbar{
+	width: 5px;
+}
+::--moz--scrollbar{
+	width: 5px;
+}
+
+::-webkit-scrollbar-track {
+	background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+	background: #888;
+}
+
+::-webkit-scrollbar-thumb:hover {
+	background: #555;
+}
+

@@ -2,20 +2,16 @@
 
 function checkEmpty($value){
     if($value == ""){
-        return "* Required Field";
+        return true;
     }
-    return "";
+    return false;
 }
 
 function checkDropDown($value, $default){
-    if(isset($_REQUEST[$value]) && $_REQUEST[$value] == $default){
-        return "Please Select an option";
+    if($value == $default){
+        return true;
     }else{
-        return "";
+        return false;
     }
 }
-
-
-
-
 
