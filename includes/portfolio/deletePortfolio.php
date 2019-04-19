@@ -3,13 +3,16 @@ ob_start();
 require_once '../../config_test.php';
 require_once 'listPortfolioSetting.php';
 
+//delete ticker form
 if(isset($_POST['deleteTicker'])){
     $dbcon = Database::getDb();
-    $id= $_POST['ticker_id'];
-
-    $p = new Portfolio();
-    $count = $p->deleteTicker($dbcon, $id);
+    $id= $_POST['ticker_id']; //getting the id so I know which ticker to delete
     
+    //calling the delete function from the portfolio model and passing the data
+    $portfolio = new Portfolio();
+    $count = $portfolio->deleteTicker($dbcon, $id);
+    
+    //if successfully deleted go back to edit portfolio view else show error
     if($count){
         header("Location:editPortfolioView.php");      
     } else {

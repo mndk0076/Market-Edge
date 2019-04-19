@@ -1,22 +1,31 @@
 <?php
+    //setting the values to empty
     $ticker_news = $grossprofit = $totalrevenue = $netincome = $currentassets = $totalassets = $cash = '';
+
+    //search ticker form
     if(isset($_GET['searchTicker'])){
         $ticker = $_GET['ticker'];
     }
+
+    //API query
     $api_company = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/company?token=pk_16658a7d0d894548ac6fc648d4126581';
     $api_keystats = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/stats?token=pk_16658a7d0d894548ac6fc648d4126581';
     $api_financial = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/financials?token=pk_16658a7d0d894548ac6fc648d4126581';
     $api_news = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/news?token=pk_16658a7d0d894548ac6fc648d4126581';
 
+    //extracting company json
     $jsondata = file_get_contents ($api_company);
     $json = json_decode($jsondata, true); 
 
+    //extracting key stats json
     $keystatsdata = file_get_contents ($api_keystats);
     $keystats = json_decode($keystatsdata, true);
 
+    //extracting financial json
     $financialdata = file_get_contents ($api_financial);
     $financial = json_decode($financialdata, true);
 
+    //extracting news json
     $newsdata = file_get_contents ($api_news);
     $news = json_decode($newsdata, true);
     
@@ -83,12 +92,13 @@
             $cash = convert_number($f['totalCash']);
         }
     }
+
+    //news
     foreach($news as $n){
         $ticker_news .= '<a href="'.$n['url'].'?token=pk_2070ea1e812e4ed989df8082e86dc16d"><p>'. $n['headline'].'</p></a>';
     }
 
-    //news
-    
+    //conver number to better looking data
     function convert_number($n) {
         if($n != ''){
             $n = (0+str_replace(",", "", $n));
