@@ -6,7 +6,8 @@ $IPO = "https://cloud.iexapis.com/beta/stock/market/upcoming-ipos?token=pk_84b5c
 
                 
 $i = new GainersIPO();
-
+ require_once '../../config_test.php';
+	require_once 'header.php';
 ?>
 
 <div class="card mb-3">
@@ -19,3 +20,8 @@ $i = $i->getAPIipo($IPO);
 
 
 </div>
+<?php
+    require_once '../../config_test.php';
+	require_once 'header.php';
+	
+	?>
