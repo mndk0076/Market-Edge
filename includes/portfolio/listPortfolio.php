@@ -1,22 +1,25 @@
 <?php
-    require_once '../../config_test.php';
-    require_once 'database.php';
-    require_once 'portfolio.php';
-    require_once 'APIRequest.php';
+require_once '../../config_test.php';
+require_once 'database.php';
+require_once 'portfolio.php';
+require_once 'APIRequest.php';
 
+$userid = $_SESSION['uid'];
 $dbcon = Database::getDb();
 $u = new Portfolio();
-$portfolio = $u->getPortfolio($dbcon);
+$portfolio = $u->getPortfolio($dbcon, $userid);
 
 $p = new APIRequest();
 $price = $p->getPortfolioMarketPrice();
 
-$jsondata = file_get_contents ($price);
-$json = json_decode($jsondata, true);
+if(count($portfolio) != 0){
+    $jsondata = file_get_contents ($price);
+    $json = json_decode($jsondata, true);
 
-$tickers_price = array();
-foreach($json as $ticker) {
-    $tickers_price[] = $ticker['price'];
+    $tickers_price = array();
+    foreach($json as $ticker) {
+        $tickers_price[] = $ticker['price'];
+    }
 }
 
 foreach($portfolio as $price => $port){

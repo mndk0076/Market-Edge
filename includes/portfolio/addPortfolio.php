@@ -2,6 +2,9 @@
 require_once '../../config_test.php';
 require_once 'portfolio.php';
 
+session_start();
+$userid = $_SESSION['uid'];
+
     if(isset($_POST['add_portfolio'])){
         $dbcon = Database::getDb();
         
@@ -11,7 +14,7 @@ require_once 'portfolio.php';
         $price = $_POST['price'];
             
         $u = new Portfolio();
-        $u->addTicker($dbcon, $ticker, $company, $shares, $price);
+        $u->addTicker($dbcon, $ticker, $company, $shares, $price, $userid);
         
         if($ticker !='' && $company !='' && $shares !='' && $price !=''){
             header("Location: portfolioView.php");

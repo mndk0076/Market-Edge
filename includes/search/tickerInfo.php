@@ -1,5 +1,5 @@
 <?php
-    $ticker_news = '';
+    $ticker_news = $grossprofit = $totalrevenue = $netincome = $currentassets = $totalassets = $cash = '';
     if(isset($_GET['searchTicker'])){
         $ticker = $_GET['ticker'];
     }
@@ -73,13 +73,15 @@
     $peratio = $keystats['peRatio'];
 
     //financial
-    foreach($financial['financials'] as $f){
-        $grossprofit = convert_number($f['grossProfit']);
-        $totalrevenue = convert_number($f['totalRevenue']);
-        $netincome = convert_number($f['netIncome']);
-        $currentassets = convert_number($f['currentAssets']);
-        $totalassets = convert_number($f['totalAssets']);
-        $cash = convert_number($f['totalCash']);
+    if (count($financial) != 0){
+        foreach($financial['financials'] as $f){
+            $grossprofit = convert_number($f['grossProfit']);    
+            $totalrevenue = convert_number($f['totalRevenue']);
+            $netincome = convert_number($f['netIncome']);
+            $currentassets = convert_number($f['currentAssets']);
+            $totalassets = convert_number($f['totalAssets']);
+            $cash = convert_number($f['totalCash']);
+        }
     }
     foreach($news as $n){
         $ticker_news .= '<a href="'.$n['url'].'?token=pk_2070ea1e812e4ed989df8082e86dc16d"><p>'. $n['headline'].'</p></a>';
@@ -88,7 +90,9 @@
     //news
     
     function convert_number($n) {
-        $n = (0+str_replace(",", "", $n));
+        if($n != ''){
+            $n = (0+str_replace(",", "", $n));
+        }
 
         //if (!is_numeric($n)) return false;
 
@@ -96,7 +100,7 @@
         elseif ($n > 1000000000) return round(($n/1000000000), 2).'B';
         elseif ($n > 1000000) return round(($n/1000000), 2).'M';
         elseif ($n > 1000) return round(($n/1000), 2).'Th';
-
+        
         return number_format($n);
     }
 

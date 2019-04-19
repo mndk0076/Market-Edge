@@ -1,17 +1,18 @@
 <?php 
-    require_once '../../config_test.php';
-    require_once 'portfolio.php';
-    require_once 'watchlist.php';
+require_once '../../config_test.php';
+require_once 'portfolio.php';
+require_once 'watchlist.php';
 
 class APIRequest{
     public function getPortfolioMarketPrice(){
+        $userid = $_SESSION['uid'];
+
         $API = "https://cloud.iexapis.com/beta/stock/market/batch?token=pk_16658a7d0d894548ac6fc648d4126581&symbols=";
         $API_type = "&types=price";
 
-
         $dbcon = Database::getDb();
         $u = new Portfolio();
-        $portfolio = $u->getPortfolio($dbcon);
+        $portfolio = $u->getPortfolio($dbcon, $userid);
         $tickers = "";
         foreach($portfolio as $port){
             $tickers.=  $port->ticker .",";
