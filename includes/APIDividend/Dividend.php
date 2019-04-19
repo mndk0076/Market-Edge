@@ -22,13 +22,16 @@ $json = json_decode($jsondata, true);
   foreach($tickersArray as $ticker){
 
   foreach($json[$ticker]['dividends'] as $value){
-    echo '<div class="card dividend" style="width: 18rem;">'
-    . '<div class="card-body">'
-    . '<h5 class="card-title">' . $ticker .'</h5>' . '<h6 class="card-subtitle mb-2 text-muted">' . "Expected Date" .": "  .$value['exDate'] .'</h6>'
-    . '<h6 class="card-subtitle mb-2 text-muted">' . "Payment Date" . ": " . "$ " .$value['paymentDate']. '</h6>'
-    . '<h6 class="card-subtitle mb-2 text-muted">' . "Dividend Amount" . ": " . "$ " .$value['amount']. '</h6>'
-    . '</div>'
-    . '</div>';
+    echo 
+    '<div class="col-sm-3">' .
+      '<div class="card dividend" style="width: 18rem;">' 
+      . '<div class="card-body">'
+        . '<h5 class="card-title">' . $ticker .'</h5>' . '<h6 class="card-subtitle mb-2 text-muted">' . "Expected Date" .": "  .$value['exDate'] .'</h6>'
+        . '<h6 class="card-subtitle mb-2 text-muted">' . "Payment Date" . ": " . "$ " .$value['paymentDate']. '</h6>'
+        . '<h6 class="card-subtitle mb-2 text-muted">' . "Dividend Amount" . ": " . "$ " .$value['amount']. '</h6>'
+      . '</div>'
+    . '</div>'.
+    '</div>';
 }
 }
 

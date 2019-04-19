@@ -8,7 +8,7 @@ $myfaq = $listAppFAQ->listApproval(Database::getDb());
 
 foreach($myfaq as $question){
     echo "<div class='displayedFAQ'>" . 
-    "<li class= 'myQuestions'>" . 
+    "<li class='myQuestions list-group-item'>" . 
     "<h2>$question->title </h2>" . "<br/>" . 
     "<p> $question->description </p>" . 
     "</li>" .

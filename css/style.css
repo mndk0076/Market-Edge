@@ -486,10 +486,15 @@ Responsive Table
 }
 .port-wrapper{
 	margin-left:20%;
+	display:inline-block !important;
 }
 /*=============================================== Events ===================================================================*/
 #event_main{
     background-color: #949BA2;
+}
+#eventH1{
+    position: relative;
+    left:450px;	
 }
 .eventPhoto{
     position: relative;
@@ -507,7 +512,56 @@ Responsive Table
 .myEvents{
 	list-style-type: none;
 }
+@media only screen and (max-width: 1200px) {
+	#eventH1{
+		position: relative;
+		left:400px;	
+	}
+}
+@media only screen and (max-width: 900px) {
+	#eventH1{
+		position: relative;
+		left:400px;	
+		font-size:1em;
+	}
+	.eventPhoto{
+		position: relative;
+		left:100px;
+		top:25px;
+		width:50px;
+	}
+	#eventMain{
+		font-size: .75em;
+	}
+	.myEvents{
+		font-size: .75em;
+	}
+	.eventtitle{
+		font-size: .75em;
+	}
+}
+@media only screen and (max-width: 700px) {
+	#eventH1{
+		position: relative;
+		left:300px;	
+	}
+}
+@media only screen and (max-width: 550px) {
+	#eventH1{
+		position: relative;
+		left:200px;	
+	}
+}
+@media only screen and (max-width: 360px) {
+	#eventH1{
+		position: relative;
+		left:150px;	
+	}
+}
 /*=============================================== FAQ ======================================================================*/
+.center-div{
+	margin:0 auto;
+} 
 #faq_main{
     background-color: #949BA2;
 }
@@ -516,15 +570,15 @@ Responsive Table
     max-width:60%;
     margin:0 auto;
 }
+
 .displayedFAQ{
 margin-bottom: 100px;
 }
 .myQuestions{
   list-style-type: none;  
 }
+
 #faqTheirName{
-	position: relative;
-	left:600px;
 	margin:20px;
 }
 #faqEmail{
@@ -534,21 +588,24 @@ margin-bottom: 100px;
 #questionDiv{
     text-align: center !important;
 }
+#quesDescInput{
+	height:100px;
+}
 .faq_input{
     margin:20px;
 }
-#faqEmail{
-    position: relative;
-    left:15px;
+.faqSuccess{
+	position: relative;
+	left:650px;
 }
 #quesDescription{
-    position: relative;
-	left:615px;
 	margin:20px;
 }
 #submitFAQ{
 	border-radius: 50px;
+	width:150px;
 	position: relative;
-	left:660px;
+	left:250px;
 	margin:50px;
 }
+/*Used Boostrap for responsiveness */
