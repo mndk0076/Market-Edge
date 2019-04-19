@@ -22,6 +22,7 @@
     </thead>
     <tbody>
         <?php 
+            //adding the data to display in the table body
             require_once 'listPortfolioSetting.php';
             require_once 'editPortfolio.php';
             require_once 'deletePortfolio.php';

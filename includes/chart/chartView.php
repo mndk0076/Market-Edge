@@ -9,8 +9,8 @@
 	<link rel="stylesheet" href="../../js/alertifyjs/css/alertify.css">
 	<link rel="stylesheet" href="../../js/alertifyjs/css/themes/default.css">
 <script>
+//loading the script function
 window.onload = function() {
- 
 var chart = new CanvasJS.Chart("chartContainer", {
 	axisX: {
 		valueFormatString: "DD MMM YY"
