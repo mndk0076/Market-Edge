@@ -1,4 +1,6 @@
-<?php 
+<?php
+	
+	require_once "../../userSession.php";
 	require_once '../../config_test.php';
 
 	require_once MODELS_NEWS_PATH . "/news.php";
