@@ -6,6 +6,9 @@ body{
 	margin: 0;
 	font-family: 'Questrial', sans-serif;
 }
+.logout{
+    margin-left: 50px;
+}
 .search{
     width: 100%;
 }

@@ -3,10 +3,10 @@
     if(isset($_GET['searchTicker'])){
         $ticker = $_GET['ticker'];
     }
-    $api_company = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/company?token=pk_2070ea1e812e4ed989df8082e86dc16d';
-    $api_keystats = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/stats?token=pk_2070ea1e812e4ed989df8082e86dc16d';
-    $api_financial = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/financials?token=pk_2070ea1e812e4ed989df8082e86dc16d';
-    $api_news = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/news?token=pk_2070ea1e812e4ed989df8082e86dc16d';
+    $api_company = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/company?token=pk_16658a7d0d894548ac6fc648d4126581';
+    $api_keystats = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/stats?token=pk_16658a7d0d894548ac6fc648d4126581';
+    $api_financial = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/financials?token=pk_16658a7d0d894548ac6fc648d4126581';
+    $api_news = 'https://cloud.iexapis.com/beta/stock/'.$ticker.'/news?token=pk_16658a7d0d894548ac6fc648d4126581';
 
     $jsondata = file_get_contents ($api_company);
     $json = json_decode($jsondata, true); 

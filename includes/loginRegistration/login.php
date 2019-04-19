@@ -1,6 +1,7 @@
 <?php
-require_once "../../models/database.php";
-require_once "../../models/user.php";
+require_once "../../config_test.php";
+require_once "database.php";
+require_once "user.php";
 
 session_start();
 
@@ -18,16 +19,21 @@ if(isset($_POST['do_login'])){
          $msg = "Incorrect email or password! Please try again.";
     }  
 	else {
-		$sql= "SELECT email, password FROM users WHERE email =? AND  password=? ";
+		$sql= "SELECT id, email, password, fname, lname FROM users WHERE email =? AND  password=? ";
 		
 		$dbcon = Database::getDb();
 		$query = $dbcon->prepare($sql);
         $query->execute(array($user,$pass));
-		
+		$euser = $query->fetch(PDO::FETCH_OBJ);
+		//var_dump($euser);
+		//echo "hello eauser";
     if($query->rowCount() >= 1) {
         $_SESSION['email'] = $user;
+		$_SESSION['uid'] = $euser->id;
+		$_SESSION['uFname'] = $euser->fname;
+		$_SESSION['uLname'] = $euser->lname ;
         $_SESSION['time_start_login'] = time();
-        header("location: ../../includes/homepage.php");  
+        header("location: ../homepage/homepage.php");  
     } else {
         $msg = "Email or Password is wrong";
 		 header("location: secure.php");  

@@ -34,9 +34,7 @@ require_once "../../config.php";
 					</span>
 				</div>
 			</form>
-			<a class="navbar-brand collapse navbar-collapse" href="../includes/login-dummy.php">&nbsp;&nbsp;Login</a>
-			<a class="navbar-brand collapse navbar-collapse" href="../includes/login-dummy.php">&nbsp;&nbsp;Register</a>
-
+			<a class="navbar-brand collapse navbar-collapse logout" href="../loginRegistration/logout.php">Logout</a>
 		</div>
 	</nav>
 	<nav class="navbar navbar-expand-lg  navbar-dark bg-secondary">

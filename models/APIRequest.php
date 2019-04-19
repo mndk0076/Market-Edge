@@ -5,7 +5,7 @@
 
 class APIRequest{
     public function getPortfolioMarketPrice(){
-        $API = "https://cloud.iexapis.com/beta/stock/market/batch?token=pk_2070ea1e812e4ed989df8082e86dc16d&symbols=";
+        $API = "https://cloud.iexapis.com/beta/stock/market/batch?token=pk_16658a7d0d894548ac6fc648d4126581&symbols=";
         $API_type = "&types=price";
 
 
@@ -30,7 +30,7 @@ class APIRequest{
         return $API_query;
     }
     public function getTickerQuote($ticker){
-        $API_query = "https://cloud.iexapis.com/beta/stock/market/batch?token=pk_2070ea1e812e4ed989df8082e86dc16d&symbols=". $ticker ."&types=quote";
+        $API_query = "https://cloud.iexapis.com/beta/stock/market/batch?token=pk_16658a7d0d894548ac6fc648d4126581&symbols=". $ticker ."&types=quote";
         
         return $API_query;
     }

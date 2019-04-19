@@ -5,6 +5,13 @@
 require_once '../../config_test.php';
 require_once INCLUDES_STATUS_PATH . "/status-add.php";
 
+session_start();
+
+//add this to every page. if user is not login it will redirect to login page
+if ($_SESSION['uid'] == ''){
+    header("location: ../loginRegistration/login.php");   
+}
+
 ?>
 
 <?php require_once 'header.php'; ?>

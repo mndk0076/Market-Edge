@@ -1,10 +1,9 @@
 <?php
     require_once '../../config_test.php';  
+    require_once  'portfolio_database.php';
+
     require_once 'watchlist.php';
     require_once 'APIRequest.php';
-    
-    require_once '../../config.php';
-    require_once   $modelspath . "database.php";
 
 $dbcon = Database::getDb();
 $u = new Watchlist();

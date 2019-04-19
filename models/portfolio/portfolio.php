@@ -1,6 +1,6 @@
 <?php
     require_once '../../config_test.php';
-    require_once 'portfolio_database.php';
+    require_once 'database.php';
 
 class Portfolio{
     public function getPortfolio($dbcon){        
