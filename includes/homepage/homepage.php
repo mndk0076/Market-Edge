@@ -1,8 +1,11 @@
 <?php
 
-//SESSIONS AND LOGIN STILL NOT IMPLEMENTED
 require_once "../../userSession.php";
 require_once '../../config_test.php';
+
+/*
+ * statusAdd.php IS CONTAINS THE LOGIC FOR ADDING, UPDATING AND DELETING USER STATUS
+ *THE statusList.php is WHERE I DISPLAY THE LIST OF STATUS THAT IS CURRENTLY STORED IN OUR DATABASE*/
 require_once INCLUDES_STATUS_PATH . "/statusAdd.php";
 
 //add this to every page. if user is not login it will redirect to login page

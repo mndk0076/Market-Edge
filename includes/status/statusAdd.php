@@ -82,10 +82,5 @@ $db = Database::getDb();
 $statusObj = new Status();
 $list = $statusObj->getAllStatus(Database::getDb());
 
-//
-//$db = Database::getDb();
-//$user_id = $_SESSION['uid'];
-//$statusObj = new Status();
-//$userInfo = $statusObj->getAllUsers($user_id, Database::getDb());
 
 //EOF

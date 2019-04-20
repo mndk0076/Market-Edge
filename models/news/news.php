@@ -49,6 +49,8 @@ class StockMarketNews{
 			
             // WANT TO LIMIT THE WORDS THAT WILL BE DISPLAY FOR description
             if ($maxWords > 0) {
+				
+				//EACH WORD WILL BE INDIVIDUALLY COUNT AND CHECK
                 $arrayWord = explode(' ', $description);
                 if ($maxWords < count($arrayWord)) {
                     $description = '';
@@ -58,6 +60,7 @@ class StockMarketNews{
                         $description .= $word . ' ';
                         $wordCount = $wordCount + 1;
 						
+						//NOW THE WORDS FROM THE DESCRIPTIO ALREADY COUNTED  IT WILL COMPARE THE WORD LIMIT AND DISPLAY THE WORDS APPENDING A LINK "..COntinue Reading"
                         if ($wordCount == $maxWords) {
                             break;
                         }
