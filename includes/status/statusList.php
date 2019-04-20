@@ -6,8 +6,8 @@ foreach($list as $status) {
 	$datePosted = date('l, F d, Y', strtotime($status->date_post));
 	
 	//GETTING FIRSTNAME AND LASTNAME FOR USERS NAME AND INITIALS TO BE DISPLAY SO USER WILL KNOW WHO OWNS THE POSTS
-	$fName = $status->userFname;
-	$lName = $status->userLname;
+	$fName = $status->user_fname;
+	$lName = $status->user_lname;
 	
 	/*THIS PART WILL ACT LIKE AND AVATAR FOR POSTED STATUS
 	 *FIRST LETTER OF THE FIRSTNAME AND LASTNAME OF THE USER WILL

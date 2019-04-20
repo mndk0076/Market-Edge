@@ -31,8 +31,8 @@ if(isset($_POST['updBtn'])) {
 	date_default_timezone_set("America/Toronto");
 	$date_post = date('Y-m-d h:i:sa');
 	$user_id = $_SESSION['uid'];
-	$userFname = $_SESSION['uFname'];
-	$userLname = $_SESSION['uLname'];
+	$user_fname = $_SESSION['uFname'];
+	$user_lname = $_SESSION['uLname'];
 	
 	if(checkEmpty($content)){
             $statErr = "Please enter your status";
@@ -45,7 +45,7 @@ if($isValid === true) {
 	//UPDATING A SPECIFIC STAUS FROM USER
 	$db = Database::getDb();
 	$statusObj = new Status();
-	$status = $statusObj->updateStatus($id, $content, $date_post, $user_id, $userFname, $userLname, $db);
+	$status = $statusObj->updateStatus($id, $content, $date_post, $user_id, $user_fname, $user_lname, $db);
 	
 	if($status) {
 		header("Location:../homepage/homepage.php");
