@@ -32,6 +32,7 @@ else
     if($blogcomments)
     {
         $comments = "<ul class=\"list-group list-group-flush\">" ;
+        //To fetch comments for particular blog
         foreach($blogcomments as $blogcomment)
         {
             //echo $blogcomment;
@@ -47,7 +48,7 @@ else
     {
         $comments= "<h5 style='color:black; margin-left:10px;'>Not Yet..</h5>" ;
     }
-
+    //To display details of blog including comments for it
     $details = "<div class=\"blogbody content\"><main><div class=\" jumbotron jumbotron-fluid \"> ".
                     "<div class=\"container\">" .
                     "<h1 class=\"blogtitle display-4\">" . $blog->title . "</h1><p class=\"lead\">" . $blog->content . "</p></div>" .

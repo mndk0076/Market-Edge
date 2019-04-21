@@ -11,14 +11,14 @@ if(isset($_POST['submit'])){
 
 	$db = Database::getDb();
     $s = new Blog();
-    //var_dump();
-    //exit();
+   
 	$c = $s->addBlog($title, $content, $blog_date, $user_id, $db);
 	header("Location: " . $includepath ."blogs/bloglistAdmin.php");
 }
 require_once   $includepath . "header_admin.php";
 
 ?>
+<!-- FORM TO CREATE BLOG -->
         <div class="content">
 
             <main>

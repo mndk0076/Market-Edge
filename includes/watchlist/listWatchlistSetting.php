@@ -1,15 +1,16 @@
 <?php
 require_once '../../config_test.php';
-require_once 'portfolio.php';
+require_once 'watchlist.php';
 require_once 'APIRequest.php';
+require_once '../../userSession.php';
         
 $dbcon = Database::getDb();
 $list = new Portfolio();
-$portfolio = $list->getPortfolio($dbcon);
+$portfolio = $list->getWatchlist($dbcon);
 
 
 $p = new APIRequest();
-$price = $p->getPortfolioMarketPrice();
+$price = $p->getWatchlistMarketPrice();
 
 $jsondata = file_get_contents ($price);
 $json = json_decode($jsondata, true);
@@ -24,12 +25,7 @@ foreach($portfolio as $price => $port){
     echo "<tr> <td style='display:none;'>". $port->id ."</td>"
             ."<td>". $port->ticker ."</td>"
             ."<td>". $port->company ."</td>"
-            ."<td>". $port->shares ."</td>"
-            ."<td>$". $port->price ."</td>"
-            ."<td>$". $port->price * $port->shares ."</td>"
             ."<td>$". $tickers_price[$price] ."</td>"
-            ."<td>$". $tickers_price[$price] * $port->shares ."</td>"
-            ."<td>". (($tickers_price[$price] * $port->shares) - ($port->price * $port->shares)  )."</td>"
             ."<td>
                 <button type='submit' name='editTicker' class='edit-btn' data-toggle='modal' data-target='#editModal'>
                     <i class='far fa-edit'></i>

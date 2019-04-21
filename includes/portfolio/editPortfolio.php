@@ -2,16 +2,22 @@
 ob_start(); 
 require_once '../../config_test.php';
 require_once 'listPortfolioSetting.php';
+require_once '../../userSession.php';
 
+//edit ticker form
 if(isset($_POST['editTicker'])){
     $id = $_POST['id'];
 
     $dbcon = Database::getDb();
+    
+    //calling the get portfolio id function from the portfolio model so we know which ticket to edit
     $id = new Portfolio();
     $portfolioID = $id->getPortfolioId($dbcon, $id);
 }
 
+//update ticker form
 if(isset($_POST['update_ticker'])){
+    //data form update form
     $id= $_POST['ticker_id'];
     $ticker = $_POST['ticker'];
     $company = $_POST['company'];
@@ -19,9 +25,12 @@ if(isset($_POST['update_ticker'])){
     $price = $_POST['price'];
 
     $dbcon = Database::getDb();
-    $p = new Portfolio();
-    $count = $p->editTicker($dbcon, $id, $ticker, $company, $shares, $price, 1);
+    
+    //calling the editTicker function from the portfolio model and passing the data from the form
+    $portfolio = new Portfolio();
+    $count = $portfolio->editTicker($dbcon, $id, $ticker, $company, $shares, $price, $userid);
 
+    //if succesfully updated go back to edit portfolio view else show the error
     if($count){
         header("Location:editportfolioView.php");
     } else {

@@ -3,10 +3,6 @@
     require_once '../../config_test.php';
     require_once 'header.php';
     require_once '../../userSession.php';
-
-    if (empty($userid)){
-        header("location: ../loginRegistration/login.php");   
-    }
 ?>
 <h1>Portfolio</h1>
 <i class="fas fa-plus" data-toggle="modal" data-target="#exampleModalCenter"></i>

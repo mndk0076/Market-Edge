@@ -1,5 +1,7 @@
 <?php
-include "../header.php";
+    require_once "../../userSession.php";
+    include "../header.php";
+    
 ?>
 
     <main id="faq_main">

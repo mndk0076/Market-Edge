@@ -1,11 +1,12 @@
 <?php
 
-//SESSIONS AND LOGIN STILL NOT IMPLEMENTED
-
+require_once "../../userSession.php";
 require_once '../../config_test.php';
-require_once INCLUDES_STATUS_PATH . "/status-add.php";
 
-session_start();
+/*
+ * statusAdd.php IS CONTAINS THE LOGIC FOR ADDING, UPDATING AND DELETING USER STATUS
+ *THE statusList.php is WHERE I DISPLAY THE LIST OF STATUS THAT IS CURRENTLY STORED IN OUR DATABASE*/
+require_once INCLUDES_STATUS_PATH . "/statusAdd.php";
 
 //add this to every page. if user is not login it will redirect to login page
 if ($_SESSION['uid'] == ''){
@@ -20,13 +21,13 @@ if ($_SESSION['uid'] == ''){
 <div class="jumbotron jumbotron-fluid">
 	<div class="container">
 		<h1 class="ml-auto">
-			<span class="homepage-market">Stock</span>
-			<span class="homepage-edge">market</span>
+			<span class="homepage-market">Market</span>
+			<span class="homepage-edge">Edge</span>
 		</h1>
 		<h2>Financial Visualization for the Latest Stock Market<br /> Company, News, and more.</h2>
 		<p class="lead">Get started and Invest for your future</p>
 		<a class="btn btn-dark btn-lg" href="../portfolio/portfolioView.php" role="button">Add Portfolio</a>
-		<a class="btn btn-dark btn-lg" href="../watchlist/watchlist.php" role="button">Add Watchlist</a>
+		<a class="btn btn-dark btn-lg" href="../watchlist/watchlistView.php" role="button">Add Watchlist</a>
 	</div>
 </div>
 <div class="container">
@@ -107,8 +108,9 @@ if ($_SESSION['uid'] == ''){
 			<h5>Recent Status</h5>
 			<div class="status-recent">
 				<?php  
-			require_once INCLUDES_STATUS_PATH . "/status-list.php";
+			require_once INCLUDES_STATUS_PATH . "/statusList.php";
 			?>
+					
 			</div>
 		</div>
 		<!-- col-md-4 -->

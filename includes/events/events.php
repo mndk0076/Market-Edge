@@ -1,5 +1,7 @@
 <?php
+    require_once "../../userSession.php";
     include "../header.php";
+
 ?>
 <!--For some reason some of the CSS styling won't fully load unless you do a hard refresh-->
 <main id="eventMain">

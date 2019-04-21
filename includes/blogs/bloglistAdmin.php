@@ -8,13 +8,13 @@ session_start();
 $dbcon = Database::getDb();
 $s = new Blog();
 $blogs =  $s->getAllBlogs(Database::getDb());
-
+//For Delete Click
 if(isset($_POST['delete']))
 {
     $id = $_POST['blog_id'];
     $count = $s->deleteBlog($id, $dbcon); 
 }
-
+//For Edit Click
 else if(isset($_POST['edit']))
 {
     $id = $_POST['blog_id'];
@@ -22,6 +22,7 @@ else if(isset($_POST['edit']))
     //$_SESSION['admin_id']= "1"; //This is to store admin id in session and transfer it to editblog.php page. so that to store the admin id
     header("Location: ". $includepath . "blogs/edit.php");
 }
+//For Details Click
 else if(isset($_POST['details']))
 {
     $id = $_POST['blog_id'];

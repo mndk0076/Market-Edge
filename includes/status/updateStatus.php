@@ -1,41 +1,51 @@
 <?php
+require_once "../../userSession.php";
+
 require_once '../../config_test.php';
 
 require_once MODELS_PATH . "/database.php";
-require_once MODELS_STATUS_PATH . "/user-status.php";
+require_once MODELS_STATUS_PATH . "/userStatus.php";
 require_once '../../Validation/validation.php'; 
+
 //require_once MODELS_STATUSCOMMENTS_PATH . "/status-comments.php";
 //include '../includes/add-status.php';
+//add this to every page. if user is not login it will redirect to login page
+
 	$message ="";
 	$statErr = "";
 	$isValid = true;
-
+//GETTING THE ID OF A SPECIFIC STATUS TO BE UPDATED BY THE USER
 if(isset($_POST['update'])) {
 	$id = $_POST['id'];
 	
 	$db = Database::getDb();
-	$s = new Status();
-	$status = $s->getStatusById($id, $db);
+	$statusObj = new Status();
+	$status = $statusObj->getStatusById($id, $db);
 }
-		
+
+//UPADATING THE USER STATUS
+	
 if(isset($_POST['updBtn'])) {
 	$id = $_POST['statId'];
 	$content = $_POST['content'];
 	date_default_timezone_set("America/Toronto");
 	$date_post = date('Y-m-d h:i:sa');
-	$user_id = "1";
+	$user_id = $_SESSION['uid'];
+	$user_fname = $_SESSION['uFname'];
+	$user_lname = $_SESSION['uLname'];
 	
 	if(checkEmpty($content)){
             $statErr = "Please enter your status";
             $isValid = false;
 	}
-	
-	//IF INPUT TEXTAREA IS NOT EMPTY THEEN FORM WILL BE SUBMITTED AND SAVE TO THE DATABASE
+
+//IF INPUT TEXTAREA IS NOT EMPTY THEEN FORM WILL BE SUBMITTED AND SAVE TO THE DATABASE
 if($isValid === true) {
 	
+	//UPDATING A SPECIFIC STAUS FROM USER
 	$db = Database::getDb();
-	$s = new Status();
-	$status = $s->updateStatus($id, $content, $date_post, $user_id, $db);
+	$statusObj = new Status();
+	$status = $statusObj->updateStatus($id, $content, $date_post, $user_id, $user_fname, $user_lname, $db);
 	
 	if($status) {
 		header("Location:../homepage/homepage.php");
@@ -45,9 +55,11 @@ if($isValid === true) {
 }
 }
 
+/*THIS GET THE LIST OF STATUS STORED FROM THE DATABASE TABLE STATUS*/
 $db = Database::getDb();
-$s = new Status();
-$list = $s->getAllStatus(Database::getDb());
+$statusObj = new Status();
+$list = $statusObj->getAllStatus(Database::getDb());
+
 ?>
 
 <?php require_once 'header.php'; ?>
@@ -79,7 +91,7 @@ $list = $s->getAllStatus(Database::getDb());
 						<div class="input-group mb-3">
 							<input type="hidden" name="statId" value="<?= $status->id; ?>" />
 							<label for="content" class="sr-only">Status</label>
-							<textarea id="content" name="content" class="form-control" aria-label="With textarea" placeholder="" row="2"><?= $status->content ?></textarea>
+							<textarea id="content" name="content" class="form-control" aria-label="With textarea" placeholder="" row="2"><?= $status->content; ?></textarea>
 							<div class="input-group-append">
 								<button id="updBtn" name="updBtn" class="btn btn-outline-dark" type="submit">Post Status</button>
 							</div>
@@ -125,6 +137,8 @@ $list = $s->getAllStatus(Database::getDb());
 					</div>
 				</div>
 			</div>
+			
+		<!--IPO CALENDAR-->
 			<h5 class="homepage-h5">IPO Calendar</h5>
 			<div class="card mb-3">
 				<?php  
@@ -142,7 +156,7 @@ $list = $s->getAllStatus(Database::getDb());
 			<h5>Recent Status</h5>
 			<div class="status-recent">
 				<?php  
-			require_once INCLUDES_STATUS_PATH . "/status-list.php";
+			require_once INCLUDES_STATUS_PATH . "/statusList.php";
 			?>
 			</div>
 		</div>

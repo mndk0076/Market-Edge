@@ -20,7 +20,7 @@ require_once "../../config.php";
 
 <body>
 	<nav class="navbar navbar-expand-lg navbar-dark bg-dark b">
-		<a class="navbar-brand" href="../homepage/homepage.php">Stock Market</a>
+		<a class="navbar-brand" href="../homepage/homepage.php"><img src="../../images/logo.png" style="width:150px"></a>
 		<span class="navbar-text">Financial Visualization</span>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 			<span class="navbar-toggler-icon"></span>
@@ -57,7 +57,7 @@ require_once "../../config.php";
 				</li>
 				<li class="nav-item">
 
-					<a class="nav-link py-0 text-white" href="../gainersLosers/gainers-losers-public.php">Top Gainers/Losers</a>
+					<a class="nav-link py-0 text-white" href="../gainersLosers/gainersLosers.php">Top Gainers/Losers</a>
 				</li>
 				<li class="nav-item">
 					<a class="nav-link py-0 text-white" href="../blogs/blogs.php">Blog</a>

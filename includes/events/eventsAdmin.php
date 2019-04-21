@@ -1,13 +1,16 @@
 <?php
+  require_once "../../userSession.php"; //session variables weren't working right for my features, we weren't sure why 
+
   require_once '../../config_test.php';
   require_once INCLUDES_PATH . '/header_admin.php';
+
 ?>
       <div class="content">
         <main>
           <div class="container-fluid">
             <h2>Event</h2>
             <div class="table-responsive">
-              <table class='table table-light'>" .
+              <table class='table table-light'>
                 <thead>
                   <tr>
                     <th>Event Name</th>

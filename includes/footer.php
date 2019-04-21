@@ -15,8 +15,8 @@
 				<h5>Stock Market</h5>
 				<ul class="list-unstyled quick-links">
 					<li><a href="../portfolio/portfolioView.php">Portfolio</a></li>
-					<li><a href="../gainersLosers/gainers-losers-public.php">Gainers/Lossers</a></li>
-					<li><a href="../watchlist/watchlist.php">Watchlist</a></li>
+					<li><a href="../gainersLosers/gainersLosers.php">Gainers/Losers</a></li>
+					<li><a href="../../watchlist/watchlistView.php">Watchlist</a></li>
 					<li><a href="../news/news.php">News</a></li>
 				</ul>
 			</div>

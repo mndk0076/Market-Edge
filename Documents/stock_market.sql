@@ -1,14 +1,22 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:8889
--- Generation Time: Apr 11, 2019 at 05:55 PM
--- Server version: 5.7.23
--- PHP Version: 7.2.10
+-- Host: 127.0.0.1
+-- Generation Time: Apr 19, 2019 at 11:08 PM
+-- Server version: 10.1.37-MariaDB
+-- PHP Version: 7.3.0
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
 SET time_zone = "+00:00";
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8mb4 */;
 
 --
 -- Database: `stock_market`
@@ -69,6 +77,13 @@ CREATE TABLE `events` (
   `location` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `events`
+--
+
+INSERT INTO `events` (`id`, `title`, `description`, `image`, `event_date`, `location`) VALUES
+(1, 'das', 'asda', 'asda', '0000-00-00', 'asddas');
+
 -- --------------------------------------------------------
 
 --
@@ -84,6 +99,13 @@ CREATE TABLE `faq` (
   `approve` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `faq`
+--
+
+INSERT INTO `faq` (`id`, `title`, `description`, `name`, `email`, `approve`) VALUES
+(1, 'portfolio', 'dasdasdas', 'daads', 'test@email.com', 0);
+
 -- --------------------------------------------------------
 
 --
@@ -92,19 +114,12 @@ CREATE TABLE `faq` (
 
 CREATE TABLE `portfolio` (
   `id` int(11) NOT NULL,
-  `ticker` varchar(255) NOT NULL,
-  `company` varchar(255) NOT NULL,
+  `symbol` varchar(255) NOT NULL,
+  `name` varchar(255) NOT NULL,
   `shares` int(11) NOT NULL,
   `price` double NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `portfolio`
---
-
-INSERT INTO `portfolio` (`id`, `ticker`, `company`, `shares`, `price`, `user_id`) VALUES
-(3, 'TSLA', 'Tesla, Inc.', 6787, 266.83, 1);
 
 -- --------------------------------------------------------
 
@@ -116,8 +131,22 @@ CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `content` varchar(2000) NOT NULL,
   `date_post` datetime NOT NULL,
-  `user_id` int(11) NOT NULL
+  `user_id` int(11) NOT NULL,
+  `userFname` varchar(50) NOT NULL,
+  `userLname` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `status`
+--
+
+INSERT INTO `status` (`id`, `content`, `date_post`, `user_id`, `userFname`, `userLname`) VALUES
+(130, 'AGAIN ASDAS', '2019-04-19 04:45:28', 16, 'naru', 'narusigawa'),
+(131, 'posting again', '2019-04-19 04:56:10', 13, 'naruto', 'uzumaki'),
+(132, 'testing', '2019-04-19 04:56:19', 13, 'naruto', 'uzumaki'),
+(133, 'dfdafadfad', '2019-04-19 04:56:26', 13, 'naruto', 'uzumaki'),
+(134, 'posting', '2019-04-19 04:58:40', 13, 'naruto', 'uzumaki'),
+(135, 'Reupdate dadasdasd Updated', '2019-04-19 05:03:02', 13, 'naruto', 'uzumaki');
 
 -- --------------------------------------------------------
 
@@ -128,6 +157,7 @@ CREATE TABLE `status` (
 CREATE TABLE `statuscomments` (
   `id` int(11) NOT NULL,
   `comment` varchar(500) NOT NULL,
+  `date_post` datetime NOT NULL,
   `status_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -152,7 +182,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `password`, `phone`, `role`) VALUES
-(1, '', '', '', '', '', '');
+(13, 'naruto', 'uzumaki', 'naruto@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '1234567890', 'user'),
+(14, 'Enrina', 'Wilms', 'enrina@gmail.com', '1234', '1234567890', 'user'),
+(15, 'sasuke', 'uchiha', 'sasuke@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '1234567890', 'user'),
+(16, 'naru', 'narusigawa', 'narusigawa@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '12345678890', 'user');
 
 -- --------------------------------------------------------
 
@@ -263,31 +296,31 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `watchlist`
@@ -334,3 +367,8 @@ ALTER TABLE `statuscomments`
 --
 ALTER TABLE `watchlist`
   ADD CONSTRAINT `Users_watchlist` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`);
+COMMIT;
+
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

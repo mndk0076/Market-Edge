@@ -1,7 +1,7 @@
 <?php
 ob_start();
 require_once '../../config_test.php';
-require_once 'listPortfolioSetting.php';
+require_once 'listWatchlistSetting.php';
 
 if(isset($_POST['deleteTicker'])){
     $dbcon = Database::getDb();
@@ -11,7 +11,7 @@ if(isset($_POST['deleteTicker'])){
     $count = $p->deleteTicker($dbcon, $id);
     
     if($count){
-        header("Location:editPortfolioView.php");      
+        header("Location:editWatchlistView.php");      
     } else {
         echo  "problem updating";
     }     
@@ -28,7 +28,7 @@ if(isset($_POST['deleteTicker'])){
                 </button>
             </div>
             <div class="modal-body">
-                <form action="deletePortfolio.php" method="post">
+                <form action="deleteWatchlist.php" method="post">
                    <input type="hidden" name="ticker_id" id="del_ticker_id">
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -41,18 +41,6 @@ if(isset($_POST['deleteTicker'])){
                             <span class="input-group-text" id="inputGroup-sizing-default">Company</span>
                         </div>
                         <input type="text" name="company" id="del_company" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text" id="inputGroup-sizing-default">Shares</span>
-                        </div>
-                        <input type="text" name="shares" id="del_shares" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default" readonly>
-                    </div>
-                    <div class="input-group mb-3">
-                        <div class="input-group-prepend">
-                            <span class="input-group-text">Price</span>
-                        </div>
-                        <input type="text" name="price" id="del_price" class="form-control" aria-label="Dollar amount (with dot and two decimal places)" readonly>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>

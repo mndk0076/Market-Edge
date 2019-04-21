@@ -2,6 +2,7 @@
     ob_start();
     require_once '../../config_test.php';
     require_once 'header.php';
+    require_once '../../userSession.php';
 ?>
 <h1>Watchlist</h1>
 <i class="fas fa-plus" data-toggle="modal" data-target="#exampleModalCenter"></i>

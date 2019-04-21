@@ -10,45 +10,33 @@
         $updEvent = new Event();
         $event = $updEvent->getEventByID($id, $db);
 
+        $title = $event->title;
+        $description = $event->description;
+        $date = $event->event_date;
+        $location =$event->location;
     }
 
-    $titleErr = "";
-    $descErr = "";
-    $dateErr = "";
-    $locaErr = "";
-    $isValid = true;
-  
-  
-    $title = $description = $date = $location = "";
+
 
     if(isset($_POST['updevent'])){
 
         $id = $_POST['eid'];
         $title = $_POST['title'];
         $description = $_POST['description'];
-        $image = $_POST['image'];//This can be Null
+        $image = $_POST['image'];
         $date = $_POST['event_date'];
         $location = $_POST['location'];
 
-        if(checkEmpty($title)){
-            $titleErr = " Please Enter the Event Title";
-            $isValid = false;
-          }
-        if(checkEmpty($description)){
-            $descErr = " Please Enter the Event Description";
-            $isValid = false;
-          }
-        if(checkEmpty($date)){
-            $dateErr = " Please Enter the Event Date";
-            $isValid = false;
-        }
-        if(checkEmpty($location)){
-            $locaErr = " Please Enter the Event Location";
-            $isValid = false;
-          }
-        
-        if($isValid === true){
-
+ 
+        if($title == ""){
+            echo "Please Enter a Title";
+        }elseif($description == "") {
+            echo "Please Enter a Description";
+        }elseif($date == "") {
+            echo "Please Enter a Date";
+        }elseif($location == "") {
+            echo "Please Enter a Location";
+        }else{
             $db = Database::getDb();
             $updEvent = new Event();
             $count = $updEvent->updateEvent($id, $title, $description, $image, 
@@ -58,6 +46,7 @@
                 header("Location: eventsAdmin.php");
             }
         }
+        
     }
 
 ?>
@@ -71,25 +60,11 @@
                 <label for="title">Event Title:</label>
                 <input type="text" id="title" name="title" value=
                 "<?=$event->title; ?>" /><br/>
-                <span id="titleErr" style="color:red;">
-                    <?php
-                        if(isset($titleErr)) {
-                            echo $titleErr;
-                                    }
-                    ?>
-                </span>
             </div>
             <div id="eventDescription">
                 <label for="description">Event Description:</label>
                 <input type="text" id="description" name="description" value=
                 "<?=$event->description; ?>" /><br/>
-                <span id="descErr" style="color:red;">
-                    <?php
-                        if(isset($descErr)) {
-                            echo $descErr;
-                                    }
-                    ?>
-                </span>
             </div>
             <div id="eventImage">
                 <label for="image">Image Pathway:</label>
@@ -100,25 +75,11 @@
                 <label for="event_date">Event Date:</label>
                 <input type="text" id="event_date" name="event_date" value=
                 "<?=$event->event_date; ?>" /><br/>
-                <span id="dateErr" style="color:red;">
-                    <?php
-                        if(isset($dateErr)) {
-                            echo $dateErr;
-                                    }
-                    ?>
-                </span>
             </div>
             <div id="loca">
                 <label for="location">Event Location:</label>
                 <input type="text" id="location" name="location" value=
                 "<?=$event->location; ?>" /><br/>
-                <span id="locaErr" style="color:red;">
-                    <?php
-                        if(isset($locaErr)) {
-                            echo $locaErr;
-                                    }
-                    ?>
-                </span>
             </div>
                 <input type="submit" name="updevent" value="update event" id="submit">
         </div>

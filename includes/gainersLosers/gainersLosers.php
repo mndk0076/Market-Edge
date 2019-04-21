@@ -1,5 +1,7 @@
 <?php 
 
+require_once "../../userSession.php";
+	
 require_once '../../config_test.php';
 
 require_once MODELS_GAINERSLOSERS_PATH . "/gainers-losers.php";
