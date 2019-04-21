@@ -2,7 +2,7 @@
 
 require_once "../../models/IPO/gainers_ipo.php";
 
-$IPO = "https://cloud.iexapis.com/beta/stock/market/upcoming-ipos?token=pk_84b5cf5051b3459cad4032e62e027b3b";
+$IPO = "https://cloud.iexapis.com/beta/stock/market/upcoming-ipos?token=pk_dcd661062dce4e0ca61d72d5dc25ab20";
 
                 
 $i = new GainersIPO();
