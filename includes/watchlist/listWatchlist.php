@@ -26,14 +26,19 @@ if(count($watchlist) != 0){
     foreach($json as $ticker) {
         $tickers_price[] = $ticker['price'];
     }
+
+    foreach($watchlist as $price => $watch){
+        echo "<tr> <td style='display:none;'>". $watch->id ."</td>"
+                ."<td>". $watch->ticker ."</td>"
+                ."<td>". $watch->company ."</td>"
+                ."<td>$". $tickers_price[$price] ."</td></tr>";
+    }
+}
+else{
+    echo"<h2>No watchlist added yet.....</h2>";
 }
 
 
-foreach($watchlist as $price => $watch){
-    echo "<tr> <td style='display:none;'>". $watch->id ."</td>"
-            ."<td>". $watch->ticker ."</td>"
-            ."<td>". $watch->company ."</td>"
-            ."<td>$". $tickers_price[$price] ."</td></tr>";
-}
+
 
  
