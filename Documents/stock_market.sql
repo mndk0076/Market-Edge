@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 19, 2019 at 11:08 PM
+-- Generation Time: Apr 21, 2019 at 09:23 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -31,8 +31,21 @@ SET time_zone = "+00:00";
 CREATE TABLE `blogcomments` (
   `id` int(11) NOT NULL,
   `comment` varchar(2000) NOT NULL,
+  `comment_date` date NOT NULL,
   `blog_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `blogcomments`
+--
+
+INSERT INTO `blogcomments` (`id`, `comment`, `comment_date`, `blog_id`) VALUES
+(26, 'This is also working', '0000-00-00', 3),
+(28, 'Thank you so much for this blog. Wonderful. ', '0000-00-00', 1),
+(29, 'Great learning for new members who want to start investing in stock market.:)ðŸ™Œ', '0000-00-00', 1),
+(30, 'Cool ðŸ‘ðŸ‘', '0000-00-00', 1),
+(31, 'WOWâœ”ðŸ¤‘ðŸ˜±', '0000-00-00', 2),
+(32, 'WOWðŸ¤‘ðŸ˜±', '0000-00-00', 1);
 
 -- --------------------------------------------------------
 
@@ -47,6 +60,15 @@ CREATE TABLE `blogs` (
   `blog_date` date NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `blogs`
+--
+
+INSERT INTO `blogs` (`id`, `title`, `content`, `blog_date`, `user_id`) VALUES
+(1, 'Investment Guide', 'It is important to have a knowledge  before investing. One should always have experience. Yash Working let&#39;s see', '2019-04-17', 1),
+(2, 'Let&#39;s see', 'YEAH its Working;);)', '2019-04-09', 1),
+(3, 'Days before submission', 'Its like staying for whole night and working', '2019-04-17', 1);
 
 -- --------------------------------------------------------
 
@@ -77,13 +99,6 @@ CREATE TABLE `events` (
   `location` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `events`
---
-
-INSERT INTO `events` (`id`, `title`, `description`, `image`, `event_date`, `location`) VALUES
-(1, 'das', 'asda', 'asda', '0000-00-00', 'asddas');
-
 -- --------------------------------------------------------
 
 --
@@ -99,13 +114,6 @@ CREATE TABLE `faq` (
   `approve` tinyint(1) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
---
--- Dumping data for table `faq`
---
-
-INSERT INTO `faq` (`id`, `title`, `description`, `name`, `email`, `approve`) VALUES
-(1, 'portfolio', 'dasdasdas', 'daads', 'test@email.com', 0);
-
 -- --------------------------------------------------------
 
 --
@@ -114,12 +122,20 @@ INSERT INTO `faq` (`id`, `title`, `description`, `name`, `email`, `approve`) VAL
 
 CREATE TABLE `portfolio` (
   `id` int(11) NOT NULL,
-  `symbol` varchar(255) NOT NULL,
-  `name` varchar(255) NOT NULL,
+  `ticker` varchar(255) NOT NULL,
+  `company` varchar(255) NOT NULL,
   `shares` int(11) NOT NULL,
   `price` double NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `portfolio`
+--
+
+INSERT INTO `portfolio` (`id`, `ticker`, `company`, `shares`, `price`, `user_id`) VALUES
+(1, 'AAPL', 'Apple', 5, 1000, 1),
+(2, 'AAPL', 'Apple', 100, 1000, 2);
 
 -- --------------------------------------------------------
 
@@ -130,23 +146,11 @@ CREATE TABLE `portfolio` (
 CREATE TABLE `status` (
   `id` int(11) NOT NULL,
   `content` varchar(2000) NOT NULL,
-  `date_post` datetime NOT NULL,
   `user_id` int(11) NOT NULL,
-  `userFname` varchar(50) NOT NULL,
-  `userLname` varchar(50) NOT NULL
+  `date_post` datetime NOT NULL,
+  `user_fname` varchar(255) NOT NULL,
+  `user_lname` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `status`
---
-
-INSERT INTO `status` (`id`, `content`, `date_post`, `user_id`, `userFname`, `userLname`) VALUES
-(130, 'AGAIN ASDAS', '2019-04-19 04:45:28', 16, 'naru', 'narusigawa'),
-(131, 'posting again', '2019-04-19 04:56:10', 13, 'naruto', 'uzumaki'),
-(132, 'testing', '2019-04-19 04:56:19', 13, 'naruto', 'uzumaki'),
-(133, 'dfdafadfad', '2019-04-19 04:56:26', 13, 'naruto', 'uzumaki'),
-(134, 'posting', '2019-04-19 04:58:40', 13, 'naruto', 'uzumaki'),
-(135, 'Reupdate dadasdasd Updated', '2019-04-19 05:03:02', 13, 'naruto', 'uzumaki');
 
 -- --------------------------------------------------------
 
@@ -157,7 +161,7 @@ INSERT INTO `status` (`id`, `content`, `date_post`, `user_id`, `userFname`, `use
 CREATE TABLE `statuscomments` (
   `id` int(11) NOT NULL,
   `comment` varchar(500) NOT NULL,
-  `date_post` datetime NOT NULL,
+  `commentdate` date NOT NULL,
   `status_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -182,10 +186,10 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `password`, `phone`, `role`) VALUES
-(13, 'naruto', 'uzumaki', 'naruto@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '1234567890', 'user'),
-(14, 'Enrina', 'Wilms', 'enrina@gmail.com', '1234', '1234567890', 'user'),
-(15, 'sasuke', 'uchiha', 'sasuke@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '1234567890', 'user'),
-(16, 'naru', 'narusigawa', 'narusigawa@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055', '12345678890', 'user');
+(1, 'Yash', 'Gandhi', 'yashgandhi@eagles.com', 'yashgandhi@eagles.com', '6541236541', 'Admin'),
+(2, 'Yash', 'Gandhi', 'yashg@gmail.com', 'c17ca65b93f31e8616df15ea7c950709', '124563458', 'user'),
+(3, 'John', 'smith', 'admin@eagles.com', '7bd3f17b77966d4187f64c092985f9cd', '123456789', 'user'),
+(4, 'Wendy', 'Mcdonell', 'user@eagles.com', 'fa82e7049efb5a688fd2b85dfa6dc5d2', '145236987', 'user');
 
 -- --------------------------------------------------------
 
@@ -195,10 +199,19 @@ INSERT INTO `users` (`id`, `fname`, `lname`, `email`, `password`, `phone`, `role
 
 CREATE TABLE `watchlist` (
   `id` int(11) NOT NULL,
-  `name` varchar(255) NOT NULL,
-  `symbol` varchar(255) NOT NULL,
+  `company` varchar(255) NOT NULL,
+  `ticker` varchar(255) NOT NULL,
   `user_id` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `watchlist`
+--
+
+INSERT INTO `watchlist` (`id`, `company`, `ticker`, `user_id`) VALUES
+(4, 'Facebook', 'FB', 2),
+(5, 'Apple', 'AAPL', 2),
+(6, 'Berkshire Hathaway', 'BRK.A', 2);
 
 --
 -- Indexes for dumped tables
@@ -278,13 +291,13 @@ ALTER TABLE `watchlist`
 -- AUTO_INCREMENT for table `blogcomments`
 --
 ALTER TABLE `blogcomments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
 
 --
 -- AUTO_INCREMENT for table `blogs`
 --
 ALTER TABLE `blogs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `contacts`
@@ -296,37 +309,37 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `events`
 --
 ALTER TABLE `events`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `faq`
 --
 ALTER TABLE `faq`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `portfolio`
 --
 ALTER TABLE `portfolio`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `status`
 --
 ALTER TABLE `status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=136;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
 -- AUTO_INCREMENT for table `watchlist`
 --
 ALTER TABLE `watchlist`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- Constraints for dumped tables
