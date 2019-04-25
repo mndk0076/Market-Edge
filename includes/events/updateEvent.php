@@ -44,7 +44,9 @@
 
             if($count){
                 header("Location: eventsAdmin.php");
+                
             }
+            exit;
         }
         
     }

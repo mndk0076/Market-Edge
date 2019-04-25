@@ -25,6 +25,7 @@ if(isset($_POST['do_login'])){
 		$query = $dbcon->prepare($sql);
         $query->execute(array($user,$pass));
 		$euser = $query->fetch(PDO::FETCH_OBJ);
+        
 		//var_dump($euser);
 		//echo "hello eauser";
     if($query->rowCount() >= 1) {
@@ -40,7 +41,6 @@ if(isset($_POST['do_login'])){
     }
   }
 }
-	
 ?>
 
 <!DOCTYPE html>
