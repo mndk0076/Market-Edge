@@ -5,8 +5,8 @@ require_once 'APIRequest.php';
 require_once '../../userSession.php';
         
 $dbcon = Database::getDb();
-$list = new Portfolio();
-$portfolio = $list->getWatchlist($dbcon);
+$list = new Watchlist();
+$watchlist = $list->getWatchlist($dbcon);
 
 
 $p = new APIRequest();
@@ -21,17 +21,12 @@ foreach($json as $ticker) {
 }
   
 
-foreach($portfolio as $price => $port){
-    echo "<tr> <td style='display:none;'>". $port->id ."</td>"
-            ."<td>". $port->ticker ."</td>"
-            ."<td>". $port->company ."</td>"
+foreach($watchlist as $price => $watch){
+    echo "<tr> <td style='display:none;'>". $watch->id ."</td>"
+            ."<td>". $watch->ticker ."</td>"
+            ."<td>". $watch->company ."</td>"
             ."<td>$". $tickers_price[$price] ."</td>"
             ."<td>
-                <button type='submit' name='editTicker' class='edit-btn' data-toggle='modal' data-target='#editModal'>
-                    <i class='far fa-edit'></i>
-                </button> 
-            </td>
-            <td>
                 <button type='submit' name='deleteTicker' class='delete-btn' data-toggle='modal' data-target='#deleteModal'>
                 <i class='far fa-trash-alt'></i></button>                
             </td></tr>";

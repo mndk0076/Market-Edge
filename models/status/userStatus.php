@@ -33,16 +33,16 @@ class Status
 	}
 	
 	//adding status
-	public function addStatus($content, $date_post, $user_id, $userFname, $userLname, $db){
+	public function addStatus($content, $date_post, $user_id, $user_fname, $user_lname, $db){
 			
-		$query = "INSERT INTO status(content, date_post, user_id, userFname, userLname)
-				  VALUES (:content, :date_post , :user_id, :userFname, :userLname)";
+		$query = "INSERT INTO status(content, date_post, user_id, user_fname, user_lname)
+				  VALUES (:content, :date_post , :user_id, :user_fname, :user_lname)";
 		$pdost = $db->prepare($query);
 		$pdost->bindParam(':content', $content);
 		$pdost->bindParam(':date_post', $date_post);
 		$pdost->bindParam(':user_id', $user_id);
-		$pdost->bindParam(':userFname', $userFname);
-		$pdost->bindParam(':userLname', $userLname);
+		$pdost->bindParam(':user_fname', $user_fname);
+		$pdost->bindParam(':user_lname', $user_lname);
 		
 		$status = $pdost->execute();
 		
@@ -50,14 +50,14 @@ class Status
 	}
 	
 	//updating status
-	public function updateStatus($id, $content, $date_post, $user_id, $userFname, $userLname, $db){
+	public function updateStatus($id, $content, $date_post, $user_id, $user_fname, $user_lname, $db){
 		
 		$query = "UPDATE status
 				  SET content = :content,
 				  	  date_post = :date_post,
 					  user_id = :user_id,
-					  userFname = :userFname,
-					  userLname = :userLname
+					  user_fname = :user_fname,
+					  user_lname = :user_lname
 				  WHERE id = :id";
 		
 		$pdost = $db->prepare($query);
@@ -65,8 +65,8 @@ class Status
 		$pdost->bindParam(':content', $content);
 		$pdost->bindParam(':date_post' , $date_post);
 		$pdost->bindParam(':user_id' , $user_id);
-		$pdost->bindParam(':userFname' , $userFname);
-		$pdost->bindParam(':userLname' , $userLname);
+		$pdost->bindParam(':user_fname' , $user_fname);
+		$pdost->bindParam(':user_lname' , $user_lname);
 		
 		$status = $pdost->execute();
 		

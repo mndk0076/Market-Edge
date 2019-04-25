@@ -23,8 +23,8 @@ if(isset($_POST['addStatus'])) {
 	//THIS IS A TEMPORARY USERID SO I CAN TRY WRITING A NEW STATUS POST ON THE DATABASE
 	//SESSIONS AND LOGIN STILL NOT IMPLEMENTED
 	$user_id = $_SESSION['uid'];
-	$user_fName = $_SESSION['uFname'];
-	$user_LName = $_SESSION['uLname'];
+	$user_fname = $_SESSION['uFname'];
+	$user_lname = $_SESSION['uLname'];
 	
 	//VALIDATION FOR INPUT TEXTAREA IF EMPTY A MESSAGE WILL APPEAR
 	if(checkEmpty($content_post)){
@@ -37,7 +37,7 @@ if(isset($_POST['addStatus'])) {
 		
 	$db = Database::getDb();
 	$statusObj = new Status();
-	$add = $statusObj->addStatus($content_post, $date_post, $user_id, $user_fName, $user_LName, $db);
+	$add = $statusObj->addStatus($content_post, $date_post, $user_id, $user_fname, $user_lname, $db);
 
 	if($add) {
 		//DISPLAY STATUS
@@ -82,10 +82,5 @@ $db = Database::getDb();
 $statusObj = new Status();
 $list = $statusObj->getAllStatus(Database::getDb());
 
-//
-//$db = Database::getDb();
-//$user_id = $_SESSION['uid'];
-//$statusObj = new Status();
-//$userInfo = $statusObj->getAllUsers($user_id, Database::getDb());
 
 //EOF

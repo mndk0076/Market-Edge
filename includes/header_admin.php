@@ -23,7 +23,7 @@
         <button class="navbar-toggler sideMenuToggler" type="button">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <a class="navbar-brand" href="../includes/portfolio.php" target="_blank">Stock Market</a>
+        <a class="navbar-brand" href="../homepage/homepage.php"><img src="../../images/logo.png" style="width:150px"></a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
@@ -34,7 +34,6 @@
             </a>
             <form class="form-inline ml-auto">
                 <input class="form-control form-control-dark w-100 search" type="text" placeholder="Search" aria-label="Search">
-<!--                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>-->
             </form>
             <ul class="navbar-nav ml-auto">
                 <li>
@@ -73,31 +72,31 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link px-2">
+                        <a href="../loginRegistration/users.php" class="nav-link px-2">
                             <i class="fas fa-users icon"></i>
                             <span class="text">Users</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link px-2">
+                        <a href="../contactUs/messages.php" class="nav-link px-2">
                             <i class="fas fa-envelope icon"></i>
                             <span class="text">Messages</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="bloglistAdmin.php" class="nav-link px-2">
+                        <a href="../blogs/bloglistAdmin.php" class="nav-link px-2">
                             <i class="fab fa-blogger-b icon"></i>
                             <span class="text">Blog</span></a>
                         <p>
                     </li>
                     <li class="nav-item">
-                        <a href="../includes/events_admin.php" class="nav-link px-2">
+                        <a href="../events/eventsAdmin.php" class="nav-link px-2">
                             <i class="fas fa-calendar-alt icon"></i>
                             <span class="text">Events</span>
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="../includes/faq_admin.php" class="nav-link px-2">
+                        <a href="../faq/faqAdmin.php" class="nav-link px-2">
                             <i class="fas fa-question-circle icon"></i>
                             <span class="text">FAQ</span>
                         </a>

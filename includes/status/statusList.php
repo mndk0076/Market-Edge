@@ -6,8 +6,8 @@ foreach($list as $status) {
 	$datePosted = date('l, F d, Y', strtotime($status->date_post));
 	
 	//GETTING FIRSTNAME AND LASTNAME FOR USERS NAME AND INITIALS TO BE DISPLAY SO USER WILL KNOW WHO OWNS THE POSTS
-	$fName = $status->userFname;
-	$lName = $status->userLname;
+	$fName = $status->user_fname;
+	$lName = $status->user_lname;
 	
 	/*THIS PART WILL ACT LIKE AND AVATAR FOR POSTED STATUS
 	 *FIRST LETTER OF THE FIRSTNAME AND LASTNAME OF THE USER WILL
@@ -33,7 +33,13 @@ foreach($list as $status) {
 	 *THE IF STATEMENT WILL HIDE THE ACTION BUTTON IF THE STATUS POSTED DOESN'T *
 	 *BELOW TO THE USE WHO'S LOGGED IN*/
 	
-	if($status->user_id == $_SESSION['uid']){
+	//if($status->user_id == $_SESSION['uid']){
+	/*I COMMENTED THIS IF STATEMENT TO HIDE THE ACTION BUTTON BECAUSE ITS ACTING WEIRD WHEN I LOGGED FROM A DIFFRENT USER
+	 *ACCOUNT THE STATUS LIST IS BEING SCATTERED MUST BE SOMETHING WITH BOOTSTRAP AND LOOP I THINK
+	 * BUT IF THIS IS COMMENTED EVERYTHING WORKS FINE AND DISPLAYS THE LIST PROPERLY
+	 *IF YOU WANT YOU CAN CHECK AND UNCOMMENT THIS IF STATEMENT TO SEE THAT ITS WORKING HIDING THE BUTTONS AND JSUT SHOWING
+	 *THE COMMENT BUTTON FROM OTHER USERS
+	*/
 	echo "<div class='status-action-btn'>"
 	. "<form class='action-btn-style' action='../status/updateStatus.php' method='post'>" 
 	. "<input type='hidden' value='$status->id' name='id'" 
@@ -53,7 +59,7 @@ foreach($list as $status) {
 	. '</i></button>'
 	. "</form>" ;
 		
-	}//END OF IF STATEMENT FOR ACTION BUTTONS
+	//}//END OF IF STATEMENT FOR ACTION BUTTONS
 	
 	/*SUPPOSED TO BE COMMENT SECTION
 	 *IF THE SESSION['UID'] DOESNT BELOW TO THAT USER ONLY COMMENTBUTTON WILL APPEAR
