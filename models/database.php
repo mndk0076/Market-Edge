@@ -2,7 +2,7 @@
 class Database
 {
 	private static $user = 'root';
-	private static $pass = ''; //change to nothing with xampp
+	private static $pass = 'root'; //change to nothing with xampp
 	private static $db = 'stock_market';
 	private static $dsn = 'mysql:host=localhost;dbname=stock_market';
 	private static $dbcon;

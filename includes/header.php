@@ -28,7 +28,7 @@ require_once "../../config.php";
 		<div class="container header-search">
 			<form action="../../includes/search/search_result.php" class="search">
 				<div class="input-group collapse navbar-collapse" id="navbarSupportedContent">
-					<input type="text" class="form-control" name="ticker" placeholder="Search ticker or company name">
+					<input type="text" class="form-control" name="ticker" id="ticker" placeholder="Search ticker or company name">
 					<span class="input-group-btn">
 						<button class="btn btn-search" name="searchTicker" type="submit" id="search"><i class="fa fa-search fa-fw"></i> Search</button>
 					</span>

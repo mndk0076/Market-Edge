@@ -5,7 +5,7 @@ class DividendAPIRequest{
     public function getDividend($ticker){
         //$ticker goes into () as argument
 
-        $API = "https://cloud.iexapis.com/beta/stock/market/batch/?token=pk_2070ea1e812e4ed989df8082e86dc16d&symbols=" . $ticker . "&types=dividends&range=ytd"; 
+        $API = "https://cloud.iexapis.com/beta/stock/market/batch/?token=pk_16658a7d0d894548ac6fc648d4126581&symbols=" . $ticker . "&types=dividends&range=ytd"; 
          return $API; 
     }
 
