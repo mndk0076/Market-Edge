@@ -6,6 +6,7 @@
 ?>
 <h1>Watchlist</h1>
 <i class="fas fa-plus" data-toggle="modal" data-target="#exampleModalCenter"></i>
+<a href="editWatchlistView.php"><i class="fas fa-cog"></i></a>
 <table class="table-hover">
     <thead>
         <tr>

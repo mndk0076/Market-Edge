@@ -7,7 +7,7 @@ if(isset($_POST['deleteTicker'])){
     $dbcon = Database::getDb();
     $id= $_POST['ticker_id'];
 
-    $p = new Portfolio();
+    $p = new Watchlist();
     $count = $p->deleteTicker($dbcon, $id);
     
     if($count){
