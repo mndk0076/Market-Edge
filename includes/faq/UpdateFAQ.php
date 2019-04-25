@@ -48,7 +48,7 @@
             if($count){
                 header("Location: faqAdmin.php");
             }
-        } 
+        }exit; 
     }
 
     ?>
