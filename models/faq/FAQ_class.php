@@ -70,11 +70,11 @@ class FAQ
     same as before but this time it runs a Delete SQL query and removes the single record from the database. 
     This method is run only on the admin list */
     public function updateFaq($id, $username,
-     $useremail, $questiontitle, $questiondescription, $approval, $db){
+     $useremail, $questiontitle, $questiondescription, $quesresponse, $approval, $db){
 
         $sql = "UPDATE faq 
             SET name = :name, email = :email, title = :title, 
-            description = :description, approve = :approve 
+            description = :description, response = :response, approve = :approve 
             where id = :id";
         $pdost = $db->prepare($sql);
         $pdost->bindParam(':id', $id);
@@ -82,6 +82,7 @@ class FAQ
         $pdost->bindParam(':email', $useremail);
         $pdost->bindParam(':title', $questiontitle);
         $pdost->bindParam(':description', $questiondescription);
+        $pdost->bindParam(':response', $quesresponse);
         $pdost->bindParam(':approve', $approval);
 
         $count = $pdost->execute();

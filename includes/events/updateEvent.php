@@ -52,9 +52,15 @@
     }
 
 ?>
+<?php
+  require_once "../../userSession.php";
+  require_once '../../config_test.php';
+  require_once INCLUDES_PATH . '/header_admin.php';
 
+?>
 
-<form action="" method="post">
+<form action="" method="post" id="eventUpdate">
+    <h2>Update</h2>
     <input type="hidden" name="eid" value="<?= $event->id; ?>" />
         <div id="eventForm">
 
@@ -73,16 +79,26 @@
                 <input type="text" id="image" name="image" value=
                 "<?=$event->image; ?>"/><br/> 
             </div>
-            <div id="date">
+            <div id="eveDate">
                 <label for="event_date">Event Date:</label>
                 <input type="text" id="event_date" name="event_date" value=
                 "<?=$event->event_date; ?>" /><br/>
             </div>
-            <div id="loca">
+            <div id="eveLoca">
                 <label for="location">Event Location:</label>
                 <input type="text" id="location" name="location" value=
                 "<?=$event->location; ?>" /><br/>
             </div>
-                <input type="submit" name="updevent" value="update event" id="submit">
+                <input type="submit" name="updevent" value="update event" id="eveSubmit">
         </div>
 </form>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/jquery.slimscroll.min.js"></script>
+    <script src="../../js/trial.js"></script>
+</body>
+
+</html>	

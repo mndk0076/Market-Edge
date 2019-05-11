@@ -16,6 +16,7 @@
                           <th>Email</th>
                           <th>Subject</th>
                           <th>Question</th>
+                          <th>Answer</th>
                           <th>Approval</th>
                           <th>Update</th>
                           <th>Delete</th>

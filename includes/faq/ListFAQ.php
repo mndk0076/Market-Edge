@@ -14,6 +14,7 @@ foreach($myfaq as $question){
         "<td> $question->email </td>" .
         "<td> $question->title </td>" .
         "<td> $question->description </td>" .
+        "<td> $question->response </td>" .
         "<td> $question->approve </td>" .
         "<td>" .
             "<form action='updateFAQ.php' method='post'>" . 
