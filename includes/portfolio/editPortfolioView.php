@@ -29,6 +29,7 @@
         ?>
     </tbody>
 </table>
+<div class="min-wrapper"></div>
 <?php
 include 'footer.php';
 ?>

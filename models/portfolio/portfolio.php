@@ -7,7 +7,7 @@ class Portfolio{
     //get portfolio function
     public function getPortfolio($dbcon, $userid){   
         //sql query where active user id
-        $sql = "SELECT * FROM PORTFOLIO WHERE USER_ID = ". $userid;
+        $sql = "SELECT * FROM portfolio WHERE USER_ID = ". $userid;
         $pdostm = $dbcon->prepare($sql);
         $pdostm->execute();
 
@@ -15,7 +15,7 @@ class Portfolio{
     }
     //add ticker function
     public function addTicker($dbcon, $ticker, $company, $shares, $price, $userid){
-        $sql = "INSERT INTO Portfolio (ticker, company, shares, price, user_id) values (:ticker, :company, :shares, :price, :userid)";
+        $sql = "INSERT INTO portfolio (ticker, company, shares, price, user_id) values (:ticker, :company, :shares, :price, :userid)";
     
         $pdostm = $dbcon->prepare($sql);
         $pdostm->bindParam(':ticker', $ticker);
@@ -27,7 +27,7 @@ class Portfolio{
     }
     //edit ticker function
     public function editTicker($dbcon, $id, $ticker, $company, $shares, $price, $user_id){
-        $sql = "UPDATE PORTFOLIO
+        $sql = "UPDATE portfolio
         SET ticker = :ticker, company = :company, shares = :shares, price = :price, user_id = :user_id
         WHERE id = :id";
                 
@@ -44,7 +44,7 @@ class Portfolio{
     }
     //delete ticker function
     public function deleteTicker($dbcon, $id){
-        $sql = "DELETE FROM PORTFOLIO WHERE id= :id";
+        $sql = "DELETE FROM portfolio WHERE id= :id";
                 
         $pdostm = $dbcon->prepare($sql);
         $pdostm->bindParam(':id', $id);

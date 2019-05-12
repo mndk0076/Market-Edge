@@ -3,6 +3,7 @@ html{
 	font-family: 'Questrial', sans-serif;
 }
 body{
+  	width: 100%; 
 	margin: 0;
 	font-family: 'Questrial', sans-serif;
 }
@@ -821,11 +822,11 @@ margin-bottom: 100px;
 
 .add-icon {
 	color: red;
-	font-size:
+
 }
 
 .status-cont {
-	margin:
+	
 }
 
 ::placeholder {

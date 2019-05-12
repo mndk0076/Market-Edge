@@ -88,7 +88,7 @@ chart.render();
                 <td class="a">Perf 1 Year</td>
                 <td style="color:<?php echo $color1; ?>"><?php echo $year1; ?></td>
                 <td class="a">Next Dividend</td>
-                <td><?php echo $nextdividend; ?></td>
+                <td>Null</td>
             </tr>   
             <tr>
                 <td class="a">Shares</td>

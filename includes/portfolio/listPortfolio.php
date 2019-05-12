@@ -30,15 +30,20 @@ if(count($portfolio) != 0){
 
 //looping through the API return data and displaying it in the table
 foreach($portfolio as $price => $port){
+    $pnl = round((($tickers_price[$price] * $port->shares) - ($port->price * $port->shares)),2);
+    if ($pnl > 0 ){
+        $color = "green";
+    }else{$color = "red";};
+
     echo "<tr> <td style='display:none;'>". $port->id ."</td>"
-            ."<td>". $port->ticker ."</td>"
+            ."<td style='color:#ffeaa7;'>". $port->ticker ."</td>"
             ."<td>". $port->company ."</td>"
             ."<td>". $port->shares ."</td>"
             ."<td>$". $port->price ."</td>"
             ."<td>$". $port->price * $port->shares ."</td>"
             ."<td>$". $tickers_price[$price] ."</td>"
             ."<td>$". $tickers_price[$price] * $port->shares ."</td>"
-            ."<td>". round((($tickers_price[$price] * $port->shares) - ($port->price * $port->shares)),2)."</td></tr>";
+            ."<td style='color: ".$color."'>". round((($tickers_price[$price] * $port->shares) - ($port->price * $port->shares)),2)."</td></tr>";
 }
 
  

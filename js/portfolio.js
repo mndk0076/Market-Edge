@@ -9,7 +9,7 @@ $(document).ready(function (){
         });
         
         $('#ticker_id').val(data[0]);
-        $('#ticker').val(data[1]);
+        $('#edit_ticker').val(data[1]);
         $('#company').val(data[2]);
         $('#shares').val(data[3]);
         $('#price').val(data[4].slice(1, 50));

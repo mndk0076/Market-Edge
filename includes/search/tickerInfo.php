@@ -75,7 +75,7 @@
     if ($day5 > 0 ){
         $colord = "green";
     }else{$colord = "#DC143C";};
-    $nextdividend = $keystats['nextDividendRate'];
+    //$nextdividend = $keystats['nextDividendRate'];
     $dividendyeild = round($keystats['dividendYield']*100,2).'%';
     $nextearningdate = $keystats['nextEarningsDate'];
     $dividenddate = $keystats['exDividendDate'];

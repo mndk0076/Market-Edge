@@ -3,17 +3,7 @@ ob_start();
 require_once '../../config_test.php';
 require_once 'listPortfolioSetting.php';
 require_once '../../userSession.php';
-
 //edit ticker form
-if(isset($_POST['editTicker'])){
-    $id = $_POST['id'];
-
-    $dbcon = Database::getDb();
-    
-    //calling the get portfolio id function from the portfolio model so we know which ticket to edit
-    $id = new Portfolio();
-    $portfolioID = $id->getPortfolioId($dbcon, $id);
-}
 
 //update ticker form
 if(isset($_POST['update_ticker'])){
@@ -23,13 +13,11 @@ if(isset($_POST['update_ticker'])){
     $company = $_POST['company'];
     $shares = $_POST['shares'];
     $price = $_POST['price'];
-
     $dbcon = Database::getDb();
     
     //calling the editTicker function from the portfolio model and passing the data from the form
     $portfolio = new Portfolio();
     $count = $portfolio->editTicker($dbcon, $id, $ticker, $company, $shares, $price, $userid);
-
     //if succesfully updated go back to edit portfolio view else show the error
     if($count){
         header("Location:editportfolioView.php");
@@ -52,11 +40,11 @@ if(isset($_POST['update_ticker'])){
             <div class="modal-body">
                 <form action="editPortfolio.php" method="post" id="editTickerModal">
                    <input type="hidden" name="ticker_id" id="ticker_id">
-                    <div class="input-group mb-3">
+                   <div class="input-group mb-3">
                         <div class="input-group-prepend">
                             <span class="input-group-text" id="inputGroup-sizing-default">Ticker</span>
                         </div>
-                        <input type="text" name="ticker" id="ticker" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
+                        <input type="text" name="ticker" id="edit_ticker" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-default">
                     </div>
                     <div class="input-group mb-3">
                         <div class="input-group-prepend">
@@ -84,4 +72,4 @@ if(isset($_POST['update_ticker'])){
             </div>
         </div>
     </div>
-</div>    
+</div> 
