@@ -14,6 +14,7 @@
             $useremail = $question->email;
             $questiontitle = $question->title;
             $questiondescription = $question->description;
+            $quesresponse = $question->response;
         }
 
 
@@ -26,6 +27,7 @@
         $useremail = $_POST['email'];
         $questiontitle = $_POST['title'];
         $questiondescription = $_POST['description'];
+        $quesresponse = $_POST['response'];
         //$approval = $_POST['approve']; It was saying that it was not defined
         $approval = "0";
 
@@ -43,7 +45,7 @@
             $db = Database::getDb();
             $updFAQ = new FAQ();
             $count = $updFAQ->updateFaq($id, $username, $useremail, $questiontitle, 
-            $questiondescription, $approval, $db);
+            $questiondescription, $quesresponse, $approval, $db);
 
             if($count){
                 header("Location: faqAdmin.php");
@@ -52,8 +54,15 @@
     }
 
     ?>
+<?php
+  require_once "../../userSession.php";
+  require_once '../../config_test.php';
+  require_once INCLUDES_PATH . '/header_admin.php';
 
-<form action="" method="post">
+?>
+
+<form action="" method="post" id="updateFAQ">
+    <h2>Update</h2>
     <input type="hidden" name="fid" value="<?= $question->id; ?>" />
     <div id="faqTheirName" class="faqInfo form-group">
         Your Name: <input type="text" class="faqInput" name="name" value="<?= $question->name; ?>" /><br/>
@@ -73,5 +82,18 @@
     <div id="quesDescription" class="faqInfo form-group">
         Question: <input type="textarea" class="faqInput" name="description" value="<?= $question->description; ?>" /><br />
     </div>
-    <input type="submit" name="updfaq" value="Update Question">
+    <div id="quesResponse" class="faqInfo form-group">
+        Answer: <input type="textarea" class="faqInput" name="response" value="<?= $question->response; ?>" /><br />
+    </div>
+    <input type="submit" id="faqSubmit" name="updfaq" value="Update Question">
 </form>
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="../../js/jquery-3.3.1.min.js"></script>
+    <script src="../../js/popper.min.js"></script>
+    <script src="../../js/bootstrap.min.js"></script>
+    <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/jquery.slimscroll.min.js"></script>
+    <script src="../../js/trial.js"></script>
+</body>
+
+</html>	 

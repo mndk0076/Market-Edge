@@ -107,6 +107,59 @@ body {
     margin-left: 5rem;
   }
 }
+/*================================================================================For FAQ and Event Update=====================================================================================*/
+#updateFAQ{
+  position: relative;
+  top: 50px ;
+  left:250px;
+}
+#faqEmail{
+  position: relative;
+  left:45px;
+}
+#questionDiv{
+  position: relative;
+  left:30px;
+}
+#quesDescription{
+  position: relative;
+  left:20px;
+}
+#quesResponse{
+  position: relative;
+  left:30px;
+}
+#faqSubmit{
+  position: relative;
+  left:100px;
+}
+
+#eventUpdate{
+  position: relative;
+  top: 50px ;
+  left:275px;
+}
+#eventDescription{
+  position: relative;
+  right:60px;
+}
+#eventImage{
+  position: relative;
+  right:45px
+}
+#eveDate{
+  position: relative;
+  right:5px
+}
+#eveLoca{
+  position: relative;
+  right:35px
+}
+#eveSubmit{
+  position: relative;
+  left:130px
+}
+
 /*================================================================================For Tables=====================================================================================*/
 @media only screen and (max-width: 760px),
 (min-device-width: 768px) and (max-device-width: 1024px) {

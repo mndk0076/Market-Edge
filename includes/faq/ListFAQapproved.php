@@ -11,6 +11,7 @@ foreach($myfaq as $question){
     "<li class='myQuestions list-group-item'>" . 
     "<h2>$question->title </h2>" . "<br/>" . 
     "<p> $question->description </p>" . 
+    "<p> $question->response </p>" .
     "</li>" .
     "</div>";
 }
